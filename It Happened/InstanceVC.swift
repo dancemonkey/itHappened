@@ -8,29 +8,45 @@
 
 import UIKit
 
-class InstanceVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      self.navigationController?.setNavigationBarHidden(false, animated: true)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
+  @IBOutlet weak var newButton: UIButton!
+  @IBOutlet weak var tableView: UITableView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    self.navigationController?.setNavigationBarHidden(false, animated: true)
+    styleViews()
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+  }
+  
+  func styleViews() {
+    newButton.setTitleColor(Colors.accent2, for: .normal)
+    tableView.backgroundColor = Colors.black
+    // Set VC title from name of instance selected
+  }
+  
+  // MARK: Tableview functions
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 5
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "instanceCell")
+    return cell!
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let editVC = storyboard?.instantiateViewController(withIdentifier: "EditInstanceVC")
+    navigationController?.show(editVC!, sender: self)
+  }
+  
 }

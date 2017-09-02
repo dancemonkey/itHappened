@@ -40,7 +40,14 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   @IBAction func newTapped(sender: UIButton) {
-    
+    // popup new dialogue
+    var newActivityPopup = UIAlertController(title: "Create New Activity", message: nil, preferredStyle: .alert)
+    let createAction = UIAlertAction(title: "Create", style: .default, handler: nil)
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    newActivityPopup.addTextField(configurationHandler: nil)
+    newActivityPopup.addAction(createAction)
+    newActivityPopup.addAction(cancelAction)
+    present(newActivityPopup, animated: true, completion: nil)
   }
   
   // MARK: Tableview Functions
@@ -56,6 +63,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell")
     return cell!
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let incidentVC = storyboard?.instantiateViewController(withIdentifier: "InstanceVC")
+    navigationController?.show(incidentVC!, sender: self)
   }
   
 }
