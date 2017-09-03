@@ -12,4 +12,22 @@ import CoreData
 @objc(Instance)
 public class Instance: NSManagedObject {
 
+  func getFormattedDate() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "EEEE, MMM d, yyyy"
+    return formatter.string(from: self.date! as Date)
+  }
+  
+  func getFormattedTime() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "h:mm a"
+    return formatter.string(from: self.date! as Date)
+  }
+  
+  func getDateAndTime() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d, h:mm a"
+    return formatter.string(from: self.date! as Date)
+  }
+  
 }

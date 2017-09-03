@@ -11,5 +11,15 @@ import CoreData
 
 @objc(Activity)
 public class Activity: NSManagedObject {
+  
+  var lastInstance: Instance? {
+    get {
+      return self.instance?.lastObject as? Instance
+    }
+  }
+  
+  func setSortOrder(to index: Int) {
+    self.sortOrder = Int32(index)
+  }
 
 }

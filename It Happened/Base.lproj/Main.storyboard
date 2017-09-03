@@ -21,6 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no activities to track." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw1-dN-AgQ">
+                                <rect key="frame" x="62.5" y="288.5" width="249.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="taz-Ni-9Et">
+                                <rect key="frame" x="169" y="315.5" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.99607843139999996" green="0.18039215689999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1j8-aN-jEs">
                                 <rect key="frame" x="0.0" y="146" width="375" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,6 +66,9 @@
                                                         <constraint firstAttribute="width" constant="77" id="XZ4-03-vwv"/>
                                                     </constraints>
                                                     <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="activityHappened" destination="sDR-wU-Qpb" eventType="touchUpInside" id="qRT-nS-swy"/>
+                                                    </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ih9-HS-ZuW">
                                                     <rect key="frame" x="248" y="8" width="34" height="57.5"/>
@@ -128,9 +142,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U4J-1l-cVl" secondAttribute="bottom" constant="16" id="44A-qd-3OU"/>
                             <constraint firstItem="1j8-aN-jEs" firstAttribute="top" secondItem="SZ9-Og-CYN" secondAttribute="bottom" constant="20" id="56B-uK-Yry"/>
                             <constraint firstItem="1j8-aN-jEs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="9Yx-ph-fkU"/>
+                            <constraint firstItem="Aw1-dN-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AvD-MN-g9Z"/>
+                            <constraint firstItem="taz-Ni-9Et" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MYS-Y8-Xak"/>
                             <constraint firstItem="SZ9-Og-CYN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="WHz-l5-Neh"/>
+                            <constraint firstItem="Aw1-dN-AgQ" firstAttribute="top" secondItem="taz-Ni-9Et" secondAttribute="bottom" constant="-64" id="cl5-0R-78h"/>
                             <constraint firstAttribute="trailing" secondItem="4tO-0X-htw" secondAttribute="trailing" constant="16" id="dKo-4B-Css"/>
                             <constraint firstItem="U4J-1l-cVl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="fkg-QD-zyZ"/>
+                            <constraint firstItem="taz-Ni-9Et" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k4F-y4-3hA"/>
                             <constraint firstAttribute="trailing" secondItem="1j8-aN-jEs" secondAttribute="trailing" id="kER-tv-yJU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1j8-aN-jEs" secondAttribute="bottom" id="naC-51-CtH"/>
                             <constraint firstItem="1j8-aN-jEs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nhT-cA-uiJ"/>
@@ -139,6 +157,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="5AL-Uy-Hug"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="taz-Ni-9Et" id="ogu-WG-vUu"/>
+                        <outlet property="emptyDataLbl" destination="Aw1-dN-AgQ" id="eOv-TY-c3a"/>
                         <outlet property="headingLbl" destination="SZ9-Og-CYN" id="y3m-i8-0U1"/>
                         <outlet property="helpButton" destination="U4J-1l-cVl" id="xMx-sG-20E"/>
                         <outlet property="newButton" destination="4tO-0X-htw" id="Na7-Vi-Ijy"/>
@@ -333,7 +353,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KaT-c9-iX7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" misplaced="YES" id="YnG-jR-jgK">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="YnG-jR-jgK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

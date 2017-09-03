@@ -13,6 +13,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   @IBOutlet weak var newButton: UIButton!
   @IBOutlet weak var tableView: UITableView!
   
+  var activity: Activity?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -21,6 +23,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     tableView.delegate = self
     tableView.dataSource = self
+    
+    if let activityToView = activity {
+      // load all instances from activity into table view
+    }
   }
   
   func styleViews() {
@@ -47,6 +53,14 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let editVC = storyboard?.instantiateViewController(withIdentifier: "EditInstanceVC")
     navigationController?.show(editVC!, sender: self)
+  }
+  
+  // MARK: Segue to Editing Instance
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "editInstance" {
+      // DI instance from selected row into edit VC
+    }
   }
   
 }

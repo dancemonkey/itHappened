@@ -16,9 +16,21 @@ class EditInstanceVC: UIViewController {
   @IBOutlet weak var noteFld: UITextField!
   @IBOutlet weak var updateBtn: BaseButton!
   
+  var instance: Instance?
+  
+  // TODO: add date/time picker option
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    if let instanceToEdit = instance {
+      timeLbl.text = instanceToEdit.date?.description // extract just time out of this
+      noteLbl.text = instanceToEdit.note
+    }
+    
     styleViews()
+    
+    // load instance data from row tapped in list that brought you here
   }
   
   func styleViews() {

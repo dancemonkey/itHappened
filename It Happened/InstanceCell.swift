@@ -23,6 +23,11 @@ class InstanceCell: UITableViewCell {
     styleViews()
   }
   
+  func configureCell(with instance: Instance) {
+    timeLbl.text = instance.getFormattedTime()
+    noteLbl.text = instance.note != nil ? instance.note! : ""
+  }
+  
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
     
