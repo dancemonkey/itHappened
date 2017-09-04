@@ -64,10 +64,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let createAction = UIAlertAction(title: "Create", style: .default) { (action: UIAlertAction!) in
       if let nameField = newActivityPopup.textFields?.first, nameField.text != nil, nameField.text != "" {
         // TODO: test against blank text field and enable/disable Create button
-        let new = Activity(context: DataManager().context)
-        new.name = nameField.text!
-        DataManager().save()
-//        DataManager().addNewActivity(called: nameField.text!)
+        DataManager().addNewActivity(called: nameField.text!)
       }
     }
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -124,7 +121,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
     print("this has also been called")
     tableView.endUpdates()
-//    updateView()
+    updateView()
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
