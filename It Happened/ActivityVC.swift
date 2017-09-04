@@ -17,13 +17,13 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   @IBOutlet weak var helpButton: UIButton!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var emptyDataLbl: UILabel!
-    
+  
   fileprivate var frc: NSFetchedResultsController<Activity> = {
-    let context = DataManager().context
+    let dm = DataManager()
+    let context = dm.context
     let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
     let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-    fetchedResultsController.delegate = self as? NSFetchedResultsControllerDelegate
     return fetchedResultsController
   }()
     
@@ -32,6 +32,12 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     styleViews()
     tableView.delegate = self
     tableView.dataSource = self
+    frc.delegate = self
+    do {
+      try frc.performFetch()
+    } catch {
+      print("nope")
+    }
     updateView()
   }
   
@@ -99,11 +105,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   fileprivate func updateView() {
-    do {
-      try frc.performFetch()
-    } catch {
-      print("nope")
-    }
     var hasActivities = false
     if let activities = frc.fetchedObjects {
       hasActivities = activities.count > 0
@@ -123,11 +124,13 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
     print("this has also been called")
     tableView.endUpdates()
-    updateView()
+//    updateView()
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
     switch (type) {
+    case .update:
+      tableView.reloadRows(at: [indexPath!], with: .fade)
     case .insert:
       if let indexPath = newIndexPath {
         tableView.insertRows(at: [indexPath], with: .fade)
