@@ -26,6 +26,7 @@ public class Activity: NSManagedObject {
     let dm = DataManager()
     let instance = Instance(context: dm.context)
     instance.date = Date() as NSDate
+    instance.activity = self
     self.addToInstance(instance)
     do {
       try dm.context.save()

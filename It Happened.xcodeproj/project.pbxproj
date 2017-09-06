@@ -10,6 +10,8 @@
 		104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463671F5AF33D00312E5A /* InstanceCell.swift */; };
 		1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463691F5B001600312E5A /* EditInstanceVC.swift */; };
 		1044636C1F5B048800312E5A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044636B1F5B048800312E5A /* BaseButton.swift */; };
+		105AD72C1F60204C00F36249 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72B1F60204C00F36249 /* Extensions.swift */; };
+		105AD72E1F6020D100F36249 /* ActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72D1F6020D100F36249 /* ActivityTableView.swift */; };
 		1091DA271F59907D00BBD040 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1091DA261F59907D00BBD040 /* ActivityCell.swift */; };
 		10A7DF021F584CE8004C4F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF011F584CE8004C4F61 /* AppDelegate.swift */; };
 		10A7DF041F584CE8004C4F61 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF031F584CE8004C4F61 /* ActivityVC.swift */; };
@@ -30,6 +32,8 @@
 		104463671F5AF33D00312E5A /* InstanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceCell.swift; sourceTree = "<group>"; };
 		104463691F5B001600312E5A /* EditInstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInstanceVC.swift; sourceTree = "<group>"; };
 		1044636B1F5B048800312E5A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		105AD72B1F60204C00F36249 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		105AD72D1F6020D100F36249 /* ActivityTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableView.swift; sourceTree = "<group>"; };
 		1091DA261F59907D00BBD040 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		10A7DEFE1F584CE8004C4F61 /* It Happened.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "It Happened.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A7DF011F584CE8004C4F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			children = (
 				10A7DF161F585153004C4F61 /* DataManager.swift */,
 				10A7DF181F58515C004C4F61 /* Style.swift */,
+				105AD72B1F60204C00F36249 /* Extensions.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				1091DA261F59907D00BBD040 /* ActivityCell.swift */,
 				104463671F5AF33D00312E5A /* InstanceCell.swift */,
 				1044636B1F5B048800312E5A /* BaseButton.swift */,
+				105AD72D1F6020D100F36249 /* ActivityTableView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 			files = (
 				1091DA271F59907D00BBD040 /* ActivityCell.swift in Sources */,
 				10A7DF041F584CE8004C4F61 /* ActivityVC.swift in Sources */,
+				105AD72E1F6020D100F36249 /* ActivityTableView.swift in Sources */,
 				10A7DF1F1F585321004C4F61 /* InstanceVC.swift in Sources */,
 				10F926D21F585BB700D06941 /* Activity+CoreDataProperties.swift in Sources */,
 				10A7DF191F58515C004C4F61 /* Style.swift in Sources */,
@@ -215,6 +222,7 @@
 				10F926D01F585BB700D06941 /* Instance+CoreDataProperties.swift in Sources */,
 				10F926CF1F585BB700D06941 /* Instance+CoreDataClass.swift in Sources */,
 				10A7DF021F584CE8004C4F61 /* AppDelegate.swift in Sources */,
+				105AD72C1F60204C00F36249 /* Extensions.swift in Sources */,
 				1044636C1F5B048800312E5A /* BaseButton.swift in Sources */,
 				104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */,
 				1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */,

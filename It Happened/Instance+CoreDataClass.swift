@@ -18,6 +18,12 @@ public class Instance: NSManagedObject {
     return formatter.string(from: self.date! as Date)
   }
   
+  var sectionNameFromDate: String {
+    get {
+      return getFormattedDate()
+    }
+  }
+  
   func getFormattedTime() -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "h:mm a"

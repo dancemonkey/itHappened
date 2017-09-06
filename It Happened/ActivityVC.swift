@@ -12,7 +12,7 @@ import CoreData
 class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
   
   @IBOutlet weak var headingLbl: UILabel!
-  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var newButton: UIButton!
   @IBOutlet weak var helpButton: UIButton!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -48,6 +48,16 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     newButton.setTitleColor(Colors.accent2, for: .normal)
     helpButton.setTitleColor(Colors.accent1, for: .normal)
     emptyDataLbl.textColor = Colors.accent2
+  }
+  
+  fileprivate func updateView() {
+    var hasActivities = false
+    if let activities = frc.fetchedObjects {
+      hasActivities = activities.count > 0
+    }
+    tableView.isHidden = !hasActivities
+    emptyDataLbl.isHidden = hasActivities
+    activityIndicator.stopAnimating()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -97,29 +107,17 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let incidentVC = storyboard?.instantiateViewController(withIdentifier: "InstanceVC")
-    navigationController?.show(incidentVC!, sender: self)
-  }
-  
-  fileprivate func updateView() {
-    var hasActivities = false
-    if let activities = frc.fetchedObjects {
-      hasActivities = activities.count > 0
-    }
-    tableView.isHidden = !hasActivities
-    emptyDataLbl.isHidden = hasActivities
-    activityIndicator.stopAnimating()
+    (tableView as? ActivityTableView)?.selected = frc.object(at: indexPath)
+    performSegue(withIdentifier: "showInstanceList", sender: self)
   }
   
   // MARK: NSFetchedResultsController Shit
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    print("this has been called")
     tableView.beginUpdates()
   }
   
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    print("this has also been called")
     tableView.endUpdates()
     updateView()
   }
@@ -140,8 +138,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   // MARK: Segue functions
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showInstanceList" {
-      // DI activity into instanceList VC
+    if segue.identifier == "showInstanceList", let activity = tableView.selected {
+      let destVC = segue.destination as? InstanceVC
+      destVC?.activity = activity
     }
   }
   
