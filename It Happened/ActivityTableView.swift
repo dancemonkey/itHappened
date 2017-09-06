@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityTableView: UITableView {
   
-  var selected: Activity?
+  var selectedActivity: Activity?
+  var selectedInstance: Instance?
   
 }

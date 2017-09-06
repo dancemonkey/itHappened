@@ -12,7 +12,7 @@ import CoreData
 class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
   
   @IBOutlet weak var newButton: UIButton!
-  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var emptyDataLbl: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
@@ -100,6 +100,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    (tableView as? ActivityTableView)?.selectedInstance = frc.object(at: indexPath)
     performSegue(withIdentifier: "editInstance", sender: self)
   }
   
@@ -144,8 +145,9 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   // MARK: Segue to Editing Instance
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "editInstance" {
-      // DI instance from selected row into edit VC
+    if segue.identifier == "editInstance", let instance = tableView.selectedInstance {
+      let destVC = segue.destination as? EditInstanceVC
+      destVC?.instance = instance
     }
   }
   

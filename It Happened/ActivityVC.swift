@@ -107,8 +107,12 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    (tableView as? ActivityTableView)?.selected = frc.object(at: indexPath)
+    (tableView as? ActivityTableView)?.selectedActivity = frc.object(at: indexPath)
     performSegue(withIdentifier: "showInstanceList", sender: self)
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    // add delete and edit actions
   }
   
   // MARK: NSFetchedResultsController Shit
@@ -138,7 +142,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   // MARK: Segue functions
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showInstanceList", let activity = tableView.selected {
+    if segue.identifier == "showInstanceList", let activity = tableView.selectedActivity {
       let destVC = segue.destination as? InstanceVC
       destVC?.activity = activity
     }

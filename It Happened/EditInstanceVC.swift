@@ -24,8 +24,9 @@ class EditInstanceVC: UIViewController {
     super.viewDidLoad()
     
     if let instanceToEdit = instance {
-      timeLbl.text = instanceToEdit.date?.description // extract just time out of this
-      noteLbl.text = instanceToEdit.note
+      timeFld.placeholder = instanceToEdit.getFormattedTime() // extract just time out of this
+      // tap field to bring up date and time picker
+      noteFld.placeholder = instanceToEdit.note
     }
     
     styleViews()
@@ -36,6 +37,14 @@ class EditInstanceVC: UIViewController {
   func styleViews() {
     timeLbl.textColor = Colors.accent2
     noteLbl.textColor = Colors.accent2
+    timeFld.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
+    noteFld.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
+    timeFld.textColor = .white
+    noteFld.textColor = .white
+  }
+  
+  @IBAction func updateBtnTapped(sender: BaseButton) {
+    // update edited instance and return to instance table view
   }
   
 }
