@@ -51,8 +51,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   func styleViews() {
     newButton.setTitleColor(Colors.accent2, for: .normal)
     tableView.backgroundColor = Colors.black
+    self.automaticallyAdjustsScrollViewInsets = false
     self.title = activity?.name!
-    // Set VC title from name of instance selected
   }
   
   fileprivate func updateView() {
@@ -63,6 +63,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     tableView.isHidden = !hasActivities
 //    emptyDataLbl.isHidden = hasActivities
 //    activityIndicator.stopAnimating()
+  }
+  
+  @IBAction func newButtonTapped(sender: UIButton) {
+    self.activity!.addNewInstance()
   }
   
   // MARK: Tableview functions
@@ -123,8 +127,17 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
       if let indexPath = newIndexPath {
         tableView.insertRows(at: [indexPath], with: .fade)
       }
-    default:
-      print("default we messed up")
+    case .move:
+      if let indexPath = indexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+      if let new = newIndexPath {
+        tableView.insertRows(at: [new], with: .fade)
+      }
+    case .delete:
+      if let indexPath = indexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+      }
     }
   }
   

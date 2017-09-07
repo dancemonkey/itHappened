@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101AE2481F61798B00F2EC17 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE2471F61798B00F2EC17 /* DatePickerVC.swift */; };
+		101AE24A1F617A7A00F2EC17 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE2491F617A7A00F2EC17 /* Delegates.swift */; };
 		104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463671F5AF33D00312E5A /* InstanceCell.swift */; };
 		1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463691F5B001600312E5A /* EditInstanceVC.swift */; };
 		1044636C1F5B048800312E5A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044636B1F5B048800312E5A /* BaseButton.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101AE2471F61798B00F2EC17 /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		101AE2491F617A7A00F2EC17 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		104463671F5AF33D00312E5A /* InstanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceCell.swift; sourceTree = "<group>"; };
 		104463691F5B001600312E5A /* EditInstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInstanceVC.swift; sourceTree = "<group>"; };
 		1044636B1F5B048800312E5A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				10A7DF031F584CE8004C4F61 /* ActivityVC.swift */,
 				10A7DF1E1F585321004C4F61 /* InstanceVC.swift */,
 				104463691F5B001600312E5A /* EditInstanceVC.swift */,
+				101AE2471F61798B00F2EC17 /* DatePickerVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				10A7DF161F585153004C4F61 /* DataManager.swift */,
 				10A7DF181F58515C004C4F61 /* Style.swift */,
 				105AD72B1F60204C00F36249 /* Extensions.swift */,
+				101AE2491F617A7A00F2EC17 /* Delegates.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -227,6 +233,8 @@
 				104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */,
 				1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */,
 				10A7DF0A1F584CE8004C4F61 /* It_Happened.xcdatamodeld in Sources */,
+				101AE24A1F617A7A00F2EC17 /* Delegates.swift in Sources */,
+				101AE2481F61798B00F2EC17 /* DatePickerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
