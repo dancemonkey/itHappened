@@ -113,13 +113,14 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      let confirmation = UIAlertController.deleteConfirmation()
+      let confirmation = UIAlertController.deleteAlert {
+        let activity = self.frc.object(at: indexPath)
+        activity.deleteAllInstances()
+        self.frc.managedObjectContext.delete(activity)
+        let dm = DataManager()
+        dm.save()
+      }
       present(confirmation, animated: true, completion: nil)
-      let activity = frc.object(at: indexPath)
-      activity.deleteAllInstances()
-      frc.managedObjectContext.delete(activity)
-      let dm = DataManager()
-      dm.save()
     }
   }
   

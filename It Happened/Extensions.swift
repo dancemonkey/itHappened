@@ -10,8 +10,10 @@ import UIKit
 
 
 extension UIAlertController {
-  static func deleteConfirmation() -> UIAlertController {
-    let confirm = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+  static func deleteAlert(confirmation: @escaping () -> ()) -> UIAlertController {
+    let confirm = UIAlertAction(title: "OK", style: .destructive, handler: { action in 
+      confirmation()
+    })
     let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     let controller = UIAlertController(title: "Are you sure?", message: "You are about to delete this!", preferredStyle: .actionSheet)
     controller.addAction(confirm)
