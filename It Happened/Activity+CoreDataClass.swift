@@ -22,6 +22,12 @@ public class Activity: NSManagedObject {
     self.sortOrder = Int32(index)
   }
   
+  func deleteAllInstances() {
+    for inst in self.instance! {
+      self.managedObjectContext?.delete(inst as! NSManagedObject)
+    }
+  }
+  
   func addNewInstance() {
     let dm = DataManager()
     let instance = Instance(context: dm.context)
@@ -46,7 +52,6 @@ public class Activity: NSManagedObject {
       }).count
       todayCount = total
     }
-    
     return todayCount
   }
 

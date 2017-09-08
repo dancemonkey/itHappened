@@ -2,7 +2,7 @@
 //  Activity+CoreDataProperties.swift
 //  It Happened
 //
-//  Created by Drew Lanning on 8/31/17.
+//  Created by Drew Lanning on 9/8/17.
 //  Copyright © 2017 Drew Lanning. All rights reserved.
 //
 
@@ -20,6 +20,7 @@ extension Activity {
     @NSManaged public var icon: String?
     @NSManaged public var name: String?
     @NSManaged public var sortOrder: Int32
+    @NSManaged public var created: NSDate?
     @NSManaged public var instance: NSOrderedSet?
 
 }

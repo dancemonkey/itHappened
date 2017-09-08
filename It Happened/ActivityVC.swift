@@ -22,11 +22,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let dm = DataManager()
     let context = dm.context
     let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: true)]
     let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
   }()
-    
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     styleViews()
@@ -112,7 +112,18 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    // add delete and edit actions
+    if editingStyle == .delete {
+      // TODO: confirm with popup alert
+      let activity = frc.object(at: indexPath)
+      activity.deleteAllInstances()
+      frc.managedObjectContext.delete(activity)
+      let dm = DataManager()
+      dm.save()
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
   }
   
   // MARK: NSFetchedResultsController Shit
@@ -133,6 +144,10 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     case .insert:
       if let indexPath = newIndexPath {
         tableView.insertRows(at: [indexPath], with: .fade)
+      }
+    case .delete:
+      if let indexPath = indexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
       }
     default:
       print("default we messed up")

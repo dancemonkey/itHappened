@@ -50,19 +50,21 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func styleViews() {
     newButton.setTitleColor(Colors.accent2, for: .normal)
+    self.view.backgroundColor = Colors.black
     tableView.backgroundColor = Colors.black
     self.automaticallyAdjustsScrollViewInsets = false
     self.title = activity?.name!
+    emptyDataLbl.textColor = Colors.accent2
   }
   
   fileprivate func updateView() {
-    var hasActivities = false
-    if let activities = frc.fetchedObjects {
-      hasActivities = activities.count > 0
+    var hasInstances = false
+    if let instances = frc.fetchedObjects {
+      hasInstances = instances.count > 0
     }
-    tableView.isHidden = !hasActivities
-//    emptyDataLbl.isHidden = hasActivities
-//    activityIndicator.stopAnimating()
+    tableView.isHidden = !hasInstances
+    emptyDataLbl.isHidden = hasInstances
+    activityIndicator.stopAnimating()
   }
   
   @IBAction func newButtonTapped(sender: UIButton) {
@@ -106,6 +108,16 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     (tableView as? ActivityTableView)?.selectedInstance = frc.object(at: indexPath)
     performSegue(withIdentifier: "editInstance", sender: self)
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      // TODO: confirm with popup alert
+      let instance = frc.object(at: indexPath)
+      frc.managedObjectContext.delete(instance)
+      let dm = DataManager()
+      dm.save()
+    }
   }
   
   // MARK: NS FRC Functions
