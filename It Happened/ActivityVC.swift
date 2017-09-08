@@ -113,7 +113,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      // TODO: confirm with popup alert
+      let confirmation = UIAlertController.deleteConfirmation()
+      present(confirmation, animated: true, completion: nil)
       let activity = frc.object(at: indexPath)
       activity.deleteAllInstances()
       frc.managedObjectContext.delete(activity)

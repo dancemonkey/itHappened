@@ -112,7 +112,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      // TODO: confirm with popup alert
+      let confirmation = UIAlertController.deleteConfirmation()
+      present(confirmation, animated: true, completion: nil)
       let instance = frc.object(at: indexPath)
       frc.managedObjectContext.delete(instance)
       let dm = DataManager()
