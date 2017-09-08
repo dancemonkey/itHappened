@@ -20,7 +20,7 @@ public class Instance: NSManagedObject {
   
   var sectionNameFromDate: String {
     get {
-      return getFormattedDate()
+      return getColloquialDate()
     }
   }
   
@@ -34,6 +34,26 @@ public class Instance: NSManagedObject {
     let formatter = DateFormatter()
     formatter.dateFormat = "MMM d, h:mm a"
     return formatter.string(from: self.date! as Date)
+  }
+  
+  func getColloquialDateAndTime() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "EEEE, MMM d, yyyy"
+    if formatter.string(from: Date()) == formatter.string(from: self.date! as Date) {
+      return "Today, \(getFormattedTime())"
+    } else {
+      return getDateAndTime()
+    }
+  }
+  
+  func getColloquialDate() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d, yyyy"
+    if formatter.string(from: Date()) == formatter.string(from: self.date! as Date) {
+      return "Today - \(formatter.string(from: self.date! as Date))"
+    } else {
+      return getFormattedDate()
+    }
   }
   
 }
