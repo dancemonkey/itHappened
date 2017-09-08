@@ -70,19 +70,10 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   @IBAction func newTapped(sender: UIButton) {
-    let newActivityPopup = UIAlertController(title: "Create New Activity", message: nil, preferredStyle: .alert)
-    let createAction = UIAlertAction(title: "Create", style: .default) { (action: UIAlertAction!) in
-      if let nameField = newActivityPopup.textFields?.first, nameField.text != nil, nameField.text != "" {
-        // TODO: test against blank text field and enable/disable Create button
-        DataManager().addNewActivity(called: nameField.text!)
-      }
+    let newActivity = UIAlertController.newActivity { name in
+      DataManager().addNewActivity(called: name)
     }
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    newActivityPopup.addTextField(configurationHandler: nil)
-    newActivityPopup.addAction(createAction)
-    newActivityPopup.addAction(cancelAction)
-    present(newActivityPopup, animated: true, completion: nil)
-    
+    present(newActivity, animated: true, completion: nil)
   }
   
   // MARK: Tableview Functions
@@ -112,7 +103,18 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    if editingStyle == .delete {
+  }
+  
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, index) in
+      let update = UIAlertController.updateActivity(called: self.frc.object(at: index).name!, confirmation: { newName in
+        self.frc.object(at: index).name = newName
+        DataManager().save()
+      })
+      self.present(update, animated: true, completion: nil)
+    }
+    let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+      // now I have to manually handle delete action
       let confirmation = UIAlertController.deleteAlert {
         let activity = self.frc.object(at: indexPath)
         activity.deleteAllInstances()
@@ -120,8 +122,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let dm = DataManager()
         dm.save()
       }
-      present(confirmation, animated: true, completion: nil)
+      self.present(confirmation, animated: true, completion: nil)
     }
+    return [delete, edit]
   }
   
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
