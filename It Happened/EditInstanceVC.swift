@@ -18,7 +18,6 @@ class EditInstanceVC: UIViewController, ReceiveDate {
   @IBOutlet weak var updateBtn: BaseButton!
   
   var instance: Instance?
-  var noteEdited: Bool = false
   
   // TODO: add date/time picker option
   
@@ -26,8 +25,8 @@ class EditInstanceVC: UIViewController, ReceiveDate {
     super.viewDidLoad()
     
     if let instanceToEdit = instance {
-      timeFld.placeholder = instanceToEdit.getFormattedTime() // extract just time out of this
-      noteFld.placeholder = instanceToEdit.note
+      timeFld.text = instanceToEdit.getFormattedTime() // extract just time out of this
+      noteFld.text = instanceToEdit.note
     }
     
     styleViews()
@@ -45,20 +44,12 @@ class EditInstanceVC: UIViewController, ReceiveDate {
     
     let tapper = UITapGestureRecognizer(target: self, action: #selector(EditInstanceVC.openDatePicker))
     tapper.numberOfTapsRequired = 1
-    timeFldOverlay.addGestureRecognizer(tapper)
-    
-    noteFld.addTarget(self, action: #selector(EditInstanceVC.didEditNote), for: UIControlEvents.editingDidBegin)
-  }
-  
-  func didEditNote() {
-    noteEdited = true
+    timeFldOverlay.addGestureRecognizer(tapper)    
   }
   
   @IBAction func updateBtnTapped(sender: BaseButton) {
     // need some data sanitizing here
-    if noteFld.text != nil, noteEdited == true {
-      instance!.note = noteFld.text!
-    }
+    instance!.note = noteFld.text!
     let dm = DataManager()
     dm.save()
     navigationController?.popViewController(animated: true)
@@ -81,6 +72,8 @@ class EditInstanceVC: UIViewController, ReceiveDate {
   func receive(date: Date) {
     instance!.date = date as NSDate
     timeFld.text = instance?.getFormattedTime()
+    let dm = DataManager()
+    dm.save()
   }
   
 }

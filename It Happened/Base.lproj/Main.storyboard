@@ -115,7 +115,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tO-0X-htw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tO-0X-htw" customClass="NewButton" customModule="It_Happened" customModuleProvider="target">
                                 <rect key="frame" x="284" y="607" width="75" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="iwg-yF-fdM"/>
@@ -235,7 +235,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-Ha-TvP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-Ha-TvP" customClass="NewButton" customModule="It_Happened" customModuleProvider="target">
                                 <rect key="frame" x="284" y="607" width="75" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="dHZ-mt-FMM"/>

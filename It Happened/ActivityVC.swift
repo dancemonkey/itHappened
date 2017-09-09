@@ -13,7 +13,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   @IBOutlet weak var headingLbl: UILabel!
   @IBOutlet weak var tableView: ActivityTableView!
-  @IBOutlet weak var newButton: UIButton!
+  @IBOutlet weak var newButton: NewButton!
   @IBOutlet weak var helpButton: UIButton!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var emptyDataLbl: UILabel!
@@ -45,9 +45,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     headingLbl.textColor = Colors.primary
     self.view.backgroundColor = Colors.black
     tableView.backgroundColor = Colors.black
-    newButton.setTitleColor(Colors.accent2, for: .normal)
     helpButton.setTitleColor(Colors.accent1, for: .normal)
     emptyDataLbl.textColor = Colors.accent2
+    helpButton.isHidden = true
   }
   
   fileprivate func updateView() {
