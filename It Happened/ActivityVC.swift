@@ -62,6 +62,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(true, animated: true)
+    do {
+      try frc.performFetch()
+    } catch {
+      print("nope")
+    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -106,7 +111,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, index) in
+    let edit = UITableViewRowAction(style: .normal, title: "Edit    ") { (action, index) in
       let update = UIAlertController.updateActivity(called: self.frc.object(at: index).name!, confirmation: { newName in
         self.frc.object(at: index).name = newName
         DataManager().save()
@@ -124,6 +129,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       }
       self.present(confirmation, animated: true, completion: nil)
     }
+  
     return [delete, edit]
   }
   

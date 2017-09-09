@@ -26,6 +26,7 @@ class InstanceCell: UITableViewCell {
   func configureCell(with instance: Instance) {
     timeLbl.text = instance.getFormattedTime()
     noteLbl.text = instance.note != nil ? instance.note! : ""
+    self.selectionStyle = .none
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
