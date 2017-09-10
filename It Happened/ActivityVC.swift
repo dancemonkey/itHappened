@@ -29,6 +29,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.appBecameActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     styleViews()
     tableView.delegate = self
     tableView.dataSource = self
@@ -61,17 +62,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    self.navigationController?.setNavigationBarHidden(true, animated: true)
-    do {
-      try frc.performFetch()
-    } catch {
-      print("nope")
-    }
+
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  func appBecameActive() {
+    tableView.reloadData()
   }
   
   @IBAction func newTapped(sender: UIButton) {
@@ -119,7 +114,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       self.present(update, animated: true, completion: nil)
     }
     let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-      // now I have to manually handle delete action
       let confirmation = UIAlertController.deleteAlert {
         let activity = self.frc.object(at: indexPath)
         activity.deleteAllInstances()

@@ -40,7 +40,7 @@ extension UIAlertController {
   static func updateActivity(called name: String, confirmation: @escaping (_ newName: String) -> ()) -> UIAlertController {
     let controller = UIAlertController(title: "Update activity name", message: nil, preferredStyle: .alert)
     controller.addTextField(configurationHandler: nil)
-    controller.textFields?.first?.placeholder = name
+    controller.textFields?.first?.text = name
     
     let confirm = UIAlertAction(title: "Update", style: .default) { action in
       if let nameField = controller.textFields?.first, nameField.text != nil, nameField.text != "" {
