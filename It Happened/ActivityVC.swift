@@ -124,7 +124,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       }
       self.present(confirmation, animated: true, completion: nil)
     }
-  
+    delete.backgroundColor = Colors.accent3
     return [delete, edit]
   }
   

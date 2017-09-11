@@ -10,23 +10,22 @@ import UIKit
 
 class IncrementButton: UIButton {
   
-  var image1: UIImage = UIImage(named: "+ Button")!
-  var image2: UIImage = UIImage(named: "Check Button")!
+  var defaultImage: UIImage = UIImage(named: "+ Button")!
+  var checkImage: UIImage = UIImage(named: "Check Button")!
   
   override func layoutSubviews() {
     super.layoutSubviews()
   }
   
   override func awakeFromNib() {
-//    self.setImage(image1, for: .normal)
   }
   
-  func checkImage() {
-    setImage(image2, for: .normal)
+  func setCheckImage() {
+    setImage(checkImage, for: .normal)
   }
   
-  func defaultImage() {
-    setImage(image1, for: .normal)
+  func setDefaultImage() {
+    setImage(defaultImage, for: .normal)
   }
   
 }

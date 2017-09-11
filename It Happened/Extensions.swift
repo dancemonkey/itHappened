@@ -26,7 +26,7 @@ extension UIAlertController {
     controller.addTextField(configurationHandler: nil)
     controller.textFields?.first?.placeholder = "Name of activity"
     
-    let confirm = UIAlertAction(title: "Create", style: .destructive, handler: { action in
+    let confirm = UIAlertAction(title: "Create", style: .default, handler: { action in
       if let nameField = controller.textFields?.first, nameField.text != nil, nameField.text != "" {
         confirmation(nameField.text!)
       }
