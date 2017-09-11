@@ -18,7 +18,15 @@ class IncrementButton: UIButton {
   }
   
   override func awakeFromNib() {
-    self.setImage(image1, for: .normal)
+//    self.setImage(image1, for: .normal)
+  }
+  
+  func checkImage() {
+    setImage(image2, for: .normal)
+  }
+  
+  func defaultImage() {
+    setImage(image1, for: .normal)
   }
   
 }

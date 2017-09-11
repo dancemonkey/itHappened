@@ -17,6 +17,7 @@ class NewButton: UIButton {
     self.setTitleColor(Colors.accent2, for: .normal)
     self.layer.cornerRadius = 4
     self.layer.masksToBounds = true
+    
     self.layer.shadowColor = Colors.accent2.cgColor
     self.layer.shadowOffset = CGSize(width: 0, height: -3)
     self.layer.shadowOpacity = 0

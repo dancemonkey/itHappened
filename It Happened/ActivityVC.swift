@@ -66,11 +66,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func appBecameActive() {
-    do {
-      try frc.performFetch()
-    } catch {
-      print("nope")
-    }
+    print("app became active")
+    tableView.reloadData()
   }
   
   @IBAction func newTapped(sender: UIButton) {
