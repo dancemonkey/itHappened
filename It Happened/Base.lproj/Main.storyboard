@@ -72,16 +72,29 @@
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ih9-HS-ZuW">
-                                                    <rect key="frame" x="234" y="8" width="50" height="57.5"/>
+                                                    <rect key="frame" x="234" y="4" width="50" height="67"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CaP-TK-Hq2">
-                                                            <rect key="frame" x="13.5" y="0.0" width="23.5" height="43"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6d1-bj-lKo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="52.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keY-j5-yjD">
+                                                                    <rect key="frame" x="0.0" y="4.5" width="50" height="43"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="PEB-yc-WkO"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="keY-j5-yjD" firstAttribute="centerY" secondItem="6d1-bj-lKo" secondAttribute="centerY" id="vSH-sV-H6l"/>
+                                                                <constraint firstItem="keY-j5-yjD" firstAttribute="centerX" secondItem="6d1-bj-lKo" secondAttribute="centerX" id="yPI-Nv-WQR"/>
+                                                            </constraints>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdv-am-4MA">
-                                                            <rect key="frame" x="8" y="43" width="34.5" height="14.5"/>
+                                                            <rect key="frame" x="8" y="52.5" width="34.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -99,15 +112,18 @@
                                                 <constraint firstItem="GCn-LO-ZdY" firstAttribute="centerY" secondItem="7ef-4a-Vg8" secondAttribute="centerY" id="YRk-Rt-OKc"/>
                                                 <constraint firstItem="BRD-vx-iFt" firstAttribute="leading" secondItem="7ef-4a-Vg8" secondAttribute="leading" constant="16" id="ZTa-p9-UpE"/>
                                                 <constraint firstItem="BRD-vx-iFt" firstAttribute="centerY" secondItem="7ef-4a-Vg8" secondAttribute="centerY" id="ar4-zE-nQN"/>
+                                                <constraint firstItem="Ih9-HS-ZuW" firstAttribute="top" secondItem="7ef-4a-Vg8" secondAttribute="top" constant="4" id="mjg-mG-Bs2"/>
                                                 <constraint firstItem="Ih9-HS-ZuW" firstAttribute="leading" secondItem="BRD-vx-iFt" secondAttribute="trailing" constant="16" id="q60-IP-2dA"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ih9-HS-ZuW" secondAttribute="bottom" constant="4" id="vyJ-2Y-UiY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.039215686274509803" green="0.11764705882352941" blue="0.13725490196078433" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <outlet property="activityTitleLbl" destination="M3m-1S-zrd" id="2Wf-Ty-BlT"/>
+                                            <outlet property="animationView" destination="6d1-bj-lKo" id="77o-e7-vDf"/>
                                             <outlet property="lastIncidentLbl" destination="p6E-Uc-NZB" id="Zh8-uv-MyV"/>
                                             <outlet property="newIncidentBtn" destination="GCn-LO-ZdY" id="gNO-Ng-gfi"/>
-                                            <outlet property="todayTotalLbl" destination="CaP-TK-Hq2" id="iae-08-d0Q"/>
+                                            <outlet property="todayTotalLbl" destination="keY-j5-yjD" id="D1a-cI-pWE"/>
                                             <outlet property="todayTotalTimes" destination="Bdv-am-4MA" id="5cJ-UM-YZ9"/>
                                         </connections>
                                     </tableViewCell>

@@ -62,11 +62,15 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   override func viewWillAppear(_ animated: Bool) {
-
+    navigationController?.setNavigationBarHidden(true, animated: true)
   }
   
   func appBecameActive() {
-    tableView.reloadData()
+    do {
+      try frc.performFetch()
+    } catch {
+      print("nope")
+    }
   }
   
   @IBAction func newTapped(sender: UIButton) {

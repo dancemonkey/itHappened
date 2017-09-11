@@ -12,12 +12,15 @@ class NewButton: UIButton {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    self.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 1.0, blue: 1.0, alpha: 0.3)
+    self.backgroundColor = Colors.accent1.withAlphaComponent(0.3)
+    self.backgroundColor?.withAlphaComponent(0.3)
     self.setTitleColor(Colors.accent2, for: .normal)
     self.layer.cornerRadius = 4
     self.layer.masksToBounds = true
-//    self.layer.borderColor = Colors.accent2.cgColor
-//    self.layer.borderWidth = 1.0
+    self.layer.shadowColor = Colors.accent2.cgColor
+    self.layer.shadowOffset = CGSize(width: 0, height: -3)
+    self.layer.shadowOpacity = 0
+    self.layer.shadowRadius = 3
   }
 
 }

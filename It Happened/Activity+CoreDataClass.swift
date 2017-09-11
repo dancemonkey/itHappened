@@ -37,7 +37,7 @@ public class Activity: NSManagedObject {
     do {
       try dm.context.save()
     } catch {
-      print("failed save in Activity addNewInstnace")
+      print("failed save in Activity addNewInstance")
     }
   }
   
