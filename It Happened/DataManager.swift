@@ -33,4 +33,18 @@ class DataManager {
     }
   }
   
+  func setLastOpen() {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "EEEE, MMM d, yyyy"
+    let today = formatter.string(from: Date())
+    UserDefaults().setValue(today, forKey: "lastOpen")
+  }
+  
+  func getLastOpen() -> String? {
+    if let lastOpen = UserDefaults().object(forKey: "lastOpen") {
+      return lastOpen as? String
+    }
+    return nil
+  }
+  
 }

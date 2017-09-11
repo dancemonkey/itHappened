@@ -66,8 +66,17 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func appBecameActive() {
-    print("app became active")
-    tableView.reloadData()
+    if let lastOpen = DataManager().getLastOpen() {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "EEEE, MMM d, yyyy"
+      if formatter.string(from: Date()) != lastOpen {
+        DataManager().setLastOpen()
+        tableView.reloadData()
+      }
+    } else {
+      DataManager().setLastOpen()
+    }
+//    tableView.reloadData()
   }
   
   @IBAction func newTapped(sender: UIButton) {
