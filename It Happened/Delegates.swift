@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol ReceiveDate {
   func receive(date: Date)

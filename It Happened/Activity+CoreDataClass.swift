@@ -33,11 +33,6 @@ public class Activity: NSManagedObject {
     instance.date = Date() as NSDate
     instance.activity = self
     self.addToInstance(instance)
-    do {
-      try context.save()
-    } catch {
-      print("failed save in Activity addNewInstance")
-    }
   }
   
   func getTodaysTotal() -> Int {

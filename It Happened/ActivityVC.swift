@@ -82,6 +82,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   @IBAction func newTapped(sender: UIButton) {
     let newActivity = UIAlertController.newActivity { name in
       DataManager().addNewActivity(called: name)
+      DataManager().save()
     }
     present(newActivity, animated: true, completion: nil)
   }

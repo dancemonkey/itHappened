@@ -26,11 +26,6 @@ class DataManager {
     let activity = Activity(context: context)
     activity.name = name
     activity.created = Date() as NSDate
-    do {
-      try context.save()
-    } catch {
-      print("failed save in DataManager addNewActivity")
-    }
   }
   
   func setLastOpen() {

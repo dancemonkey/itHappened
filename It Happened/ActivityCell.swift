@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ActivityCell: UITableViewCell {
   
@@ -17,7 +18,7 @@ class ActivityCell: UITableViewCell {
   @IBOutlet weak var newIncidentBtn: IncrementButton!
   @IBOutlet weak var animationView: UIView!
   
-  var activity: Activity?
+  var addNewInstance: (() -> ())?
   
   func styleViews() {
     activityTitleLbl.textColor = Colors.accent2
@@ -29,11 +30,13 @@ class ActivityCell: UITableViewCell {
   }
   
   func configureCell(with activity: Activity) {
-    self.activity = activity
     activityTitleLbl.text = activity.name
     lastIncidentLbl.text = activity.lastInstance?.getColloquialDateAndTime()
     animationView.pushTransition(1.0)
     todayTotalLbl.text = "\(activity.getTodaysTotal())"
+    addNewInstance = {
+      activity.addNewInstance(withContext: DataManager().context)
+    }
     self.selectionStyle = .none
   }
   
@@ -46,7 +49,10 @@ class ActivityCell: UITableViewCell {
       }, completion: { (finished) in
         self.newIncidentBtn.setDefaultImage()
         self.newIncidentBtn.alpha = 1.0
-        self.activity?.addNewInstance(withContext: DataManager().context)
+        if let addNew = self.addNewInstance {
+          addNew()
+          DataManager().save()
+        }
       })
     })
   }
