@@ -40,10 +40,10 @@ class ActivityCell: UITableViewCell {
   
   @IBAction func activityHappened(sender: IncrementButton) {
     UIView.animate(withDuration: 0.0, delay: 0, options: .transitionCrossDissolve, animations: {
-      self.newIncidentBtn.setCheckImage()
+//      self.newIncidentBtn.setCheckImage()
     }, completion: { finished in
       self.newIncidentBtn.setCheckImage()
-      UIView.animate(withDuration: 0.2, delay: 0.3, animations: {
+      UIView.animate(withDuration: 0.4, delay: 0.2, animations: {
         self.newIncidentBtn.alpha = 0.0
       }, completion: { (finished) in
         self.newIncidentBtn.setDefaultImage()
