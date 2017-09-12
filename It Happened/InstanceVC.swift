@@ -68,7 +68,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   }
   
   @IBAction func newButtonTapped(sender: UIButton) {
-    self.activity!.addNewInstance()
+    self.activity!.addNewInstance(withContext: DataManager().context)
   }
   
   // MARK: Tableview functions

@@ -28,14 +28,13 @@ public class Activity: NSManagedObject {
     }
   }
   
-  func addNewInstance() {
-    let dm = DataManager()
-    let instance = Instance(context: dm.context)
+  func addNewInstance(withContext context: NSManagedObjectContext) {
+    let instance = Instance(context: context)
     instance.date = Date() as NSDate
     instance.activity = self
     self.addToInstance(instance)
     do {
-      try dm.context.save()
+      try context.save()
     } catch {
       print("failed save in Activity addNewInstance")
     }
