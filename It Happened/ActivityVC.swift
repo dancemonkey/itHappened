@@ -102,9 +102,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell") as! ActivityCell
-    configure(cell: cell, at: indexPath)
-    return cell
+    if let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell") as? ActivityCell {
+      configure(cell: cell, at: indexPath)
+      return cell
+    }
+    return ActivityCell()
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -128,8 +130,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let activity = self.frc.object(at: indexPath)
         activity.deleteAllInstances()
         self.frc.managedObjectContext.delete(activity)
-        let dm = DataManager()
-        dm.save()
+        DataManager().save()
       }
       self.present(confirmation, animated: true, completion: nil)
     }

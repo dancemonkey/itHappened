@@ -20,7 +20,6 @@ class ActivityCell: UITableViewCell {
   var activity: Activity?
   
   func styleViews() {
-    
     activityTitleLbl.textColor = Colors.accent2
     lastIncidentLbl.textColor = Colors.accent1
     todayTotalLbl.textColor = Colors.accent2
@@ -55,10 +54,6 @@ class ActivityCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     styleViews()
-  }
-  
-  override func prepareForReuse() {
-    super.prepareForReuse()
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
