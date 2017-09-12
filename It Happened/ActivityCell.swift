@@ -19,6 +19,7 @@ class ActivityCell: UITableViewCell {
   @IBOutlet weak var animationView: UIView!
   
   var addNewInstance: (() -> ())?
+  var swipe: UISwipeGestureRecognizer?
   
   func styleViews() {
     activityTitleLbl.textColor = Colors.accent2
@@ -57,6 +58,14 @@ class ActivityCell: UITableViewCell {
     })
   }
   
+  override func willTransition(to state: UITableViewCellStateMask) {
+    if state == .showingDeleteConfirmationMask {
+      newIncidentBtn.isUserInteractionEnabled = false
+    } else {
+      newIncidentBtn.isUserInteractionEnabled = true
+    }
+  }
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     styleViews()
@@ -64,6 +73,12 @@ class ActivityCell: UITableViewCell {
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
+  }
+  
+  // MARK: UIGesture methods
+  
+  override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    return true
   }
   
 }
