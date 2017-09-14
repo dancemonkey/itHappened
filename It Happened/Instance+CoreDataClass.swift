@@ -18,7 +18,7 @@ public class Instance: NSManagedObject {
     return formatter.string(from: self.date! as Date)
   }
   
-  var sectionNameFromDate: String {
+  @objc var sectionNameFromDate: String {
     get {
       return getColloquialDate()
     }
