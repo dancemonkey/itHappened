@@ -134,6 +134,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="iwg-yF-fdM"/>
                                     <constraint firstAttribute="height" constant="45" id="tyF-Cz-WaI"/>
                                 </constraints>
+                                <size key="titleShadowOffset" width="2" height="2"/>
                                 <state key="normal" image="New Button">
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

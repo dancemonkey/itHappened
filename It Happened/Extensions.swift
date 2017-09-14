@@ -65,3 +65,17 @@ extension UIView {
     layer.add(animation, forKey: kCATransitionPush)
   }
 }
+
+extension UIButton {
+  func pulsateOut() {
+    UIView.animate(withDuration: 0.1) {
+      self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+    }
+  }
+  
+  func pulsateIn() {
+    UIView.animate(withDuration: 0.1) {
+      self.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+    }
+  }
+}
