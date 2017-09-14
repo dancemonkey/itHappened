@@ -53,7 +53,6 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     newButton.setTitleColor(Colors.accent2, for: .normal)
     self.view.backgroundColor = Colors.black
     tableView.backgroundColor = Colors.black
-//    self.automaticallyAdjustsScrollViewInsets = false
     self.title = activity?.name!
     emptyDataLbl.textColor = Colors.accent2
   }
@@ -142,7 +141,9 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
     switch (type) {
     case .update:
-      tableView.reloadRows(at: [indexPath!], with: .fade)
+      if let indexPath = indexPath {
+        tableView.reloadRows(at: [indexPath], with: .fade)
+      }
     case .insert:
       if let indexPath = newIndexPath {
         tableView.insertRows(at: [indexPath], with: .fade)
@@ -157,6 +158,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .delete:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.headerView(forSection: indexPath.section)?.textLabel?.text = (frc.object(at: indexPath).sectionNameFromDate)
       }
     }
   }
@@ -170,7 +172,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .move:
       break
     case .update:
-      break
+      tableView.reloadSections(IndexSet(integer: sectionIndex), with: .fade)
     }
   }
 

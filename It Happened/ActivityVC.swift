@@ -47,6 +47,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     helpButton.setTitleColor(Colors.accent1, for: .normal)
     emptyDataLbl.textColor = Colors.accent2
     helpButton.isHidden = true
+    newButton.tintColor = Colors.primary
   }
   
   fileprivate func updateView() {
@@ -79,7 +80,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 //    tableView.reloadData()
   }
   
-  @IBAction func newTapped(sender: UIButton) {
+  @IBAction func newTapped(sender: NewButton) {
     let newActivity = UIAlertController.newActivity { name in
       DataManager().addNewActivity(called: name)
       DataManager().save()
