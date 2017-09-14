@@ -65,7 +65,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     navigationController?.setNavigationBarHidden(true, animated: true)
   }
   
-  func appBecameActive() {
+  @objc func appBecameActive() {
     if let lastOpen = DataManager().getLastOpen() {
       let formatter = DateFormatter()
       formatter.dateFormat = "EEEE, MMM d, yyyy"

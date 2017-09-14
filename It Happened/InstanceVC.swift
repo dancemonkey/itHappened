@@ -14,7 +14,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   @IBOutlet weak var newButton: UIButton!
   @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var emptyDataLbl: UILabel!
-  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  @objc @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   var activity: Activity?
   
@@ -25,7 +25,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
     let activity = self.activity!
     fetchRequest.predicate = NSPredicate(format: "activity == %@", activity)
-    let fetchedResultsController: NSFetchedResultsController<Instance> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: #keyPath(Instance.sectionNameFromDate), cacheName: nil)
+//    let fetchedResultsController: NSFetchedResultsController<Instance> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: #keyPath(Instance.sectionNameFromDate), cacheName: nil)
+    let fetchedResultsController: NSFetchedResultsController<Instance> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "sectionNameFromDate", cacheName: nil)
     return fetchedResultsController
   }()
   
