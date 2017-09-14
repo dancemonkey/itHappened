@@ -25,7 +25,6 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
     let activity = self.activity!
     fetchRequest.predicate = NSPredicate(format: "activity == %@", activity)
-//    let fetchedResultsController: NSFetchedResultsController<Instance> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: #keyPath(Instance.sectionNameFromDate), cacheName: nil)
     let fetchedResultsController: NSFetchedResultsController<Instance> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "sectionNameFromDate", cacheName: nil)
     return fetchedResultsController
   }()
@@ -46,6 +45,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     } catch {
       print("nope")
     }
+    
     updateView()
   }
   
@@ -53,9 +53,13 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     newButton.setTitleColor(Colors.accent2, for: .normal)
     self.view.backgroundColor = Colors.black
     tableView.backgroundColor = Colors.black
-    self.automaticallyAdjustsScrollViewInsets = false
+//    self.automaticallyAdjustsScrollViewInsets = false
     self.title = activity?.name!
     emptyDataLbl.textColor = Colors.accent2
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
   }
   
   fileprivate func updateView() {

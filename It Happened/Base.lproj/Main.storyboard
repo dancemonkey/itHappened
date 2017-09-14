@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KaT-c9-iX7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KaT-c9-iX7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ActivityVC-->
+        <!--Activities-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ActivityVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                                 <color key="tintColor" red="0.99607843139999996" green="0.18039215689999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1j8-aN-jEs" customClass="ActivityTableView" customModule="It_Happened" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="146" width="375" height="521"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" id="sDR-wU-Qpb" customClass="ActivityCell" customModule="It_Happened" customModuleProvider="target">
@@ -80,7 +80,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="keY-j5-yjD">
                                                                     <rect key="frame" x="0.0" y="4.5" width="50" height="43"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="PEB-yc-WkO"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="PEB-yc-WkO"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                                     <nil key="textColor"/>
@@ -129,16 +129,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZ9-Og-CYN">
-                                <rect key="frame" x="16" y="83" width="103.5" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tO-0X-htw" customClass="NewButton" customModule="It_Happened" customModuleProvider="target">
                                 <rect key="frame" x="284" y="607" width="75" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="iwg-yF-fdM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="iwg-yF-fdM"/>
                                     <constraint firstAttribute="height" constant="44" id="tyF-Cz-WaI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -148,10 +142,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4J-1l-cVl">
-                                <rect key="frame" x="16" y="607" width="44" height="44"/>
+                                <rect key="frame" x="16" y="607" width="30" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="joM-6B-kb5"/>
-                                    <constraint firstAttribute="width" constant="44" id="tgC-RR-c40"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="44" id="tgC-RR-c40"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="?"/>
@@ -160,11 +154,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U4J-1l-cVl" secondAttribute="bottom" constant="16" id="44A-qd-3OU"/>
-                            <constraint firstItem="1j8-aN-jEs" firstAttribute="top" secondItem="SZ9-Og-CYN" secondAttribute="bottom" constant="20" id="56B-uK-Yry"/>
-                            <constraint firstItem="1j8-aN-jEs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="9Yx-ph-fkU"/>
+                            <constraint firstItem="1j8-aN-jEs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9Yx-ph-fkU"/>
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AvD-MN-g9Z"/>
                             <constraint firstItem="taz-Ni-9Et" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MYS-Y8-Xak"/>
-                            <constraint firstItem="SZ9-Og-CYN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="WHz-l5-Neh"/>
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="top" secondItem="taz-Ni-9Et" secondAttribute="bottom" constant="-64" id="cl5-0R-78h"/>
                             <constraint firstAttribute="trailing" secondItem="4tO-0X-htw" secondAttribute="trailing" constant="16" id="dKo-4B-Css"/>
                             <constraint firstItem="U4J-1l-cVl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="fkg-QD-zyZ"/>
@@ -175,11 +167,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4tO-0X-htw" secondAttribute="bottom" constant="16" id="y98-uz-IcA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5AL-Uy-Hug"/>
+                    <navigationItem key="navigationItem" title="Activities" largeTitleDisplayMode="always" id="5AL-Uy-Hug"/>
                     <connections>
                         <outlet property="activityIndicator" destination="taz-Ni-9Et" id="ogu-WG-vUu"/>
                         <outlet property="emptyDataLbl" destination="Aw1-dN-AgQ" id="eOv-TY-c3a"/>
-                        <outlet property="headingLbl" destination="SZ9-Og-CYN" id="y3m-i8-0U1"/>
                         <outlet property="helpButton" destination="U4J-1l-cVl" id="xMx-sG-20E"/>
                         <outlet property="newButton" destination="4tO-0X-htw" id="Na7-Vi-Ijy"/>
                         <outlet property="tableView" destination="1j8-aN-jEs" id="rpa-gM-oI7"/>
@@ -259,7 +250,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-Ha-TvP" customClass="NewButton" customModule="It_Happened" customModuleProvider="target">
                                 <rect key="frame" x="284" y="607" width="75" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="dHZ-mt-FMM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="dHZ-mt-FMM"/>
                                     <constraint firstAttribute="height" constant="44" id="zau-ZC-P16"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -361,7 +352,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYz-Fv-BrA" customClass="BaseButton" customModule="It_Happened" customModuleProvider="target">
                                         <rect key="frame" x="121.5" y="185" width="100" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="4oA-cQ-qQi"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="4oA-cQ-qQi"/>
                                             <constraint firstAttribute="height" constant="45" id="tiv-C5-7d2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -430,7 +421,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chZ-7A-7M3" customClass="BaseButton" customModule="It_Happened" customModuleProvider="target">
                                 <rect key="frame" x="137" y="320" width="100" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="1dn-KE-nzb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1dn-KE-nzb"/>
                                     <constraint firstAttribute="height" constant="45" id="cod-OC-Rum"/>
                                 </constraints>
                                 <state key="normal" title="Update"/>
@@ -463,7 +454,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KaT-c9-iX7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="YnG-jR-jgK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>

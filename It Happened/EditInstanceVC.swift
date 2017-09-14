@@ -29,9 +29,7 @@ class EditInstanceVC: UIViewController, ReceiveDate {
       noteFld.text = instanceToEdit.note
     }
     
-    styleViews()
-    
-    // load instance data from row tapped in list that brought you here
+    styleViews()    
   }
   
   func styleViews() {
@@ -44,7 +42,7 @@ class EditInstanceVC: UIViewController, ReceiveDate {
     
     let tapper = UITapGestureRecognizer(target: self, action: #selector(EditInstanceVC.openDatePicker))
     tapper.numberOfTapsRequired = 1
-    timeFldOverlay.addGestureRecognizer(tapper)    
+    timeFldOverlay.addGestureRecognizer(tapper)
   }
   
   @IBAction func updateBtnTapped(sender: BaseButton) {

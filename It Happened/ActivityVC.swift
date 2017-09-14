@@ -11,7 +11,6 @@ import CoreData
 
 class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
   
-  @IBOutlet weak var headingLbl: UILabel!
   @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var newButton: NewButton!
   @IBOutlet weak var helpButton: UIButton!
@@ -43,7 +42,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func styleViews() {
-    headingLbl.textColor = Colors.primary
     self.view.backgroundColor = Colors.black
     tableView.backgroundColor = Colors.black
     helpButton.setTitleColor(Colors.accent1, for: .normal)
@@ -62,7 +60,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    navigationController?.setNavigationBarHidden(true, animated: true)
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Colors.primary]
+    navigationController?.navigationBar.barTintColor = Colors.black
   }
   
   @objc func appBecameActive() {
