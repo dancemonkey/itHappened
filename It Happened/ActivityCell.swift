@@ -34,7 +34,7 @@ class ActivityCell: UITableViewCell {
     activityTitleLbl.text = activity.name
     lastIncidentLbl.text = activity.lastInstance?.getColloquialDateAndTime()
     animationView.pushTransition(1.0)
-    todayTotalLbl.text = "\(activity.getTodaysTotal())"
+    todayTotalLbl.text = "\(activity.getInstanceCount(forDate: Date()))"
     addNewInstance = {
       activity.addNewInstance(withContext: DataManager().context)
     }
