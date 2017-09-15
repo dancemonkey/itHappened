@@ -41,7 +41,7 @@ class ActivityCell: UITableViewCell {
   }
   
   func setIncrementCounter(to count: Int) {
-    animationView.pushTransition(1.0)
+//    animationView.pushTransition(1.0)
     self.todayTotalLbl.text = "\(count)"
   }
   
