@@ -42,7 +42,7 @@ class ActivityCell: UITableViewCell {
   
   func setIncrementCounter(to count: Int) {
     animationView.pushTransition(1.0)
-    todayTotalLbl.text = "\(count)"
+    self.todayTotalLbl.text = "\(count)"
   }
   
   @IBAction func activityHappened(sender: IncrementButton) {
@@ -77,6 +77,14 @@ class ActivityCell: UITableViewCell {
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    print("preparing for re-use")
+    print(todayTotalLbl.text)
+    todayTotalLbl.text = ""
+    print(todayTotalLbl.text)
   }
   
   // MARK: UIGesture methods

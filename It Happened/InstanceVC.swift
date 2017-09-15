@@ -134,6 +134,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
   }
   
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 40.0
+  }
+  
   // MARK: NS FRC Functions
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
