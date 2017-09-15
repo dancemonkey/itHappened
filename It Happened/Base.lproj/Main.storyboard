@@ -129,10 +129,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tO-0X-htw" customClass="NewButton" customModule="It_Happened" customModuleProvider="target">
-                                <rect key="frame" x="314" y="606" width="45" height="45"/>
+                                <rect key="frame" x="299" y="591" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="iwg-yF-fdM"/>
-                                    <constraint firstAttribute="height" constant="45" id="tyF-Cz-WaI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="iwg-yF-fdM"/>
+                                    <constraint firstAttribute="height" constant="60" id="tyF-Cz-WaI"/>
                                 </constraints>
                                 <size key="titleShadowOffset" width="2" height="2"/>
                                 <state key="normal" image="New Button">
@@ -237,10 +237,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDa-Ha-TvP" customClass="NewButton" customModule="It_Happened" customModuleProvider="target">
-                                <rect key="frame" x="314" y="606" width="45" height="45"/>
+                                <rect key="frame" x="299" y="591" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="dHZ-mt-FMM"/>
-                                    <constraint firstAttribute="height" constant="45" id="zau-ZC-P16"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="dHZ-mt-FMM"/>
+                                    <constraint firstAttribute="height" constant="60" id="zau-ZC-P16"/>
                                 </constraints>
                                 <state key="normal" image="New Button"/>
                                 <connections>
@@ -459,6 +459,6 @@
     </scenes>
     <resources>
         <image name="+ Button" width="75" height="75"/>
-        <image name="New Button" width="45" height="45"/>
+        <image name="New Button" width="60" height="60"/>
     </resources>
 </document>

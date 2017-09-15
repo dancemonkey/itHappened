@@ -59,6 +59,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
   
   fileprivate func updateView() {

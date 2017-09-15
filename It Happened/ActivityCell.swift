@@ -81,10 +81,6 @@ class ActivityCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    print("preparing for re-use")
-    print(todayTotalLbl.text)
-    todayTotalLbl.text = ""
-    print(todayTotalLbl.text)
   }
   
   // MARK: UIGesture methods

@@ -25,6 +25,7 @@ class DatePickerVC: UIViewController, UIPickerViewDelegate {
   func styleViews() {
     picker.setValue(Colors.accent2, forKey: "textColor")
     picker.maximumDate = Date()
+    navigationController?.navigationBar.prefersLargeTitles = false
   }
   
   @IBAction func updateTapped(sender: BaseButton) {

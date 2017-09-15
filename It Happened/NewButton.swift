@@ -14,6 +14,7 @@ class NewButton: UIButton {
     super.awakeFromNib()
     self.layer.masksToBounds = true
     self.backgroundColor = .clear
+    self.alpha = 0.8
     
     self.layer.shadowColor = UIColor.white.cgColor
     self.layer.shadowOffset = CGSize(width: 0, height: -3)

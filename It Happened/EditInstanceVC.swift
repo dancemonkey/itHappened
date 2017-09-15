@@ -32,6 +32,11 @@ class EditInstanceVC: UIViewController, ReceiveDate {
     styleViews()    
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.navigationBar.prefersLargeTitles = true
+  }
+  
   func styleViews() {
     timeLbl.textColor = Colors.accent2
     noteLbl.textColor = Colors.accent2
