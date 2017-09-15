@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate {
   
   @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var newButton: NewButton!
@@ -79,11 +79,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   @IBAction func newTapped(sender: NewButton) {
-    let newActivity = UIAlertController.newActivity { name in
-      DataManager().addNewActivity(called: name)
-      DataManager().save()
-    }
-    present(newActivity, animated: true, completion: nil)
+//    let newActivity = UIAlertController.newActivity { name in
+//      DataManager().addNewActivity(called: name)
+//      DataManager().save()
+//    }
+//    present(newActivity, animated: true, completion: nil)
   }
   
   // MARK: Tableview Functions
@@ -170,12 +170,27 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
   }
   
+  // MARK: PresentationController delegate
+  
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+    return .none
+  }
+  
   // MARK: Segue functions
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showInstanceList", let activity = tableView.selectedActivity {
       let destVC = segue.destination as? InstanceVC
       destVC?.activity = activity
+    }
+    if segue.identifier == "newActivityPopover" {
+      let popOver = segue.destination as! NewActivityPopoverVC
+      popOver.modalPresentationStyle = .popover
+      popOver.popoverPresentationController!.delegate = self
+      popOver.completion = { name in
+        DataManager().addNewActivity(called: name)
+        DataManager().save()
+      }
     }
   }
   

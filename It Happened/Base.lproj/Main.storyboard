@@ -140,6 +140,9 @@
                                 </state>
                                 <connections>
                                     <action selector="newTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Emm-fQ-hdk"/>
+                                    <segue destination="cbN-Rn-hMR" kind="popoverPresentation" identifier="newActivityPopover" popoverAnchorView="4tO-0X-htw" id="RjS-rZ-YeY">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -455,6 +458,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSL-13-NJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112.8" y="-644.52773613193403"/>
+        </scene>
+        <!--New Activity PopoverVC-->
+        <scene sceneID="i2v-11-J0Z">
+            <objects>
+                <viewController id="cbN-Rn-hMR" customClass="NewActivityPopoverVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nBH-Hd-9i3"/>
+                        <viewControllerLayoutGuide type="bottom" id="F8g-jf-Jfi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dFx-tx-FvR">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kh-cO-uk3">
+                                <rect key="frame" x="77" y="20" width="146.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.039215686270000001" green="0.1176470588" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDV-ei-f8C">
+                                <rect key="frame" x="16" y="67.5" width="268.5" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="RPR-aD-MU5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjA-Gr-USP" customClass="BaseButton" customModule="It_Happened" customModuleProvider="target">
+                                <rect key="frame" x="209" y="135" width="75" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="LGL-uI-SPu"/>
+                                    <constraint firstAttribute="height" constant="45" id="cPq-xD-qtr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okPressedWithSender:" destination="cbN-Rn-hMR" eventType="touchUpInside" id="AU9-c2-dqY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qT-Al-JUg" customClass="BaseButton" customModule="It_Happened" customModuleProvider="target">
+                                <rect key="frame" x="16" y="135" width="75" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="gCU-q4-u19"/>
+                                    <constraint firstAttribute="height" constant="45" id="zy9-ak-jmp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressedWithSender:" destination="cbN-Rn-hMR" eventType="touchUpInside" id="lz8-nT-SDm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5kh-cO-uk3" firstAttribute="centerX" secondItem="dFx-tx-FvR" secondAttribute="centerX" id="2r4-Hf-Y3r"/>
+                            <constraint firstItem="9qT-Al-JUg" firstAttribute="leading" secondItem="dFx-tx-FvR" secondAttribute="leading" constant="16" id="BTB-7X-Pbu"/>
+                            <constraint firstItem="F8g-jf-Jfi" firstAttribute="top" secondItem="FjA-Gr-USP" secondAttribute="bottom" constant="20" id="Chb-NW-4KI"/>
+                            <constraint firstAttribute="trailing" secondItem="FjA-Gr-USP" secondAttribute="trailing" constant="16" id="F3f-jt-NNL"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="hDV-ei-f8C" secondAttribute="trailing" constant="16" id="HsL-e8-0yA"/>
+                            <constraint firstItem="F8g-jf-Jfi" firstAttribute="top" secondItem="9qT-Al-JUg" secondAttribute="bottom" constant="20" id="Nw1-uB-5dr"/>
+                            <constraint firstItem="hDV-ei-f8C" firstAttribute="centerY" secondItem="dFx-tx-FvR" secondAttribute="centerY" constant="-10" id="ZOP-zs-vCe"/>
+                            <constraint firstItem="5kh-cO-uk3" firstAttribute="top" secondItem="nBH-Hd-9i3" secondAttribute="bottom" constant="20" id="eyK-81-zoz"/>
+                            <constraint firstItem="hDV-ei-f8C" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dFx-tx-FvR" secondAttribute="leading" constant="16" id="o7I-al-RKy"/>
+                            <constraint firstItem="hDV-ei-f8C" firstAttribute="centerX" secondItem="dFx-tx-FvR" secondAttribute="centerX" id="qrO-eH-b8i"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                    <connections>
+                        <outlet property="nameFld" destination="hDV-ei-f8C" id="YqB-NM-npC"/>
+                        <outlet property="titleLbl" destination="5kh-cO-uk3" id="N4t-Zw-ftU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OdI-Ni-Mum" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="641"/>
         </scene>
     </scenes>
     <resources>
