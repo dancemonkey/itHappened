@@ -174,7 +174,6 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .delete:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
-        setHeader(forSection: indexPath.section)
       }
     }
   }
@@ -189,6 +188,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
       break
     case .update:
       tableView.reloadSections(IndexSet(integer: sectionIndex), with: .fade)
+      setHeader(forSection: sectionIndex)
     }
   }
 
