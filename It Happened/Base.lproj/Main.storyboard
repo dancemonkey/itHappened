@@ -142,25 +142,14 @@
                                     <action selector="newTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Emm-fQ-hdk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4J-1l-cVl">
-                                <rect key="frame" x="16" y="607" width="30" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="joM-6B-kb5"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="44" id="tgC-RR-c40"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="?"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U4J-1l-cVl" secondAttribute="bottom" constant="16" id="44A-qd-3OU"/>
                             <constraint firstItem="1j8-aN-jEs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9Yx-ph-fkU"/>
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AvD-MN-g9Z"/>
                             <constraint firstItem="taz-Ni-9Et" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MYS-Y8-Xak"/>
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="top" secondItem="taz-Ni-9Et" secondAttribute="bottom" constant="-64" id="cl5-0R-78h"/>
                             <constraint firstAttribute="trailing" secondItem="4tO-0X-htw" secondAttribute="trailing" constant="16" id="dKo-4B-Css"/>
-                            <constraint firstItem="U4J-1l-cVl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="fkg-QD-zyZ"/>
                             <constraint firstItem="taz-Ni-9Et" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k4F-y4-3hA"/>
                             <constraint firstAttribute="trailing" secondItem="1j8-aN-jEs" secondAttribute="trailing" id="kER-tv-yJU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1j8-aN-jEs" secondAttribute="bottom" id="naC-51-CtH"/>
@@ -172,7 +161,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="taz-Ni-9Et" id="ogu-WG-vUu"/>
                         <outlet property="emptyDataLbl" destination="Aw1-dN-AgQ" id="eOv-TY-c3a"/>
-                        <outlet property="helpButton" destination="U4J-1l-cVl" id="xMx-sG-20E"/>
                         <outlet property="newButton" destination="4tO-0X-htw" id="Mzq-h7-9Oc"/>
                         <outlet property="tableView" destination="1j8-aN-jEs" id="rpa-gM-oI7"/>
                         <segue destination="tdh-Bl-E9G" kind="show" identifier="showInstanceList" id="7VP-jH-3L2"/>
@@ -424,7 +412,8 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1dn-KE-nzb"/>
                                     <constraint firstAttribute="height" constant="45" id="cod-OC-Rum"/>
                                 </constraints>
-                                <state key="normal" title="Update"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="UPDATE"/>
                                 <connections>
                                     <action selector="updateTappedWithSender:" destination="aiF-US-aBD" eventType="touchUpInside" id="C7t-oR-yr3"/>
                                 </connections>

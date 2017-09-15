@@ -33,12 +33,16 @@ class ActivityCell: UITableViewCell {
   func configureCell(with activity: Activity) {
     activityTitleLbl.text = activity.name
     lastIncidentLbl.text = activity.lastInstance?.getColloquialDateAndTime()
-    animationView.pushTransition(1.0)
-    todayTotalLbl.text = "\(activity.getInstanceCount(forDate: Date()))"
+    setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
     addNewInstance = {
       activity.addNewInstance(withContext: DataManager().context)
     }
     self.selectionStyle = .none
+  }
+  
+  func setIncrementCounter(to count: Int) {
+    animationView.pushTransition(1.0)
+    todayTotalLbl.text = "\(count)"
   }
   
   @IBAction func activityHappened(sender: IncrementButton) {

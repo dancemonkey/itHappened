@@ -44,9 +44,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   func styleViews() {
     self.view.backgroundColor = Colors.black
     tableView.backgroundColor = Colors.black
-    helpButton.setTitleColor(Colors.accent1, for: .normal)
     emptyDataLbl.textColor = Colors.accent2
-    helpButton.isHidden = true
     newButton.tintColor = Colors.primary
   }
   
@@ -64,6 +62,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Colors.primary]
     navigationController?.navigationBar.barTintColor = Colors.black
+    tableView.reloadData()
   }
   
   @objc func appBecameActive() {
@@ -77,7 +76,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     } else {
       DataManager().setLastOpen()
     }
-//    tableView.reloadData()
   }
   
   @IBAction func newTapped(sender: NewButton) {

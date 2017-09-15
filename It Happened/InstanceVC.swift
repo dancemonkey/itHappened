@@ -76,6 +76,12 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     DataManager().save()
   }
   
+  func setHeader(forSection section: Int) {
+    let headerText = self.tableView(tableView, titleForHeaderInSection: section)
+    tableView.headerView(forSection: section)?.textLabel?.text = ""
+    tableView.headerView(forSection: section)?.textLabel?.text = headerText
+  }
+  
   // MARK: Tableview functions
   
   func configure(cell: InstanceCell, at indexPath: IndexPath) {
@@ -101,7 +107,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     guard let sectionInfo = frc.sections?[section] else {
       fatalError("Unexpected Section")
     }
-    return sectionInfo.name
+    let firstInstance = frc.sections![section].objects?.first as! Instance
+    return sectionInfo.name + " - \(firstInstance.getInstanceCount(forDate: firstInstance.date! as Date)) times"
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,22 +150,26 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .update:
       if let indexPath = indexPath {
         tableView.reloadRows(at: [indexPath], with: .fade)
+        setHeader(forSection: indexPath.section)
       }
     case .insert:
       if let indexPath = newIndexPath {
         tableView.insertRows(at: [indexPath], with: .fade)
+        setHeader(forSection: indexPath.section)
       }
     case .move:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
+        setHeader(forSection: indexPath.section)
       }
       if let new = newIndexPath {
         tableView.insertRows(at: [new], with: .fade)
+        setHeader(forSection: new.section)
       }
     case .delete:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
-        tableView.headerView(forSection: indexPath.section)?.textLabel?.text = (frc.object(at: indexPath).sectionNameFromDate)
+        setHeader(forSection: indexPath.section)
       }
     }
   }

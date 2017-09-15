@@ -49,12 +49,15 @@ public class Instance: NSManagedObject {
   func getColloquialDate() -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "MMM d, yyyy"
-    let count: String = "\(self.activity!.getInstanceCount(forDate: self.date! as Date))"
     if formatter.string(from: Date()) == formatter.string(from: self.date! as Date) {
-      return "Today - \(count) times"
+      return "Today"
     } else {
-      return getFormattedDate() + " - \(count) times"
+      return getFormattedDate()
     }
+  }
+  
+  func getInstanceCount(forDate date: Date) -> Int {
+    return self.activity!.getInstanceCount(forDate: self.date! as Date)
   }
   
 }
