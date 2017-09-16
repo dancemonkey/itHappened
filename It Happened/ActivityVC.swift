@@ -120,9 +120,15 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
       let vc = self.storyboard?.instantiateViewController(withIdentifier: "deleteConfirmation") as! DeleteConfirmationVC
       vc.modalPresentationStyle = .popover
+      vc.completion = {
+        let activity = self.frc.object(at: index) as Activity
+        activity.deleteAllInstances()
+        DataManager().context.delete(activity)
+        DataManager().save()
+      }
       let popOverPresentationController = vc.popoverPresentationController
       if let popOverPC = popOverPresentationController {
-        popOverPC.sourceView = self.view //self.tableView.cellForRow(at: indexPath)
+        popOverPC.sourceView = self.view
         popOverPC.delegate = self
         popOverPC.permittedArrowDirections = .init(rawValue: 0)
         popOverPC.sourceRect = self.view.bounds
