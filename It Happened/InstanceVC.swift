@@ -78,7 +78,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   }
   
   func setHeader(forSection section: Int) {
-    let headerText = self.tableView(tableView, titleForHeaderInSection: section)
+    let headerText = self.tableView(tableView, titleForHeaderInSection: section)!
     tableView.headerView(forSection: section)?.textLabel?.text = ""
     tableView.headerView(forSection: section)?.textLabel?.text = headerText
   }
@@ -109,7 +109,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
       fatalError("Unexpected Section")
     }
     let firstInstance = frc.sections![section].objects?.first as! Instance
-    return sectionInfo.name + " - \(firstInstance.getInstanceCount(forDate: firstInstance.date! as Date)) times"
+    return sectionInfo.name + " - \(firstInstance.getInstanceCount(forDate: firstInstance.date! as Date))" + "    "
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -138,6 +138,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 40.0
   }
+  
+//  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//    return UIView()
+//  }
   
   // MARK: NS FRC Functions
   

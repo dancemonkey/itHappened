@@ -14,6 +14,7 @@
 		104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463671F5AF33D00312E5A /* InstanceCell.swift */; };
 		1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463691F5B001600312E5A /* EditInstanceVC.swift */; };
 		1044636C1F5B048800312E5A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044636B1F5B048800312E5A /* BaseButton.swift */; };
+		10464D471F6D50D200AF1D27 /* DeleteConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */; };
 		105AD72C1F60204C00F36249 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72B1F60204C00F36249 /* Extensions.swift */; };
 		105AD72E1F6020D100F36249 /* ActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72D1F6020D100F36249 /* ActivityTableView.swift */; };
 		106C3A7D1F647D2800E3D7F3 /* NewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C3A7C1F647D2800E3D7F3 /* NewButton.swift */; };
@@ -42,6 +43,7 @@
 		104463671F5AF33D00312E5A /* InstanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceCell.swift; sourceTree = "<group>"; };
 		104463691F5B001600312E5A /* EditInstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInstanceVC.swift; sourceTree = "<group>"; };
 		1044636B1F5B048800312E5A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteConfirmationVC.swift; sourceTree = "<group>"; };
 		105AD72B1F60204C00F36249 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		105AD72D1F6020D100F36249 /* ActivityTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableView.swift; sourceTree = "<group>"; };
 		106C3A7C1F647D2800E3D7F3 /* NewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewButton.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				104463691F5B001600312E5A /* EditInstanceVC.swift */,
 				101AE2471F61798B00F2EC17 /* DatePickerVC.swift */,
 				1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */,
+				10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				10A7DF171F585153004C4F61 /* DataManager.swift in Sources */,
 				10F926D11F585BB700D06941 /* Activity+CoreDataClass.swift in Sources */,
 				10F926D01F585BB700D06941 /* Instance+CoreDataProperties.swift in Sources */,
+				10464D471F6D50D200AF1D27 /* DeleteConfirmationVC.swift in Sources */,
 				10F926CF1F585BB700D06941 /* Instance+CoreDataClass.swift in Sources */,
 				10A7DF021F584CE8004C4F61 /* AppDelegate.swift in Sources */,
 				105AD72C1F60204C00F36249 /* Extensions.swift in Sources */,

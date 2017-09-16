@@ -139,7 +139,6 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="newTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Emm-fQ-hdk"/>
                                     <segue destination="cbN-Rn-hMR" kind="popoverPresentation" identifier="newActivityPopover" popoverAnchorView="4tO-0X-htw" id="RjS-rZ-YeY">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
@@ -537,7 +536,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OdI-Ni-Mum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="641"/>
+            <point key="canvasLocation" x="677" y="629"/>
+        </scene>
+        <!--Delete ConfirmationVC-->
+        <scene sceneID="9ED-mL-5tN">
+            <objects>
+                <viewController storyboardIdentifier="deleteConfirmation" id="zeu-eA-293" customClass="DeleteConfirmationVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5w5-cO-dd1"/>
+                        <viewControllerLayoutGuide type="bottom" id="iUs-yQ-9tQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wSX-I3-smb">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eke-KI-93O">
+                                <rect key="frame" x="98" y="20" width="104.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.039215686270000001" green="0.1176470588" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u0-Qa-IsG" customClass="BaseButton" customModule="It_Happened" customModuleProvider="target">
+                                <rect key="frame" x="209" y="135" width="75" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="WO3-cF-a4P"/>
+                                    <constraint firstAttribute="height" constant="45" id="hBd-XJ-B4K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okPressedWithSender:" destination="zeu-eA-293" eventType="touchUpInside" id="cQD-N6-XGW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5x-kN-H1Q" customClass="BaseButton" customModule="It_Happened" customModuleProvider="target">
+                                <rect key="frame" x="16" y="135" width="75" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bQp-Wy-vYL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="oSK-Q6-qGC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressedWithSender:" destination="zeu-eA-293" eventType="touchUpInside" id="i7H-1B-BJa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You cannot undo this deletion!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkP-eB-k1S">
+                                <rect key="frame" x="34" y="61" width="232" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M5x-kN-H1Q" firstAttribute="leading" secondItem="wSX-I3-smb" secondAttribute="leading" constant="16" id="5NX-O9-7He"/>
+                            <constraint firstItem="KkP-eB-k1S" firstAttribute="top" secondItem="Eke-KI-93O" secondAttribute="bottom" constant="20" id="6ae-Du-nUt"/>
+                            <constraint firstItem="KkP-eB-k1S" firstAttribute="centerX" secondItem="wSX-I3-smb" secondAttribute="centerX" id="KBl-EX-37q"/>
+                            <constraint firstItem="Eke-KI-93O" firstAttribute="top" secondItem="5w5-cO-dd1" secondAttribute="bottom" constant="20" id="Sm0-EA-rEi"/>
+                            <constraint firstItem="iUs-yQ-9tQ" firstAttribute="top" secondItem="8u0-Qa-IsG" secondAttribute="bottom" constant="20" id="VXH-a1-e2b"/>
+                            <constraint firstItem="Eke-KI-93O" firstAttribute="centerX" secondItem="wSX-I3-smb" secondAttribute="centerX" id="ckf-Yi-Yuz"/>
+                            <constraint firstItem="iUs-yQ-9tQ" firstAttribute="top" secondItem="M5x-kN-H1Q" secondAttribute="bottom" constant="20" id="j1D-d9-bvT"/>
+                            <constraint firstAttribute="trailing" secondItem="8u0-Qa-IsG" secondAttribute="trailing" constant="16" id="m1i-j3-9F0"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                    <connections>
+                        <outlet property="messageLbl" destination="KkP-eB-k1S" id="Z5I-q6-jar"/>
+                        <outlet property="titleLbl" destination="Eke-KI-93O" id="0zc-l6-NaQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1p8-EM-830" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1336" y="629"/>
         </scene>
     </scenes>
     <resources>

@@ -78,14 +78,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
   }
   
-  @IBAction func newTapped(sender: NewButton) {
-//    let newActivity = UIAlertController.newActivity { name in
-//      DataManager().addNewActivity(called: name)
-//      DataManager().save()
-//    }
-//    present(newActivity, animated: true, completion: nil)
-  }
-  
   // MARK: Tableview Functions
   
   func configure(cell: ActivityCell, at indexPath: IndexPath) {
@@ -126,13 +118,16 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       self.present(update, animated: true, completion: nil)
     }
     let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-      let confirmation = UIAlertController.deleteAlert {
-        let activity = self.frc.object(at: indexPath)
-        activity.deleteAllInstances()
-        self.frc.managedObjectContext.delete(activity)
-        DataManager().save()
+      let vc = self.storyboard?.instantiateViewController(withIdentifier: "deleteConfirmation") as! DeleteConfirmationVC
+      vc.modalPresentationStyle = .popover
+      let popOverPresentationController = vc.popoverPresentationController
+      if let popOverPC = popOverPresentationController {
+        popOverPC.sourceView = self.view //self.tableView.cellForRow(at: indexPath)
+        popOverPC.delegate = self
+        popOverPC.permittedArrowDirections = .init(rawValue: 0)
+        popOverPC.sourceRect = self.view.bounds
+        self.present(vc, animated: true, completion: nil)
       }
-      self.present(confirmation, animated: true, completion: nil)
     }
     delete.backgroundColor = Colors.accent3
     return [delete, edit]
