@@ -152,6 +152,24 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     return 40.0
   }
   
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let headerView = UIView()
+    for view in headerView.subviews {
+      view.removeFromSuperview()
+    }
+    headerView.backgroundColor = Colors.primary
+    
+    let title = UILabel()
+    title.frame = CGRect(x: 8, y: 0, width: tableView.frame.width, height: 40)
+    title.textColor = UIColor.white
+    title.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
+    title.text = (self.tableView(tableView, titleForHeaderInSection: section))?.uppercased()
+    title.baselineAdjustment = .alignCenters
+
+    headerView.addSubview(title)
+    return headerView
+  }
+  
   // MARK: NS FRC Functions
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
