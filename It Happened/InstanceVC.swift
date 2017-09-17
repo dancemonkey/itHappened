@@ -187,7 +187,9 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .delete:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
-        setHeader(forSection: indexPath.section)
+        if let objects = frc.fetchedObjects, objects.count > 0 {
+          setHeader(forSection: indexPath.section)
+        }
       }
     }
   }
