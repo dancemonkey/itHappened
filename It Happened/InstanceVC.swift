@@ -124,7 +124,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    if editingStyle == .delete {
+  }
+  
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
       let vc = self.storyboard?.instantiateViewController(withIdentifier: "deleteConfirmation") as! DeleteConfirmationVC
       vc.modalPresentationStyle = .popover
       vc.completion = {
@@ -141,6 +144,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         self.present(vc, animated: true, completion: nil)
       }
     }
+    delete.backgroundColor = Colors.accent3
+    return [delete]
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
