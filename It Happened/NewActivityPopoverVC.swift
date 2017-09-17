@@ -14,12 +14,17 @@ class NewActivityPopoverVC: UIViewController {
   @IBOutlet weak var titleLbl: UILabel!
   
   var completion: ((String) -> ())? = nil
+  var activity: Activity? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    nameFld.becomeFirstResponder()
-    titleLbl.textColor = Colors.primary
-    titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+    if activity == nil {
+      nameFld.becomeFirstResponder()
+      titleLbl.textColor = Colors.primary
+      titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+    } else {
+      nameFld.text = activity!.name
+    }
   }
   
   @IBAction func okPressed(sender: UIButton) {

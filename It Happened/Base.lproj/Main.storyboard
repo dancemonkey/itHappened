@@ -461,7 +461,7 @@
         <!--New Activity PopoverVC-->
         <scene sceneID="i2v-11-J0Z">
             <objects>
-                <viewController id="cbN-Rn-hMR" customClass="NewActivityPopoverVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newActivityPopover" id="cbN-Rn-hMR" customClass="NewActivityPopoverVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nBH-Hd-9i3"/>
                         <viewControllerLayoutGuide type="bottom" id="F8g-jf-Jfi"/>
@@ -606,6 +606,7 @@
                     <size key="freeformSize" width="300" height="200"/>
                     <connections>
                         <outlet property="messageLbl" destination="KkP-eB-k1S" id="Z5I-q6-jar"/>
+                        <outlet property="okButton" destination="8u0-Qa-IsG" id="GZd-dm-uXM"/>
                         <outlet property="titleLbl" destination="Eke-KI-93O" id="0zc-l6-NaQ"/>
                     </connections>
                 </viewController>

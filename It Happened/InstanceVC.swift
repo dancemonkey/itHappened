@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate {
   
   @IBOutlet weak var newButton: UIButton!
   @IBOutlet weak var tableView: ActivityTableView!
@@ -125,23 +125,27 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      let confirmation = UIAlertController.deleteAlert {
+      let vc = self.storyboard?.instantiateViewController(withIdentifier: "deleteConfirmation") as! DeleteConfirmationVC
+      vc.modalPresentationStyle = .popover
+      vc.completion = {
         let instance = self.frc.object(at: indexPath)
-        self.frc.managedObjectContext.delete(instance)
-        let dm = DataManager()
-        dm.save()
+        DataManager().context.delete(instance)
+        DataManager().save()
       }
-      present(confirmation, animated: true, completion: nil)
+      let popOverPresentationController = vc.popoverPresentationController
+      if let popOverPC = popOverPresentationController {
+        popOverPC.sourceView = self.view
+        popOverPC.delegate = self
+        popOverPC.permittedArrowDirections = .init(rawValue: 0)
+        popOverPC.sourceRect = self.view.bounds
+        self.present(vc, animated: true, completion: nil)
+      }
     }
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 40.0
   }
-  
-//  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//    return UIView()
-//  }
   
   // MARK: NS FRC Functions
   
@@ -178,6 +182,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .delete:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
+        setHeader(forSection: indexPath.section)
       }
     }
   }
@@ -195,7 +200,12 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
       setHeader(forSection: sectionIndex)
     }
   }
-
+  
+  // MARK: PresentationController delegate
+  
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+    return .none
+  }
   
   // MARK: Segue to Editing Instance
   

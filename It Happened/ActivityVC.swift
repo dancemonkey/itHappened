@@ -111,11 +111,21 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let edit = UITableViewRowAction(style: .normal, title: "Edit    ") { (action, index) in
-      let update = UIAlertController.updateActivity(called: self.frc.object(at: index).name!, confirmation: { newName in
-        self.frc.object(at: index).name = newName
+      let vc = self.storyboard?.instantiateViewController(withIdentifier: "newActivityPopover") as! NewActivityPopoverVC
+      vc.modalPresentationStyle = .popover
+      vc.activity = self.frc.object(at: indexPath)
+      vc.completion = { name in
+        self.frc.object(at: indexPath).name = name
         DataManager().save()
-      })
-      self.present(update, animated: true, completion: nil)
+      }
+      let popOverPresentationController = vc.popoverPresentationController
+      if let popOverPC = popOverPresentationController {
+        popOverPC.sourceView = self.view
+        popOverPC.delegate = self
+        popOverPC.permittedArrowDirections = .init(rawValue: 0)
+        popOverPC.sourceRect = self.view.bounds
+        self.present(vc, animated: true, completion: nil)
+      }
     }
     let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
       let vc = self.storyboard?.instantiateViewController(withIdentifier: "deleteConfirmation") as! DeleteConfirmationVC
@@ -188,6 +198,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       let popOver = segue.destination as! NewActivityPopoverVC
       popOver.modalPresentationStyle = .popover
       popOver.popoverPresentationController!.delegate = self
+      popOver.popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
+      popOver.popoverPresentationController?.sourceView = self.view
+      popOver.popoverPresentationController?.sourceRect = self.view.bounds
       popOver.completion = { name in
         DataManager().addNewActivity(called: name)
         DataManager().save()

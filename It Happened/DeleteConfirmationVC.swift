@@ -13,12 +13,15 @@ class DeleteConfirmationVC: UIViewController {
   @IBOutlet weak var titleLbl: UILabel!
   @IBOutlet weak var messageLbl: UILabel!
   
+  @IBOutlet weak var okButton: BaseButton!
+  
   var completion: (() -> ())? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+    okButton.backgroundColor = Colors.accent3
   }
   
   @IBAction func okPressed(sender: UIButton) {
