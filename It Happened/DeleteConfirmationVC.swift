@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeleteConfirmationVC: UIViewController {
+public class DeleteConfirmationVC: UIViewController {
 
   @IBOutlet weak var titleLbl: UILabel!
   @IBOutlet weak var messageLbl: UILabel!
@@ -17,7 +17,7 @@ class DeleteConfirmationVC: UIViewController {
   
   var completion: (() -> ())? = nil
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)

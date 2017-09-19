@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate {
+class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter {
   
   @IBOutlet weak var newButton: UIButton!
   @IBOutlet weak var tableView: ActivityTableView!
@@ -128,13 +128,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-      let vc = self.storyboard?.instantiateViewController(withIdentifier: "deleteConfirmation") as! DeleteConfirmationVC
-      vc.modalPresentationStyle = .popover
-      vc.completion = {
-        let instance = self.frc.object(at: indexPath)
-        DataManager().context.delete(instance)
-        DataManager().save()
-      }
+      let vc = self.deleteConfirmation(forObject: self.frc.object(at: indexPath), isActivity: false)
       let popOverPresentationController = vc.popoverPresentationController
       if let popOverPC = popOverPresentationController {
         popOverPC.sourceView = self.view

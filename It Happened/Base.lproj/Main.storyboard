@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Activities-->
+        <!--Today-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ActivityVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,7 +159,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4tO-0X-htw" secondAttribute="bottom" constant="16" id="y98-uz-IcA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Activities" largeTitleDisplayMode="always" id="5AL-Uy-Hug"/>
+                    <navigationItem key="navigationItem" title="Today" largeTitleDisplayMode="always" id="5AL-Uy-Hug"/>
                     <connections>
                         <outlet property="activityIndicator" destination="taz-Ni-9Et" id="ogu-WG-vUu"/>
                         <outlet property="emptyDataLbl" destination="Aw1-dN-AgQ" id="eOv-TY-c3a"/>

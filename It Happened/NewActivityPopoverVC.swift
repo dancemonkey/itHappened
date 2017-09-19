@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewActivityPopoverVC: UIViewController {
+public class NewActivityPopoverVC: UIViewController {
   
   @IBOutlet weak var nameFld: UITextField!
   @IBOutlet weak var titleLbl: UILabel!
@@ -16,7 +16,7 @@ class NewActivityPopoverVC: UIViewController {
   var completion: ((String) -> ())? = nil
   var activity: Activity? = nil
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     if activity == nil {
       nameFld.becomeFirstResponder()
