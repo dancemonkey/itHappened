@@ -78,6 +78,15 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
   }
   
+  @IBAction func newPressed(sender: UIButton) {
+    let popOver = activityCreateAndUpdate(withActivity: nil)
+    popOver.popoverPresentationController!.delegate = self
+    popOver.popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
+    popOver.popoverPresentationController?.sourceView = self.view
+    popOver.popoverPresentationController?.sourceRect = self.view.bounds
+    self.present(popOver, animated: true, completion: nil)
+  }
+  
   // MARK: Tableview Functions
   
   func configure(cell: ActivityCell, at indexPath: IndexPath) {
@@ -111,13 +120,14 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let edit = UITableViewRowAction(style: .normal, title: "Edit    ") { (action, index) in
-      let vc = self.storyboard?.instantiateViewController(withIdentifier: "newActivityPopover") as! NewActivityPopoverVC
-      vc.modalPresentationStyle = .popover
-      vc.activity = self.frc.object(at: indexPath)
-      vc.completion = { name in
-        self.frc.object(at: indexPath).name = name
-        DataManager().save()
-      }
+      let vc = self.activityCreateAndUpdate(withActivity: self.frc.object(at: indexPath))
+//      let vc = self.storyboard?.instantiateViewController(withIdentifier: "newActivityPopover") as! NewActivityPopoverVC
+//      vc.modalPresentationStyle = .popover
+//      vc.activity = self.frc.object(at: indexPath)
+//      vc.completion = { name in
+//        self.frc.object(at: indexPath).name = name
+//        DataManager().save()
+//      }
       let popOverPresentationController = vc.popoverPresentationController
       if let popOverPC = popOverPresentationController {
         popOverPC.sourceView = self.view
@@ -186,18 +196,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     if segue.identifier == "showInstanceList", let activity = tableView.selectedActivity {
       let destVC = segue.destination as? InstanceVC
       destVC?.activity = activity
-    }
-    if segue.identifier == "newActivityPopover" {
-      let popOver = segue.destination as! NewActivityPopoverVC
-      popOver.modalPresentationStyle = .popover
-      popOver.popoverPresentationController!.delegate = self
-      popOver.popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
-      popOver.popoverPresentationController?.sourceView = self.view
-      popOver.popoverPresentationController?.sourceRect = self.view.bounds
-      popOver.completion = { name in
-        DataManager().addNewActivity(called: name)
-        DataManager().save()
-      }
     }
   }
   

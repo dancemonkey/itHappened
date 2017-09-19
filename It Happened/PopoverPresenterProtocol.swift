@@ -11,7 +11,7 @@ import CoreData
 
 public protocol PopoverPresenter {
   func deleteConfirmation(forObject object: NSManagedObject, isActivity: Bool) -> DeleteConfirmationVC
-  func activityCreateAndUpdate() -> NewActivityPopoverVC
+  func activityCreateAndUpdate(withActivity activity: Activity?) -> NewActivityPopoverVC
 }
 
 public extension PopoverPresenter {
@@ -30,7 +30,21 @@ public extension PopoverPresenter {
     return vc
   }
   
-  func activityCreateAndUpdate() -> NewActivityPopoverVC {
-    return NewActivityPopoverVC()
+  func activityCreateAndUpdate(withActivity activity: Activity?) -> NewActivityPopoverVC {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewController(withIdentifier: "newActivityPopover") as! NewActivityPopoverVC
+    vc.modalPresentationStyle = .popover
+    if let existingActivity = activity {
+      vc.activity = existingActivity
+    }
+    vc.completion = { name in
+      if activity != nil {
+        activity!.name = name
+      } else {
+        DataManager().addNewActivity(called: name)
+      }
+      DataManager().save()
+    }
+    return vc
   }
 }

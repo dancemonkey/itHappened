@@ -18,11 +18,13 @@ public class NewActivityPopoverVC: UIViewController {
   
   override public func viewDidLoad() {
     super.viewDidLoad()
+    titleLbl.textColor = Colors.primary
+    titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     if activity == nil {
       nameFld.becomeFirstResponder()
-      titleLbl.textColor = Colors.primary
-      titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+      titleLbl.text = "Create New Activity"
     } else {
+      titleLbl.text = "Update Activity"
       nameFld.text = activity!.name
     }
   }
