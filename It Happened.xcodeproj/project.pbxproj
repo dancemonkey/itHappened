@@ -29,6 +29,7 @@
 		10A7DF191F58515C004C4F61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF181F58515C004C4F61 /* Style.swift */; };
 		10A7DF1F1F585321004C4F61 /* InstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF1E1F585321004C4F61 /* InstanceVC.swift */; };
 		10D06D451F70B7CF00646197 /* PopoverPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */; };
+		10EA3EA61F7158AD00778ADF /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */; };
 		10F926CF1F585BB700D06941 /* Instance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CB1F585BB700D06941 /* Instance+CoreDataClass.swift */; };
 		10F926D01F585BB700D06941 /* Instance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */; };
 		10F926D11F585BB700D06941 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */; };
@@ -61,6 +62,7 @@
 		10A7DF181F58515C004C4F61 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		10A7DF1E1F585321004C4F61 /* InstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceVC.swift; sourceTree = "<group>"; };
 		10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenterProtocol.swift; sourceTree = "<group>"; };
+		10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		10F926CB1F585BB700D06941 /* Instance+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instance+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				105AD72B1F60204C00F36249 /* Extensions.swift */,
 				101AE2491F617A7A00F2EC17 /* Delegates.swift */,
 				10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */,
+				10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				10A7DF171F585153004C4F61 /* DataManager.swift in Sources */,
 				10F926D11F585BB700D06941 /* Activity+CoreDataClass.swift in Sources */,
 				10F926D01F585BB700D06941 /* Instance+CoreDataProperties.swift in Sources */,
+				10EA3EA61F7158AD00778ADF /* AudioPlayer.swift in Sources */,
 				10464D471F6D50D200AF1D27 /* DeleteConfirmationVC.swift in Sources */,
 				10F926CF1F585BB700D06941 /* Instance+CoreDataClass.swift in Sources */,
 				10A7DF021F584CE8004C4F61 /* AppDelegate.swift in Sources */,
