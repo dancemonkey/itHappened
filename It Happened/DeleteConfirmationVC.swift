@@ -22,6 +22,8 @@ public class DeleteConfirmationVC: UIViewController {
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     okButton.backgroundColor = Colors.accent3
+    messageLbl.text = PopupMessages.deleteMessage
+    titleLbl.text = PopupMessages.deleteTitle
   }
   
   @IBAction func okPressed(sender: UIButton) {

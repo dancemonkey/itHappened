@@ -113,14 +113,14 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "instanceCell") as! InstanceCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: CellIDs.instanceCell) as! InstanceCell
     configure(cell: cell, at: indexPath)
     return cell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     (tableView as? ActivityTableView)?.selectedInstance = frc.object(at: indexPath)
-    performSegue(withIdentifier: "editInstance", sender: self)
+    performSegue(withIdentifier: SegueIDs.editInstance, sender: self)
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -229,7 +229,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   // MARK: Segue to Editing Instance
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "editInstance", let instance = tableView.selectedInstance {
+    if segue.identifier == SegueIDs.editInstance, let instance = tableView.selectedInstance {
       let destVC = segue.destination as? EditInstanceVC
       destVC?.instance = instance
     }

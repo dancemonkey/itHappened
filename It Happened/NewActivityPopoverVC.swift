@@ -22,9 +22,9 @@ public class NewActivityPopoverVC: UIViewController {
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     if activity == nil {
       nameFld.becomeFirstResponder()
-      titleLbl.text = "Create New Activity"
+      titleLbl.text = PopupMessages.newActivityTitle
     } else {
-      titleLbl.text = "Update Activity"
+      titleLbl.text = PopupMessages.updateActivityTitle
       nameFld.text = activity!.name
     }
   }

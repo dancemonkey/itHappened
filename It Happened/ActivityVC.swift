@@ -103,7 +103,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell") as? ActivityCell {
+    if let cell = tableView.dequeueReusableCell(withIdentifier: CellIDs.activityCell) as? ActivityCell {
       configure(cell: cell, at: indexPath)
       return cell
     }
@@ -112,7 +112,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     (tableView as? ActivityTableView)?.selectedActivity = frc.object(at: indexPath)
-    performSegue(withIdentifier: "showInstanceList", sender: self)
+    performSegue(withIdentifier: SegueIDs.showInstanceList, sender: self)
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -121,13 +121,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let edit = UITableViewRowAction(style: .normal, title: "Edit    ") { (action, index) in
       let vc = self.activityCreateAndUpdate(withActivity: self.frc.object(at: indexPath))
-//      let vc = self.storyboard?.instantiateViewController(withIdentifier: "newActivityPopover") as! NewActivityPopoverVC
-//      vc.modalPresentationStyle = .popover
-//      vc.activity = self.frc.object(at: indexPath)
-//      vc.completion = { name in
-//        self.frc.object(at: indexPath).name = name
-//        DataManager().save()
-//      }
       let popOverPresentationController = vc.popoverPresentationController
       if let popOverPC = popOverPresentationController {
         popOverPC.sourceView = self.view
@@ -193,7 +186,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   // MARK: Segue functions
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showInstanceList", let activity = tableView.selectedActivity {
+    if segue.identifier == SegueIDs.showInstanceList, let activity = tableView.selectedActivity {
       let destVC = segue.destination as? InstanceVC
       destVC?.activity = activity
     }

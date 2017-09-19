@@ -35,20 +35,6 @@ public class Activity: NSManagedObject {
     self.addToInstance(instance)
   }
   
-//  func getTodaysTotal() -> Int {
-//    var todayCount = 0
-//    if let instances = self.instance {
-//      let total: Int = instances.filter({ (inst) -> Bool in
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "EEEE, MMM d, yyyy"
-//        let today = formatter.string(from: Date())
-//        return today == (inst as? Instance)?.getFormattedDate()
-//      }).count
-//      todayCount = total
-//    }
-//    return todayCount
-//  }
-  
   func getInstanceCount(forDate date: Date) -> Int {
     var instanceCount = 0
     if let instances = self.instance {

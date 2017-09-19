@@ -51,7 +51,6 @@ class EditInstanceVC: UIViewController, ReceiveDate {
   }
   
   @IBAction func updateBtnTapped(sender: BaseButton) {
-    // need some data sanitizing here
     instance!.note = noteFld.text!
     let dm = DataManager()
     dm.save()
@@ -59,11 +58,11 @@ class EditInstanceVC: UIViewController, ReceiveDate {
   }
   
   @objc func openDatePicker() {
-    performSegue(withIdentifier: "showDatePicker", sender: self)
+    performSegue(withIdentifier: SegueIDs.showDatePicker, sender: self)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showDatePicker" {
+    if segue.identifier == SegueIDs.showDatePicker {
       let destVC = segue.destination as? DatePickerVC
       destVC?.delegate = self
       destVC?.dateAndTime = instance!.date! as Date
