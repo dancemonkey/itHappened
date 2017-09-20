@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
-public class NewActivityPopoverVC: UIViewController {
+public class NewActivityPopoverVC: UIViewController, AudioPlayer {
+  
+  public var audioPlayer: AVAudioPlayer?
   
   @IBOutlet weak var nameFld: UITextField!
   @IBOutlet weak var titleLbl: UILabel!
@@ -18,6 +21,9 @@ public class NewActivityPopoverVC: UIViewController {
   
   override public func viewDidLoad() {
     super.viewDidLoad()
+    if activity != nil {
+      playSound(called: Sound.activityPopover)
+    }
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     if activity == nil {
@@ -31,6 +37,7 @@ public class NewActivityPopoverVC: UIViewController {
   
   @IBAction func okPressed(sender: UIButton) {
     if let closure = completion, let name = nameFld.text, name != "" {
+      playSound(called: Sound.buttonPress)
       closure(name)
       self.dismiss(animated: true, completion: nil)
     }

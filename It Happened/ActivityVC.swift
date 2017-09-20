@@ -8,14 +8,17 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
-class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter {
+class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter, AudioPlayer {
   
   @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var newButton: NewButton!
   @IBOutlet weak var helpButton: UIButton!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var emptyDataLbl: UILabel!
+  
+  var audioPlayer: AVAudioPlayer?
   
   fileprivate var frc: NSFetchedResultsController<Activity> = {
     let dm = DataManager()
@@ -79,6 +82,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   @IBAction func newPressed(sender: UIButton) {
+    playSound(called: Sound.buttonPress)
     let popOver = activityCreateAndUpdate(withActivity: nil)
     popOver.popoverPresentationController!.delegate = self
     popOver.popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)

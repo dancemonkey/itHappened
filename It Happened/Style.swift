@@ -21,6 +21,22 @@ enum DateFormat {
   
 }
 
+enum Sound {
+  static let incrementPress = ""
+  static let numberRise = "retro_affirm.wav"
+  static let buttonPress = "analogue_click.wav"
+  static let cancelButtonPress = ""
+  static let plusNewPressed = ""
+  static let deletePopover = "click_alert.wav"
+  static let activityPopover = "melodic1_affirm.wav"
+}
+
+enum ImageName {
+  static let plusButton = "+ Button"
+  static let checkButton = "Check Button"
+  static let newButton = "New Button"
+}
+
 enum PopupMessages {
   static let deleteTitle = "Are You Sure?"
   static let deleteMessage = "This can't be undone."

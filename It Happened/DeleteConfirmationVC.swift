@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
-public class DeleteConfirmationVC: UIViewController {
+public class DeleteConfirmationVC: UIViewController, AudioPlayer {
 
+  public var audioPlayer: AVAudioPlayer?
+  
   @IBOutlet weak var titleLbl: UILabel!
   @IBOutlet weak var messageLbl: UILabel!
   
@@ -19,6 +22,7 @@ public class DeleteConfirmationVC: UIViewController {
   
   override public func viewDidLoad() {
     super.viewDidLoad()
+    playSound(called: Sound.deletePopover)
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     okButton.backgroundColor = Colors.accent3

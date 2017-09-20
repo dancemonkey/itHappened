@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
-class ActivityCell: UITableViewCell {
+class ActivityCell: UITableViewCell, AudioPlayer {
+  
+  var audioPlayer: AVAudioPlayer?
   
   @IBOutlet weak var activityTitleLbl: UILabel!
   @IBOutlet weak var lastIncidentLbl: UILabel!
@@ -36,6 +39,7 @@ class ActivityCell: UITableViewCell {
     setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
     addNewInstance = {
       activity.addNewInstance(withContext: DataManager().context)
+      self.playSound(called: Sound.numberRise)
     }
     self.selectionStyle = .none
   }

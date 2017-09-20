@@ -22,8 +22,6 @@ extension UIView {
 
 extension UIButton {
   
-  // include play sound function
-  
   func pulsateOut() {
     UIView.animate(withDuration: 0.1) {
       self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)

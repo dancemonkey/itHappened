@@ -10,20 +10,21 @@ import AVFoundation
 import UIKit
 
 public protocol AudioPlayer: class {
-  var audioPlayer: AVAudioPlayer { get set }
-  func playSound(file: String)
+  var audioPlayer: AVAudioPlayer? { get set }
+  func playSound(called sound: String)
 }
 
 public extension AudioPlayer {
   
-  func playSound(called sound: String, ofType type: String) {
-    // load and play the sound?
-    let audioFilePath = Bundle.main.path(forResource: sound, ofType: type)
+  func playSound(called sound: String) {
+    let audioFilePath = Bundle.main.path(forResource: sound, ofType: nil)
     if audioFilePath != nil {
       let audioFileURL = URL.init(fileURLWithPath: audioFilePath!)
       do {
         try audioPlayer = AVAudioPlayer(contentsOf: audioFileURL)
-        audioPlayer.play()
+        if let player = audioPlayer {
+          player.play()
+        }
       } catch {
         print("error initializing AVAudioPlayer")
       }
