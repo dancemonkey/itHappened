@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1001B91D1F72A7F500B999C2 /* analogue_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1001B91C1F72A50300B999C2 /* analogue_click.wav */; };
+		1001B91F1F72A89000B999C2 /* retro_affirm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1001B91E1F72A88D00B999C2 /* retro_affirm.wav */; };
+		1001B9211F72A9FB00B999C2 /* echo_affirm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1001B9201F72A9F800B999C2 /* echo_affirm.wav */; };
+		1001B9241F72AAC800B999C2 /* click_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1001B9221F72AAB900B999C2 /* click_alert.wav */; };
+		1001B9251F72AACB00B999C2 /* melodic1_affirm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1001B9231F72AAC600B999C2 /* melodic1_affirm.wav */; };
 		101AE2481F61798B00F2EC17 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE2471F61798B00F2EC17 /* DatePickerVC.swift */; };
 		101AE24A1F617A7A00F2EC17 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE2491F617A7A00F2EC17 /* Delegates.swift */; };
 		1039AE951F6C182300218D5B /* NewActivityPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */; };
@@ -38,6 +43,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1001B91C1F72A50300B999C2 /* analogue_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = analogue_click.wav; sourceTree = "<group>"; };
+		1001B91E1F72A88D00B999C2 /* retro_affirm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = retro_affirm.wav; sourceTree = "<group>"; };
+		1001B9201F72A9F800B999C2 /* echo_affirm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = echo_affirm.wav; sourceTree = "<group>"; };
+		1001B9221F72AAB900B999C2 /* click_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click_alert.wav; sourceTree = "<group>"; };
+		1001B9231F72AAC600B999C2 /* melodic1_affirm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = melodic1_affirm.wav; sourceTree = "<group>"; };
 		101AE2471F61798B00F2EC17 /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
 		101AE2491F617A7A00F2EC17 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityPopoverVC.swift; sourceTree = "<group>"; };
@@ -84,6 +94,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1001B91B1F72A4F500B999C2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1001B91C1F72A50300B999C2 /* analogue_click.wav */,
+				1001B9221F72AAB900B999C2 /* click_alert.wav */,
+				1001B91E1F72A88D00B999C2 /* retro_affirm.wav */,
+				1001B9231F72AAC600B999C2 /* melodic1_affirm.wav */,
+				1001B9201F72A9F800B999C2 /* echo_affirm.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		10A7DEF51F584CE7004C4F61 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				10A7DF011F584CE8004C4F61 /* AppDelegate.swift */,
+				1001B91B1F72A4F500B999C2 /* Sounds */,
 				10A7DF1B1F585172004C4F61 /* Model */,
 				10A7DF1D1F58518C004C4F61 /* View */,
 				10A7DF1A1F585169004C4F61 /* Controller */,
@@ -250,9 +273,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1001B9211F72A9FB00B999C2 /* echo_affirm.wav in Resources */,
+				1001B9251F72AACB00B999C2 /* melodic1_affirm.wav in Resources */,
 				10A7DF0F1F584CE8004C4F61 /* LaunchScreen.storyboard in Resources */,
+				1001B9241F72AAC800B999C2 /* click_alert.wav in Resources */,
 				10A7DF0C1F584CE8004C4F61 /* Assets.xcassets in Resources */,
 				10A7DF071F584CE8004C4F61 /* Main.storyboard in Resources */,
+				1001B91D1F72A7F500B999C2 /* analogue_click.wav in Resources */,
+				1001B91F1F72A89000B999C2 /* retro_affirm.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
