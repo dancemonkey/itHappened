@@ -12,9 +12,20 @@ import UIKit
 public protocol AudioPlayer: class {
   var audioPlayer: AVAudioPlayer? { get set }
   func playSound(called sound: String)
+  func setupSession()
 }
 
 public extension AudioPlayer {
+  
+  func setupSession() {
+    let session = AVAudioSession.sharedInstance()
+    do {
+      try session.setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+      try session.setActive(true)
+    } catch {
+      print("av audio session duck others attempt failed")
+    }
+  }
   
   func playSound(called sound: String) {
     let audioFilePath = Bundle.main.path(forResource: sound, ofType: nil)
