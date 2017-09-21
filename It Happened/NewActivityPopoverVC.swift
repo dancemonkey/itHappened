@@ -19,11 +19,10 @@ public class NewActivityPopoverVC: UIViewController, AudioPlayer {
   var completion: ((String) -> ())? = nil
   var activity: Activity? = nil
   
+  let generator = UINotificationFeedbackGenerator()
+  
   override public func viewDidLoad() {
     super.viewDidLoad()
-    if activity != nil {
-      playSound(called: Sound.activityPopover)
-    }
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     if activity == nil {
@@ -40,6 +39,7 @@ public class NewActivityPopoverVC: UIViewController, AudioPlayer {
       playSound(called: Sound.buttonPress)
       closure(name)
       self.dismiss(animated: true, completion: nil)
+      self.generator.notificationOccurred(.success)
     }
   }
   

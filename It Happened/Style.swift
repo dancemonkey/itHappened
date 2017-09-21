@@ -22,13 +22,13 @@ enum DateFormat {
 }
 
 enum Sound {
-  static let incrementPress = ""
-  static let numberRise = "retro_affirm.wav"
+//  static let incrementPress = ""
+  static let numberRise = "techy_affirm.wav"
   static let buttonPress = "analogue_click.wav"
-  static let cancelButtonPress = ""
-  static let plusNewPressed = ""
+//  static let cancelButtonPress = ""
+  static let plusNewPressed = "analogue_click.wav"
   static let deletePopover = "click_alert.wav"
-  static let activityPopover = "melodic1_affirm.wav"
+//  static let activityPopover = "melodic1_affirm.wav"
 }
 
 enum ImageName {

@@ -19,9 +19,11 @@ public class DeleteConfirmationVC: UIViewController, AudioPlayer {
   @IBOutlet weak var okButton: BaseButton!
   
   var completion: (() -> ())? = nil
+  let generator = UINotificationFeedbackGenerator()
   
   override public func viewDidLoad() {
     super.viewDidLoad()
+    generator.notificationOccurred(.warning)
     playSound(called: Sound.deletePopover)
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
@@ -32,8 +34,10 @@ public class DeleteConfirmationVC: UIViewController, AudioPlayer {
   
   @IBAction func okPressed(sender: UIButton) {
     if let closure = completion {
+      playSound(called: Sound.buttonPress)
       closure()
       self.dismiss(animated: true, completion: nil)
+      self.generator.notificationOccurred(.success)
     }
   }
   

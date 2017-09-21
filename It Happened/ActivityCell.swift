@@ -23,6 +23,7 @@ class ActivityCell: UITableViewCell, AudioPlayer {
   
   var addNewInstance: (() -> ())?
   var swipe: UISwipeGestureRecognizer?
+  let generator = UINotificationFeedbackGenerator()
   
   func styleViews() {
     activityTitleLbl.textColor = Colors.accent2
@@ -51,6 +52,7 @@ class ActivityCell: UITableViewCell, AudioPlayer {
   @IBAction func activityHappened(sender: IncrementButton) {
     UIView.animate(withDuration: 0.0, delay: 0, options: .transitionCrossDissolve, animations: {
       self.newIncidentBtn.setCheckImage()
+      self.generator.notificationOccurred(.success)
     }, completion: { finished in
       UIView.animate(withDuration: 0.4, delay: 0.2, animations: {
         self.newIncidentBtn.alpha = 0.0
