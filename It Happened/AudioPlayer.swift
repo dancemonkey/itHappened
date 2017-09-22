@@ -28,6 +28,11 @@ public extension AudioPlayer {
   }
   
   func playSound(called sound: String) {
+    
+    guard Settings().isSoundOn() else {
+      return
+    }
+    
     let audioFilePath = Bundle.main.path(forResource: sound, ofType: nil)
     if audioFilePath != nil {
       let audioFileURL = URL.init(fileURLWithPath: audioFilePath!)

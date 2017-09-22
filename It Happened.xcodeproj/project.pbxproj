@@ -167,7 +167,6 @@
 				10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */,
 				10F926CE1F585BB700D06941 /* Activity+CoreDataProperties.swift */,
 				10A7DF081F584CE8004C4F61 /* It_Happened.xcdatamodeld */,
-				102942B31F74AD700042F87B /* Settings.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -175,6 +174,7 @@
 		10A7DF1C1F585181004C4F61 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				102942B31F74AD700042F87B /* Settings.swift */,
 				10A7DF161F585153004C4F61 /* DataManager.swift */,
 				10A7DF181F58515C004C4F61 /* Style.swift */,
 				105AD72B1F60204C00F36249 /* Extensions.swift */,

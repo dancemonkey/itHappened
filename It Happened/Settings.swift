@@ -13,3 +13,38 @@ enum SettingsKey {
   static let haptic = "haptic"
 }
 
+class Settings {
+  
+  func isSoundOn() -> Bool {
+    return UserDefaults.standard.bool(forKey: SettingsKey.sound)
+  }
+  
+  func isHapticOn() -> Bool {
+    return UserDefaults.standard.bool(forKey: SettingsKey.haptic)
+  }
+  
+  func toggleSound() {
+    if isSoundOn() {
+      UserDefaults.standard.set(false, forKey: SettingsKey.sound)
+    } else {
+      UserDefaults.standard.set(true, forKey: SettingsKey.sound)
+    }
+  }
+  
+  func toggleHaptic() {
+    if isHapticOn() {
+      UserDefaults.standard.set(false, forKey: SettingsKey.haptic)
+    } else {
+      UserDefaults.standard.set(true, forKey: SettingsKey.haptic)
+    }
+  }
+  
+  func turnSoundOn() {
+    UserDefaults.standard.set(true, forKey: SettingsKey.sound)
+  }
+  
+  func turnHapticOn() {
+    UserDefaults.standard.set(true, forKey: SettingsKey.haptic)
+  }
+  
+}
