@@ -18,6 +18,7 @@ class EditInstanceVC: UIViewController, ReceiveDate {
   @IBOutlet weak var updateBtn: BaseButton!
   
   var instance: Instance?
+  let generator = UINotificationFeedbackGenerator()
   
   // TODO: add date/time picker option
   
@@ -54,6 +55,7 @@ class EditInstanceVC: UIViewController, ReceiveDate {
     instance!.note = noteFld.text!
     let dm = DataManager()
     dm.save()
+    generator.notificationOccurred(.success)
     navigationController?.popViewController(animated: true)
   }
   

@@ -23,7 +23,6 @@ public class DeleteConfirmationVC: UIViewController, AudioPlayer {
   
   override public func viewDidLoad() {
     super.viewDidLoad()
-    generator.notificationOccurred(.warning)
     playSound(called: Sound.deletePopover)
     titleLbl.textColor = Colors.primary
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)

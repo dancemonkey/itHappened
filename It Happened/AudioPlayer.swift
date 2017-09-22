@@ -12,15 +12,15 @@ import UIKit
 public protocol AudioPlayer: class {
   var audioPlayer: AVAudioPlayer? { get set }
   func playSound(called sound: String)
-  func setupSession()
+  func setupAudioSession()
 }
 
 public extension AudioPlayer {
   
-  func setupSession() {
+  func setupAudioSession() {
     let session = AVAudioSession.sharedInstance()
     do {
-      try session.setCategory(AVAudioSessionCategoryPlayback, with: .mixWithOthers)
+      try session.setCategory(AVAudioSessionCategoryAmbient, with: .mixWithOthers)
       try session.setActive(true)
     } catch {
       print("av audio session duck others attempt failed")

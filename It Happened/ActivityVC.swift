@@ -31,7 +31,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupSession()
+    setupAudioSession()
     NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.appBecameActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     styleViews()
     tableView.delegate = self

@@ -13,6 +13,7 @@
 		1001B9241F72AAC800B999C2 /* click_alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1001B9221F72AAB900B999C2 /* click_alert.wav */; };
 		101AE2481F61798B00F2EC17 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE2471F61798B00F2EC17 /* DatePickerVC.swift */; };
 		101AE24A1F617A7A00F2EC17 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AE2491F617A7A00F2EC17 /* Delegates.swift */; };
+		102942B41F74AD700042F87B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102942B31F74AD700042F87B /* Settings.swift */; };
 		1039AE951F6C182300218D5B /* NewActivityPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */; };
 		1040F4951F65DBC700893F7D /* IncrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040F4941F65DBC700893F7D /* IncrementButton.swift */; };
 		104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463671F5AF33D00312E5A /* InstanceCell.swift */; };
@@ -50,6 +51,7 @@
 		1001B9221F72AAB900B999C2 /* click_alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click_alert.wav; sourceTree = "<group>"; };
 		101AE2471F61798B00F2EC17 /* DatePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
 		101AE2491F617A7A00F2EC17 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
+		102942B31F74AD700042F87B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityPopoverVC.swift; sourceTree = "<group>"; };
 		1040F4941F65DBC700893F7D /* IncrementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementButton.swift; sourceTree = "<group>"; };
 		104463671F5AF33D00312E5A /* InstanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceCell.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */,
 				10F926CE1F585BB700D06941 /* Activity+CoreDataProperties.swift */,
 				10A7DF081F584CE8004C4F61 /* It_Happened.xcdatamodeld */,
+				102942B31F74AD700042F87B /* Settings.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				1040F4951F65DBC700893F7D /* IncrementButton.swift in Sources */,
 				10A7DF191F58515C004C4F61 /* Style.swift in Sources */,
 				10A7DF171F585153004C4F61 /* DataManager.swift in Sources */,
+				102942B41F74AD700042F87B /* Settings.swift in Sources */,
 				10F926D11F585BB700D06941 /* Activity+CoreDataClass.swift in Sources */,
 				10F926D01F585BB700D06941 /* Instance+CoreDataProperties.swift in Sources */,
 				10EA3EA61F7158AD00778ADF /* AudioPlayer.swift in Sources */,

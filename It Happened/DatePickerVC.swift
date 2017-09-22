@@ -15,6 +15,7 @@ class DatePickerVC: UIViewController, UIPickerViewDelegate {
   
   var delegate: ReceiveDate?
   var dateAndTime: Date?
+  let generator = UINotificationFeedbackGenerator()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,6 +31,7 @@ class DatePickerVC: UIViewController, UIPickerViewDelegate {
   
   @IBAction func updateTapped(sender: BaseButton) {
     delegate?.receive(date: picker.date)
+    generator.notificationOccurred(.success)
     navigationController?.popViewController(animated: true)
   }
   
