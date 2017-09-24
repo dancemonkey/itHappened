@@ -13,7 +13,7 @@ enum SettingsKey {
   static let haptic = "haptic"
 }
 
-class Settings {
+struct Settings {
   
   func isSoundOn() -> Bool {
     return UserDefaults.standard.bool(forKey: SettingsKey.sound)

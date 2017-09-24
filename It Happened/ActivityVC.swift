@@ -42,7 +42,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     } catch {
       print("nope")
     }
-    updateView()
+    updateView()    
   }
   
   func styleViews() {
