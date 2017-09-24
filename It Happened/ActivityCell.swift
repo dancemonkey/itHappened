@@ -38,9 +38,9 @@ class ActivityCell: UITableViewCell, AudioPlayer {
     activityTitleLbl.text = activity.name
     lastIncidentLbl.text = activity.lastInstance?.getColloquialDateAndTime()
     setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
-    addNewInstance = {
+    addNewInstance = { [weak self] in
       activity.addNewInstance(withContext: DataManager().context)
-      self.playSound(called: Sound.numberRise)
+      self?.playSound(called: Sound.numberRise)
     }
     self.selectionStyle = .none
   }
