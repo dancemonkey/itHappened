@@ -67,6 +67,10 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Colors.primary]
     navigationController?.navigationBar.barTintColor = Colors.black
     tableView.reloadData()
+    
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d, yyyy"
+    self.title = formatter.string(from: Date())
   }
   
   @objc func appBecameActive() {
