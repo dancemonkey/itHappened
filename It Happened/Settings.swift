@@ -18,16 +18,18 @@ typealias Theme = [ColorSlot: UIColor]
 
 struct Settings {
   
-  func setColorTheme(to theme: Theme) {
-    UserDefaults.standard.set(theme, forKey: SettingsKey.colorTheme)
+  var colorTheme: Theme {
+    get {
+      if let theme = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) {
+        return theme as! Theme
+      } else {
+        return ThemeOption.dark
+      }
+    }
   }
   
-  func getColorTheme() -> Theme {
-    if let theme = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) {
-      return theme as! Theme
-    } else {
-      return ThemeOption.dark
-    }
+  func setColorTheme(to theme: Theme) {
+    UserDefaults.standard.set(theme, forKey: SettingsKey.colorTheme)
   }
   
   func isSoundOn() -> Bool {

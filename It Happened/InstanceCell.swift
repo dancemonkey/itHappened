@@ -14,8 +14,8 @@ class InstanceCell: UITableViewCell {
   @IBOutlet weak var noteLbl: UILabel!
   
   func styleViews() {
-    timeLbl.textColor = Colors.accent2
-    noteLbl.textColor = Colors.accent1
+    timeLbl.textColor = Settings().colorTheme[.accent2]
+    noteLbl.textColor = Settings().colorTheme[.accent1]
   }
   
   override func awakeFromNib() {

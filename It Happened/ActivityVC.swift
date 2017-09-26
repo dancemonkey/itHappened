@@ -46,10 +46,10 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func styleViews() {
-    self.view.backgroundColor = Colors.black
-    tableView.backgroundColor = Colors.black
-    emptyDataLbl.textColor = Colors.accent2
-    newButton.tintColor = Colors.primary
+    self.view.backgroundColor = Settings().colorTheme[.black]
+    tableView.backgroundColor = Settings().colorTheme[.black]
+    emptyDataLbl.textColor = Settings().colorTheme[.accent2]
+    newButton.tintColor = Settings().colorTheme[.primary]
   }
   
   fileprivate func updateView() {
@@ -64,8 +64,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.navigationBar.prefersLargeTitles = true
-    navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Colors.primary]
-    navigationController?.navigationBar.barTintColor = Colors.black
+    navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.primary] as Any]
+    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.black]
     tableView.reloadData()
     
     let formatter = DateFormatter()
@@ -153,7 +153,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.present(vc, animated: true, completion: nil)
       }
     }
-    delete.backgroundColor = Colors.accent3
+    delete.backgroundColor = Settings().colorTheme[.accent3]
     return [delete, edit]
   }
   

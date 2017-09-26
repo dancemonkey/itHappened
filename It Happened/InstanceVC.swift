@@ -50,11 +50,11 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   }
   
   func styleViews() {
-    newButton.setTitleColor(Colors.accent2, for: .normal)
-    self.view.backgroundColor = Colors.black
-    tableView.backgroundColor = Colors.black
+    newButton.setTitleColor(Settings().colorTheme[.accent2], for: .normal)
+    self.view.backgroundColor = Settings().colorTheme[.black]
+    tableView.backgroundColor = Settings().colorTheme[.black]
     self.title = activity?.name!
-    emptyDataLbl.textColor = Colors.accent2
+    emptyDataLbl.textColor = Settings().colorTheme[.accent2]
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -138,7 +138,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         self.present(vc, animated: true, completion: nil)
       }
     }
-    delete.backgroundColor = Colors.accent3
+    delete.backgroundColor = Settings().colorTheme[.accent3]
     return [delete]
   }
   
@@ -151,7 +151,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     for view in headerView.subviews {
       view.removeFromSuperview()
     }
-    headerView.backgroundColor = Colors.primary
+    headerView.backgroundColor = Settings().colorTheme[.primary]
     
     let title = UILabel()
     title.frame = CGRect(x: 8, y: 0, width: tableView.frame.width, height: 40)

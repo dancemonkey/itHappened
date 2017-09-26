@@ -39,8 +39,8 @@ class EditInstanceVC: UIViewController, ReceiveDate {
   }
   
   func styleViews() {
-    timeLbl.textColor = Colors.accent2
-    noteLbl.textColor = Colors.accent2
+    timeLbl.textColor = Settings().colorTheme[.accent2]
+    noteLbl.textColor = Settings().colorTheme[.accent2]
     timeFld.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
     noteFld.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
     timeFld.textColor = .white

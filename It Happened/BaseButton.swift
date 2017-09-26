@@ -12,7 +12,7 @@ class BaseButton: UIButton {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    self.backgroundColor = Colors.primary
+    self.backgroundColor = Settings().colorTheme[.primary]
     self.setTitleColor(.white, for: .normal)
     self.layer.cornerRadius = 4
     self.layer.masksToBounds = true

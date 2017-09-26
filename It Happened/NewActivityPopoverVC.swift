@@ -23,7 +23,7 @@ public class NewActivityPopoverVC: UIViewController, AudioPlayer {
   
   override public func viewDidLoad() {
     super.viewDidLoad()
-    titleLbl.textColor = Colors.primary
+    titleLbl.textColor = Settings().colorTheme[.primary]
     titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     if activity == nil {
       nameFld.becomeFirstResponder()

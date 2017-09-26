@@ -26,12 +26,12 @@ class ActivityCell: UITableViewCell, AudioPlayer {
   let generator = UINotificationFeedbackGenerator()
   
   func styleViews() {
-    activityTitleLbl.textColor = Colors.accent2
-    lastIncidentLbl.textColor = Colors.accent1
-    todayTotalLbl.textColor = Colors.accent2
-    todayTotalTimes.textColor = Colors.accent2
-    self.backgroundColor = Colors.black
-    newIncidentBtn.tintColor = Colors.accent1
+    activityTitleLbl.textColor = Settings().colorTheme[.accent2]
+    lastIncidentLbl.textColor = Settings().colorTheme[.accent1]
+    todayTotalLbl.textColor = Settings().colorTheme[.accent2]
+    todayTotalTimes.textColor = Settings().colorTheme[.accent2]
+    self.backgroundColor = Settings().colorTheme[.black]
+    newIncidentBtn.tintColor = Settings().colorTheme[.accent1]
   }
   
   func configureCell(with activity: Activity) {
