@@ -6,14 +6,29 @@
 //  Copyright © 2017 Drew Lanning. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum SettingsKey {
   static let sound = "sound"
   static let haptic = "haptic"
+  static let colorTheme = "colorTheme"
 }
 
+typealias Theme = [ColorSlot: UIColor]
+
 struct Settings {
+  
+  func setColorTheme(to theme: Theme) {
+    UserDefaults.standard.set(theme, forKey: SettingsKey.colorTheme)
+  }
+  
+  func getColorTheme() -> Theme {
+    if let theme = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) {
+      return theme as! Theme
+    } else {
+      return ThemeOption.dark
+    }
+  }
   
   func isSoundOn() -> Bool {
     return UserDefaults.standard.bool(forKey: SettingsKey.sound)

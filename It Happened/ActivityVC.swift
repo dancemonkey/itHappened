@@ -80,6 +80,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       if formatter.string(from: Date()) != lastOpen {
         DataManager().setLastOpen()
         tableView.reloadData()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        self.title = formatter.string(from: Date())
       }
     } else {
       DataManager().setLastOpen()
