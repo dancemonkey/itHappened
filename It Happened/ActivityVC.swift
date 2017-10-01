@@ -19,6 +19,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   @IBOutlet weak var emptyDataLbl: UILabel!
   
   var audioPlayer: AVAudioPlayer?
+  var generator = UINotificationFeedbackGenerator()
   
   fileprivate var frc: NSFetchedResultsController<Activity> = {
     let dm = DataManager()
@@ -96,6 +97,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     popOver.popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
     popOver.popoverPresentationController?.sourceView = self.view
     popOver.popoverPresentationController?.sourceRect = self.view.bounds
+    generator.notificationOccurred(.success)
     self.present(popOver, animated: true, completion: nil)
   }
   

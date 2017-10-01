@@ -29,7 +29,6 @@ public class DeleteConfirmationVC: UIViewController, AudioPlayer {
     okButton.backgroundColor = Settings().colorTheme[.accent3]
     messageLbl.text = PopupMessages.deleteMessage
     titleLbl.text = PopupMessages.deleteTitle
-    generator.notificationOccurred(.warning)
   }
   
   @IBAction func okPressed(sender: UIButton) {

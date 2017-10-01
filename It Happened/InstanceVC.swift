@@ -17,6 +17,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   @objc @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   var activity: Activity?
+  var generator = UINotificationFeedbackGenerator()
   
   fileprivate lazy var frc: NSFetchedResultsController<Instance> = {
     let dm = DataManager()
@@ -74,6 +75,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   @IBAction func newButtonTapped(sender: UIButton) {
     self.activity!.addNewInstance(withContext: DataManager().context)
+    generator.notificationOccurred(.success)
     DataManager().save()
   }
   

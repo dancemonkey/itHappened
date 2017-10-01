@@ -22,10 +22,10 @@ struct Settings {
   
   var colorTheme: Theme {
     get {
-      guard let theme = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) else {
+      guard let _ = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) else {
         return ThemeOption.dark
       }
-      return theme as! Theme
+      return self.theme!
     }
   }
   
