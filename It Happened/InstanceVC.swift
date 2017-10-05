@@ -83,6 +83,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     let headerText = self.tableView(tableView, titleForHeaderInSection: section)!
     tableView.headerView(forSection: section)?.textLabel?.text = ""
     tableView.headerView(forSection: section)?.textLabel?.text = headerText
+    tableView.reloadData()
   }
   
   // MARK: Tableview functions
@@ -161,7 +162,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     title.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
     title.text = (self.tableView(tableView, titleForHeaderInSection: section))?.uppercased()
     title.baselineAdjustment = .alignCenters
-
+    
     headerView.addSubview(title)
     return headerView
   }
@@ -201,8 +202,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .delete:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
-        if let objects = frc.fetchedObjects, objects.count > 0 {
-          setHeader(forSection: indexPath.section)
+        if let sections = frc.sections {
+          if sections.count == indexPath.section + 1 {
+            setHeader(forSection: indexPath.section)
+          }
         }
       }
     }
@@ -212,6 +215,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     switch type {
     case .insert:
       tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+      setHeader(forSection: sectionIndex)
     case .delete:
       tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
     case .move:
