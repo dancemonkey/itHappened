@@ -32,7 +32,7 @@
                                 <color key="tintColor" red="0.99607843139999996" green="0.18039215689999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1j8-aN-jEs" customClass="ActivityTableView" customModule="It_Happened" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" id="sDR-wU-Qpb" customClass="ActivityCell" customModule="It_Happened" customModuleProvider="target">
@@ -148,11 +148,11 @@
                             <constraint firstItem="1j8-aN-jEs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9Yx-ph-fkU"/>
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AvD-MN-g9Z"/>
                             <constraint firstItem="taz-Ni-9Et" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MYS-Y8-Xak"/>
+                            <constraint firstItem="4tO-0X-htw" firstAttribute="top" secondItem="1j8-aN-jEs" secondAttribute="bottom" constant="8" id="VZn-in-INn"/>
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="top" secondItem="taz-Ni-9Et" secondAttribute="bottom" constant="-64" id="cl5-0R-78h"/>
                             <constraint firstAttribute="trailing" secondItem="4tO-0X-htw" secondAttribute="trailing" constant="16" id="dKo-4B-Css"/>
                             <constraint firstItem="taz-Ni-9Et" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k4F-y4-3hA"/>
                             <constraint firstAttribute="trailing" secondItem="1j8-aN-jEs" secondAttribute="trailing" id="kER-tv-yJU"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1j8-aN-jEs" secondAttribute="bottom" id="naC-51-CtH"/>
                             <constraint firstItem="1j8-aN-jEs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nhT-cA-uiJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4tO-0X-htw" secondAttribute="bottom" constant="16" id="y98-uz-IcA"/>
                         </constraints>
