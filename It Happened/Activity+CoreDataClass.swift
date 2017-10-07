@@ -14,7 +14,23 @@ public class Activity: NSManagedObject {
   
   var lastInstance: Instance? {
     get {
-      return self.instance?.lastObject as? Instance
+      guard let instances = self.instance else {
+        return nil
+      }
+      var interval: Double? = nil
+      var mostRecentInstance: Instance? = nil
+      for inst in instances {
+        if interval == nil {
+          interval = (inst as! Instance).date?.timeIntervalSinceReferenceDate
+          mostRecentInstance = inst as? Instance
+        } else {
+          if ((inst as! Instance).date?.timeIntervalSinceReferenceDate)! > interval! {
+            interval = (inst as! Instance).date?.timeIntervalSinceReferenceDate
+            mostRecentInstance = inst as? Instance
+          }
+        }
+      }
+      return mostRecentInstance //self.instance?.lastObject as? Instance // fix to return most recent object by date
     }
   }
   
