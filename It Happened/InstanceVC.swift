@@ -146,7 +146,6 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         popOverPC.permittedArrowDirections = .init(rawValue: 0)
         popOverPC.sourceRect = self.view.bounds
         self.present(vc, animated: true, completion: nil)
-        vc.view.animateAll(animationType: Animations.popOverIn)
       }
     }
     delete.backgroundColor = Settings().colorTheme[.accent3]

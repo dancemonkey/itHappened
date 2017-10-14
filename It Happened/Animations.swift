@@ -10,7 +10,8 @@ import Foundation
 import ViewAnimator
 
 struct Animations {
-  static let newButtonIn = AnimationType.from(direction: .right, offset: 60.0)
+  //static let newButtonIn = AnimationType.from(direction: .left, offset: 60.0)
+  static let newButtonIn = AnimationType.zoom(scale: 0.25)
   static let tableRowsIn = AnimationType.from(direction: .bottom, offset: 200.0)
   static let popOverIn = AnimationType.from(direction: .bottom, offset: 10.0)
 }
