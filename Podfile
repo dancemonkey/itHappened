@@ -7,5 +7,4 @@ target 'It Happened' do
 
   # Pods for It Happened
   pod "ViewAnimator"	
-  pod "Hero"
 end

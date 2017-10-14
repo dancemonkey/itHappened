@@ -102,6 +102,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     popOver.popoverPresentationController?.sourceView = self.view
     popOver.popoverPresentationController?.sourceRect = self.view.bounds
     generator.notificationOccurred(.success)
+    
     self.present(popOver, animated: true, completion: nil)
   }
   

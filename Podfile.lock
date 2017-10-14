@@ -1,15 +1,12 @@
 PODS:
-  - Hero (0.3.6)
   - ViewAnimator (1.0.0)
 
 DEPENDENCIES:
-  - Hero
   - ViewAnimator
 
 SPEC CHECKSUMS:
-  Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
   ViewAnimator: ae94bb7d19728ecc061465b00f491bfd855053cd
 
-PODFILE CHECKSUM: cbf6d0d29d61309f572564c52b9b63483b2dce34
+PODFILE CHECKSUM: 5a62e4d094fc95f8ca2d4bff9e7e38b9a6a3c975
 
 COCOAPODS: 1.3.1
