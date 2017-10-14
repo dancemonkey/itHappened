@@ -45,9 +45,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       print("nope")
     }
     updateView()
-    
-    newButton.animate(animationType: Animations.newButtonIn)
-    tableView.animateViews(animationType: Animations.tableRowsIn)
   }
   
   func styleViews() {
@@ -76,6 +73,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let formatter = DateFormatter()
     formatter.dateFormat = "MMM d, yyyy"
     self.title = formatter.string(from: Date())
+    
+    newButton.animate(animationType: Animations.newButtonIn)
+    tableView.animateViews(animationType: Animations.tableRowsIn)
   }
   
   @objc func appBecameActive() {
@@ -103,6 +103,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     popOver.popoverPresentationController?.sourceRect = self.view.bounds
     generator.notificationOccurred(.success)
     self.present(popOver, animated: true, completion: nil)
+    popOver.view.animateAll(animationType: Animations.popOverIn)
   }
   
   // MARK: Tableview Functions
@@ -146,6 +147,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         popOverPC.permittedArrowDirections = .init(rawValue: 0)
         popOverPC.sourceRect = self.view.bounds
         self.present(vc, animated: true, completion: nil)
+        vc.view.animateAll(animationType: Animations.popOverIn)
       }
     }
     let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
@@ -157,6 +159,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         popOverPC.permittedArrowDirections = .init(rawValue: 0)
         popOverPC.sourceRect = self.view.bounds
         self.present(vc, animated: true, completion: nil)
+        vc.view.animateAll(animationType: Animations.popOverIn)
       }
     }
     delete.backgroundColor = Settings().colorTheme[.accent3]
