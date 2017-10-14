@@ -48,8 +48,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func styleViews() {
-    self.view.backgroundColor = Settings().colorTheme[.black]
-    tableView.backgroundColor = Settings().colorTheme[.black]
+    self.view.backgroundColor = Settings().colorTheme[.background]
+    tableView.backgroundColor = Settings().colorTheme[.background]
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
     newButton.tintColor = Settings().colorTheme[.primary]
   }
@@ -67,7 +67,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.primary] as Any]
-    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.black]
+    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.background]
     tableView.reloadData()
     
     let formatter = DateFormatter()

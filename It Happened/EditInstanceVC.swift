@@ -46,6 +46,7 @@ class EditInstanceVC: UIViewController, ReceiveDate {
     noteFld.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
     timeFld.textColor = .white
     noteFld.textColor = .white
+    view.backgroundColor = Settings().colorTheme[.background]
     
     let tapper = UITapGestureRecognizer(target: self, action: #selector(EditInstanceVC.openDatePicker))
     tapper.numberOfTapsRequired = 1

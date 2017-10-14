@@ -23,7 +23,8 @@ struct Settings {
   var colorTheme: Theme {
     get {
       guard let _ = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) else {
-        return ThemeOption.dark
+        return ThemeOption.light
+        //return ThemeOption.dark
       }
       return self.theme!
     }

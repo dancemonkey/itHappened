@@ -16,6 +16,7 @@ class InstanceCell: UITableViewCell {
   func styleViews() {
     timeLbl.textColor = Settings().colorTheme[.accent2]
     noteLbl.textColor = Settings().colorTheme[.accent1]
+    self.backgroundColor = Settings().colorTheme[.background]
   }
   
   override func awakeFromNib() {

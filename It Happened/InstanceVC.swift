@@ -55,8 +55,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func styleViews() {
     newButton.setTitleColor(Settings().colorTheme[.accent2], for: .normal)
-    self.view.backgroundColor = Settings().colorTheme[.black]
-    tableView.backgroundColor = Settings().colorTheme[.black]
+    self.view.backgroundColor = Settings().colorTheme[.background]
+    tableView.backgroundColor = Settings().colorTheme[.background]
     self.title = activity?.name!
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
   }

@@ -30,7 +30,7 @@ class ActivityCell: UITableViewCell, AudioPlayer {
     lastIncidentLbl.textColor = Settings().colorTheme[.accent1]
     todayTotalLbl.textColor = Settings().colorTheme[.accent2]
     todayTotalTimes.textColor = Settings().colorTheme[.accent2]
-    self.backgroundColor = Settings().colorTheme[.black]
+    self.backgroundColor = Settings().colorTheme[.background]
     newIncidentBtn.tintColor = Settings().colorTheme[.accent1]
   }
   
