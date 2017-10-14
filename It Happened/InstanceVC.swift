@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
-class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter {
+class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter, AudioPlayer {
   
   @IBOutlet weak var newButton: UIButton!
   @IBOutlet weak var tableView: ActivityTableView!
@@ -18,6 +19,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   var activity: Activity?
   var generator = UINotificationFeedbackGenerator()
+  var audioPlayer: AVAudioPlayer?
   
   fileprivate lazy var frc: NSFetchedResultsController<Instance> = {
     let dm = DataManager()
@@ -33,6 +35,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    setupAudioSession()
     self.navigationController?.setNavigationBarHidden(false, animated: true)
     
     styleViews()
@@ -48,6 +51,9 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     updateView()
+    
+    tableView.animateViews(animationType: Animations.tableRowsIn)
+    newButton.animate(animationType: Animations.newButtonIn)
   }
   
   func styleViews() {
@@ -75,6 +81,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   @IBAction func newButtonTapped(sender: UIButton) {
     self.activity!.addNewInstance(withContext: DataManager().context)
+    playSound(called: Sound.numberRise)
     generator.notificationOccurred(.success)
     DataManager().save()
   }

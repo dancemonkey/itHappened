@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AVFoundation
+import ViewAnimator
 
 class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter, AudioPlayer {
   
@@ -43,7 +44,10 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     } catch {
       print("nope")
     }
-    updateView()    
+    updateView()
+    
+    newButton.animate(animationType: Animations.newButtonIn)
+    tableView.animateViews(animationType: Animations.tableRowsIn)
   }
   
   func styleViews() {

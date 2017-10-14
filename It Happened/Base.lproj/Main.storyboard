@@ -474,7 +474,7 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.1176470588" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hDV-ei-f8C">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of activity" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hDV-ei-f8C">
                                 <rect key="frame" x="16" y="67.5" width="268.5" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="RPR-aD-MU5"/>
