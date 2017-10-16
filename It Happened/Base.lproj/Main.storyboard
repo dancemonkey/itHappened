@@ -142,7 +142,7 @@
                                     <action selector="newPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="asw-un-vtA"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axN-MI-lor">
+                            <switch opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axN-MI-lor">
                                 <rect key="frame" x="16" y="542" width="51" height="31"/>
                                 <connections>
                                     <action selector="themeSwitchedWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="7pb-9S-Hxi"/>

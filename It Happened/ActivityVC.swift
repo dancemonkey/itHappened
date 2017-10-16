@@ -36,7 +36,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     super.viewDidLoad()
     setupAudioSession()
     NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.appBecameActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
-    styleViews()
     tableView.delegate = self
     tableView.dataSource = self
     frc.delegate = self
@@ -47,6 +46,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     updateView()
     themeSwitch.setOn(settings.getColorThemeName() == .dark, animated: false)
+    styleViews()
   }
   
   func styleViews() {
@@ -60,8 +60,15 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
     navigationController?.navigationBar.barTintColor = Settings().colorTheme[.background]
     
+    switch settings.getColorThemeName() {
+    case .dark:
+      UIApplication.shared.statusBarStyle = .lightContent
+    case .light:
+      UIApplication.shared.statusBarStyle = .default
+    }
+    
     themeSwitch.onTintColor = Settings().colorTheme[.accent1]
-    themeSwitch.alpha = 0.5
+    themeSwitch.alpha = 0.3
   }
   
   fileprivate func updateView() {
