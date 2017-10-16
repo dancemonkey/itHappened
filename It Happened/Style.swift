@@ -35,6 +35,11 @@ enum ThemeOption {
   ]
 }
 
+enum ThemeType: String {
+  case dark
+  case light
+}
+
 enum Sound {
   static let numberRise = "techy_affirm.wav"
   static let buttonPress = "analogue_click.wav"

@@ -15,12 +15,13 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var newButton: NewButton!
-  @IBOutlet weak var helpButton: UIButton!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var emptyDataLbl: UILabel!
+  @IBOutlet weak var themeSwitch: UISwitch!
   
   var audioPlayer: AVAudioPlayer?
   var generator = UINotificationFeedbackGenerator()
+  var settings = Settings()
   
   fileprivate var frc: NSFetchedResultsController<Activity> = {
     let dm = DataManager()
@@ -52,9 +53,14 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     tableView.backgroundColor = Settings().colorTheme[.background]
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
     newButton.tintColor = Settings().colorTheme[.primary]
+    
     navigationController?.navigationBar.tintColor = Settings().colorTheme[.navElement]
-    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.accent1]
-    navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
+    UINavigationBar.appearance().barTintColor = Settings().colorTheme[.accent1]
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
+    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.background]
+    
+    themeSwitch.onTintColor = Settings().colorTheme[.accent1]
+    themeSwitch.alpha = 0.5
   }
   
   fileprivate func updateView() {
@@ -70,6 +76,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.primary] as Any]
+    UINavigationBar.appearance().barTintColor = Settings().colorTheme[.accent1]
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
     navigationController?.navigationBar.barTintColor = Settings().colorTheme[.background]
     tableView.reloadData()
     
@@ -107,6 +115,15 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     generator.notificationOccurred(.success)
     
     self.present(popOver, animated: true, completion: nil)
+  }
+  
+  @IBAction func themeSwitched(sender: UISwitch) {
+    let theme: ThemeType = sender.isOn ? .dark : .light
+    settings.setColorTheme(to: theme)
+    styleViews()
+    for cell in tableView.visibleCells {
+      (cell as! ActivityCell).styleViews()
+    }
   }
   
   // MARK: Tableview Functions
@@ -171,7 +188,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     return true
   }
   
-  // MARK: NSFetchedResultsController Shit
+  // MARK: NSFetchedResultsController
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
     tableView.beginUpdates()

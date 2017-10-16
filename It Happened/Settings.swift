@@ -22,17 +22,24 @@ struct Settings {
   
   var colorTheme: Theme {
     get {
-      guard let _ = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) else {
-//        return ThemeOption.light
+      guard let theme = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) else {
         return ThemeOption.dark
       }
-      return self.theme!
+      let savedTheme = ThemeType(rawValue: theme as! String)!
+      switch savedTheme {
+      case .dark: return ThemeOption.dark
+      case .light: return ThemeOption.light
+      }
     }
   }
   
-  mutating func setColorTheme(to theme: Theme) {
-    UserDefaults.standard.set(theme, forKey: SettingsKey.colorTheme)
-    self.theme = theme
+  mutating func setColorTheme(to theme: ThemeType) {
+    UserDefaults.standard.set(theme.rawValue, forKey: SettingsKey.colorTheme)
+    print(theme.rawValue)
+    switch theme {
+    case .dark: self.theme = ThemeOption.dark
+    case .light: self.theme = ThemeOption.light
+    }
   }
   
   func isSoundOn() -> Bool {

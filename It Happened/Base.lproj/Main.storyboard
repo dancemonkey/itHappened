@@ -142,6 +142,12 @@
                                     <action selector="newPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="asw-un-vtA"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axN-MI-lor">
+                                <rect key="frame" x="16" y="542" width="51" height="31"/>
+                                <connections>
+                                    <action selector="themeSwitchedWithSender:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="7pb-9S-Hxi"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.039215686274509803" green="0.11764705882352941" blue="0.13725490196078433" alpha="0.0" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -149,6 +155,8 @@
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AvD-MN-g9Z"/>
                             <constraint firstItem="taz-Ni-9Et" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MYS-Y8-Xak"/>
                             <constraint firstItem="4tO-0X-htw" firstAttribute="top" secondItem="1j8-aN-jEs" secondAttribute="bottom" constant="8" id="VZn-in-INn"/>
+                            <constraint firstItem="axN-MI-lor" firstAttribute="centerY" secondItem="4tO-0X-htw" secondAttribute="centerY" id="Yl9-In-gP4"/>
+                            <constraint firstItem="axN-MI-lor" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="aue-z1-BOr"/>
                             <constraint firstItem="Aw1-dN-AgQ" firstAttribute="top" secondItem="taz-Ni-9Et" secondAttribute="bottom" constant="-64" id="cl5-0R-78h"/>
                             <constraint firstAttribute="trailing" secondItem="4tO-0X-htw" secondAttribute="trailing" constant="16" id="dKo-4B-Css"/>
                             <constraint firstItem="taz-Ni-9Et" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k4F-y4-3hA"/>
@@ -156,12 +164,6 @@
                             <constraint firstItem="1j8-aN-jEs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nhT-cA-uiJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4tO-0X-htw" secondAttribute="bottom" constant="16" id="y98-uz-IcA"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="activityPopup"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="[.fade, .translate(x:0, y:-250), .rotate(x:-1.6), .scale(1.5)]"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Today" largeTitleDisplayMode="always" id="5AL-Uy-Hug"/>
                     <connections>
@@ -169,6 +171,7 @@
                         <outlet property="emptyDataLbl" destination="Aw1-dN-AgQ" id="eOv-TY-c3a"/>
                         <outlet property="newButton" destination="4tO-0X-htw" id="Mzq-h7-9Oc"/>
                         <outlet property="tableView" destination="1j8-aN-jEs" id="rpa-gM-oI7"/>
+                        <outlet property="themeSwitch" destination="axN-MI-lor" id="hHt-oU-yb8"/>
                         <segue destination="tdh-Bl-E9G" kind="show" identifier="showInstanceList" id="7VP-jH-3L2"/>
                     </connections>
                 </viewController>
@@ -527,12 +530,6 @@
                             <constraint firstItem="hDV-ei-f8C" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dFx-tx-FvR" secondAttribute="leading" constant="16" id="o7I-al-RKy"/>
                             <constraint firstItem="hDV-ei-f8C" firstAttribute="centerX" secondItem="dFx-tx-FvR" secondAttribute="centerX" id="qrO-eH-b8i"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="activityPopup"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="[.fade, .translate(x:0, y:-250), .rotate(x:-1.6), .scale(1.5)]"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>
                     <nil key="simulatedTopBarMetrics"/>
