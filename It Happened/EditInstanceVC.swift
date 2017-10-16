@@ -30,7 +30,6 @@ class EditInstanceVC: UIViewController, ReceiveDate {
       timeFld.text = instanceToEdit.getFormattedTime() // extract just time out of this
       noteFld.text = instanceToEdit.note
     }
-    
     styleViews()    
   }
   
@@ -44,8 +43,8 @@ class EditInstanceVC: UIViewController, ReceiveDate {
     noteLbl.textColor = Settings().colorTheme[.accent2]
     timeFld.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
     noteFld.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.2)
-    timeFld.textColor = .white
-    noteFld.textColor = .white
+    timeFld.textColor = Settings().colorTheme[.textField]
+    noteFld.textColor = Settings().colorTheme[.textField]
     view.backgroundColor = Settings().colorTheme[.background]
     
     let tapper = UITapGestureRecognizer(target: self, action: #selector(EditInstanceVC.openDatePicker))

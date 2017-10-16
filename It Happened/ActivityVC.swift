@@ -52,6 +52,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     tableView.backgroundColor = Settings().colorTheme[.background]
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
     newButton.tintColor = Settings().colorTheme[.primary]
+    navigationController?.navigationBar.tintColor = Settings().colorTheme[.navElement]
+    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.accent1]
+    navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
   }
   
   fileprivate func updateView() {
