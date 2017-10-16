@@ -42,6 +42,13 @@ struct Settings {
     }
   }
   
+  func getColorThemeName() -> ThemeType {
+    guard let theme = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) else {
+      return .dark
+    }
+    return ThemeType(rawValue: theme as! String)!
+  }
+  
   func isSoundOn() -> Bool {
     return UserDefaults.standard.bool(forKey: SettingsKey.sound)
   }

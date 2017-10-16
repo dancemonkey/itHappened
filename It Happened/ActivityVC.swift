@@ -46,6 +46,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       print("nope")
     }
     updateView()
+    themeSwitch.setOn(settings.getColorThemeName() == .dark, animated: false)
   }
   
   func styleViews() {
