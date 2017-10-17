@@ -86,6 +86,7 @@ class ActivityCell: UITableViewCell, AudioPlayer {
   
   override func prepareForReuse() {
     super.prepareForReuse()
+    styleViews()
   }
   
   // MARK: UIGesture methods
