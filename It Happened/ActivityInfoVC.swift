@@ -38,7 +38,7 @@ public class ActivityInfoVC: UIViewController, AudioPlayer {
       formatter.dateFormat = "EEEE, MMM d, yyyy"
       dateCreatedLbl.text = "Created: \(formatter.string(from: activity.created! as Date))"
       totalLbl.text = "Total: \(String(describing: activity.instance!.count))"
-      averageLbl.text = "Average / day: not coded yet"
+      averageLbl.text = "Average / day: \(activity.getAveragePerDay())"
     }
   }
   
