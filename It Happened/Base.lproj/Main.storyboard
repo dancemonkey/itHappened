@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -620,6 +621,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1p8-EM-830" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1336" y="629"/>
+        </scene>
+        <!--Activity InfoVC-->
+        <scene sceneID="lSb-eO-ICX">
+            <objects>
+                <viewController storyboardIdentifier="activityInfoPopover" id="gsw-Oo-NV6" customClass="ActivityInfoVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="meC-y5-8Jf"/>
+                        <viewControllerLayoutGuide type="bottom" id="xgq-Ob-WLl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Dl-2q-0Fe">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-ny-iPU">
+                                <rect key="frame" x="97" y="16" width="106.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.039215686270000001" green="0.1176470588" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-mw-kib" customClass="BaseButton" customModule="It_Happened" customModuleProvider="target">
+                                <rect key="frame" x="112.5" y="139" width="75" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4xZ-0V-ewN"/>
+                                    <constraint firstAttribute="width" constant="75" id="6sb-cn-hYH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okPressedWithSender:" destination="gsw-Oo-NV6" eventType="touchUpInside" id="Fu3-Ra-uWy"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m3d-mX-4J6" userLabel="Labels">
+                                <rect key="frame" x="16" y="52.5" width="268" height="77.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Created:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdj-hj-TxH">
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Instances:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-RP-kXb">
+                                        <rect key="frame" x="0.0" y="28.5" width="268" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avg / Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="581-Nb-iai">
+                                        <rect key="frame" x="0.0" y="57" width="268" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="m3d-mX-4J6" secondAttribute="trailing" constant="16" id="D5I-Jn-hVH"/>
+                            <constraint firstItem="m3d-mX-4J6" firstAttribute="top" secondItem="Ugv-ny-iPU" secondAttribute="bottom" constant="16" id="Ti7-sQ-rpY"/>
+                            <constraint firstItem="xgq-Ob-WLl" firstAttribute="top" secondItem="aqQ-mw-kib" secondAttribute="bottom" constant="16" id="fAr-Nr-d7u"/>
+                            <constraint firstItem="Ugv-ny-iPU" firstAttribute="centerX" secondItem="6Dl-2q-0Fe" secondAttribute="centerX" id="ham-hP-tRU"/>
+                            <constraint firstItem="aqQ-mw-kib" firstAttribute="centerX" secondItem="6Dl-2q-0Fe" secondAttribute="centerX" id="nRh-R0-SCX"/>
+                            <constraint firstItem="Ugv-ny-iPU" firstAttribute="top" secondItem="meC-y5-8Jf" secondAttribute="bottom" constant="16" id="p73-Lq-aap"/>
+                            <constraint firstItem="m3d-mX-4J6" firstAttribute="leading" secondItem="6Dl-2q-0Fe" secondAttribute="leading" constant="16" id="zvH-UL-v4K"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                    <connections>
+                        <outlet property="averageLbl" destination="581-Nb-iai" id="peK-G1-ya7"/>
+                        <outlet property="dateCreatedLbl" destination="pdj-hj-TxH" id="0ds-XZ-Vja"/>
+                        <outlet property="okButton" destination="aqQ-mw-kib" id="237-Wh-42v"/>
+                        <outlet property="titleLbl" destination="Ugv-ny-iPU" id="RAp-FE-mMU"/>
+                        <outlet property="totalLbl" destination="n3R-RP-kXb" id="ImL-VL-Oez"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rM0-2b-F7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="903"/>
         </scene>
     </scenes>
     <resources>

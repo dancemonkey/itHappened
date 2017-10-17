@@ -188,6 +188,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.present(vc, animated: true, completion: nil)
       }
     }
+    let info = UITableViewRowAction(style: .normal, title: "Info    ") { (action, index) in
+      // launch info popover
+    }
     delete.backgroundColor = Settings().colorTheme[.accent3]
     return [delete, edit]
   }
