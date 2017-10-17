@@ -200,7 +200,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     case .move:
       if let indexPath = indexPath {
         var resetHeader = false
-        if let sections = frc.sections {
+        if frc.sections != nil {
           let count = tableView.numberOfRows(inSection: indexPath.section)
           if count > 1 {
             resetHeader = true

@@ -63,11 +63,7 @@ public class Activity: NSManagedObject {
     let allInstances = instance?.sortedArray(using: [NSSortDescriptor(key: "date", ascending: true)])
     let totalCount = Double(allInstances!.count)
     let earlierDate = (allInstances?.first as! Instance).date! as Date
-    print(earlierDate)
-    let recentDate = (allInstances?.last as! Instance).date! as Date
-    print(recentDate)
-    let diff = Double(recentDate.interval(ofComponent: .day, fromDate: earlierDate)) + 1
-    print(diff)
+    let diff = Double(Date().interval(ofComponent: .day, fromDate: earlierDate)) + 1
     
     return totalCount / diff
   }
