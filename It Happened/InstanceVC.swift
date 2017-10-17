@@ -199,8 +199,17 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
       }
     case .move:
       if let indexPath = indexPath {
+        var resetHeader = false
+        if let sections = frc.sections {
+          let count = tableView.numberOfRows(inSection: indexPath.section)
+          if count > 1 {
+            resetHeader = true
+          }
+        }
         tableView.deleteRows(at: [indexPath], with: .fade)
-        setHeader(forSection: indexPath.section)
+        if resetHeader {
+          setHeader(forSection: indexPath.section)
+        }
       }
       if let new = newIndexPath {
         tableView.insertRows(at: [new], with: .fade)
