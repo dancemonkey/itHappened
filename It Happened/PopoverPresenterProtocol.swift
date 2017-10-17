@@ -15,6 +15,15 @@ public protocol PopoverPresenter {
 }
 
 public extension PopoverPresenter {
+  
+  func activityInfo(forActivity activity: Activity) -> ActivityInfoVC {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewController(withIdentifier: "activityInfoPopover") as! ActivityInfoVC
+    vc.modalPresentationStyle = .popover
+    vc.activity = activity
+    return vc
+  }
+  
   func deleteConfirmation(forObject object: NSManagedObject, isActivity: Bool) -> DeleteConfirmationVC {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewController(withIdentifier: "deleteConfirmation") as! DeleteConfirmationVC

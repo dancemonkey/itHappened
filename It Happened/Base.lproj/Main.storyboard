@@ -649,26 +649,26 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="OK"/>
                                 <connections>
-                                    <action selector="okPressedWithSender:" destination="gsw-Oo-NV6" eventType="touchUpInside" id="Fu3-Ra-uWy"/>
+                                    <action selector="okButtonPressed" destination="gsw-Oo-NV6" eventType="touchUpInside" id="0vp-I1-xcN"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m3d-mX-4J6" userLabel="Labels">
-                                <rect key="frame" x="16" y="52.5" width="268" height="77.5"/>
+                                <rect key="frame" x="32" y="52.5" width="236" height="77.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Created:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdj-hj-TxH">
-                                        <rect key="frame" x="0.0" y="0.0" width="268" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Instances:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3R-RP-kXb">
-                                        <rect key="frame" x="0.0" y="28.5" width="268" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="236" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avg / Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="581-Nb-iai">
-                                        <rect key="frame" x="0.0" y="57" width="268" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="57" width="236" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -678,13 +678,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="m3d-mX-4J6" secondAttribute="trailing" constant="16" id="D5I-Jn-hVH"/>
+                            <constraint firstAttribute="trailing" secondItem="m3d-mX-4J6" secondAttribute="trailing" constant="32" id="D5I-Jn-hVH"/>
                             <constraint firstItem="m3d-mX-4J6" firstAttribute="top" secondItem="Ugv-ny-iPU" secondAttribute="bottom" constant="16" id="Ti7-sQ-rpY"/>
                             <constraint firstItem="xgq-Ob-WLl" firstAttribute="top" secondItem="aqQ-mw-kib" secondAttribute="bottom" constant="16" id="fAr-Nr-d7u"/>
                             <constraint firstItem="Ugv-ny-iPU" firstAttribute="centerX" secondItem="6Dl-2q-0Fe" secondAttribute="centerX" id="ham-hP-tRU"/>
                             <constraint firstItem="aqQ-mw-kib" firstAttribute="centerX" secondItem="6Dl-2q-0Fe" secondAttribute="centerX" id="nRh-R0-SCX"/>
                             <constraint firstItem="Ugv-ny-iPU" firstAttribute="top" secondItem="meC-y5-8Jf" secondAttribute="bottom" constant="16" id="p73-Lq-aap"/>
-                            <constraint firstItem="m3d-mX-4J6" firstAttribute="leading" secondItem="6Dl-2q-0Fe" secondAttribute="leading" constant="16" id="zvH-UL-v4K"/>
+                            <constraint firstItem="m3d-mX-4J6" firstAttribute="leading" secondItem="6Dl-2q-0Fe" secondAttribute="leading" constant="32" id="zvH-UL-v4K"/>
                         </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>

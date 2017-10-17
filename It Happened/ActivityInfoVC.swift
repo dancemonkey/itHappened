@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ActivityInfoVC: UIViewController {
+public class ActivityInfoVC: UIViewController, AudioPlayer {
   
   public var audioPlayer: AVAudioPlayer?
   
@@ -21,10 +21,30 @@ class ActivityInfoVC: UIViewController {
   @IBOutlet weak var okButton: BaseButton!
   
   let generator = UINotificationFeedbackGenerator()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+  var activity: Activity?
+  
+  override public func viewDidLoad() {
+    super.viewDidLoad()
+    titleLbl.textColor = Settings().colorTheme[.primary]
+    let labelFont = UIFont.systemFont(ofSize: 12, weight: .thin)
+    titleLbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+    dateCreatedLbl.font = labelFont
+    totalLbl.font = labelFont
+    averageLbl.font = labelFont
+    okButton.backgroundColor = Settings().colorTheme[.accent1]
+    if let activity = activity {
+      titleLbl.text = activity.name
+      let formatter = DateFormatter()
+      formatter.dateFormat = "EEEE, MMM d, yyyy"
+      dateCreatedLbl.text = "Created: \(formatter.string(from: activity.created! as Date))"
+      totalLbl.text = "Total: \(String(describing: activity.instance!.count))"
+      averageLbl.text = "Average / day: not coded yet"
     }
+  }
+  
+  @IBAction func okButtonPressed() {
+    self.dismiss(animated: true, completion: nil)
+    playSound(called: Sound.buttonPress)
+  }
   
 }

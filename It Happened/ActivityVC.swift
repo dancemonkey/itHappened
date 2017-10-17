@@ -189,10 +189,18 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       }
     }
     let info = UITableViewRowAction(style: .normal, title: "Info    ") { (action, index) in
-      // launch info popover
+      let vc = self.activityInfo(forActivity: self.frc.object(at: indexPath))
+      let popOverPresentationController = vc.popoverPresentationController
+      if let popOverPC = popOverPresentationController {
+        popOverPC.sourceView = self.view
+        popOverPC.delegate = self
+        popOverPC.permittedArrowDirections = .init(rawValue: 0)
+        popOverPC.sourceRect = self.view.bounds
+        self.present(vc, animated: true, completion: nil)
+      }
     }
     delete.backgroundColor = Settings().colorTheme[.accent3]
-    return [delete, edit]
+    return [delete, edit, info]
   }
   
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
