@@ -65,7 +65,7 @@ public class Activity: NSManagedObject {
     let earlierDate = (allInstances?.first as! Instance).date! as Date
     let diff = Double(Date().interval(ofComponent: .day, fromDate: earlierDate)) + 1
     
-    return totalCount / diff
+    return (totalCount / diff).roundTo(2)
   }
 
 }
