@@ -200,7 +200,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       }
     }
     delete.backgroundColor = Settings().colorTheme[.accent3]
-    return [delete, edit, info]
+    info.backgroundColor = Settings().colorTheme[.accent1]
+    return [info, edit, delete]
   }
   
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
