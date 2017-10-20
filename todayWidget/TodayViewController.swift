@@ -47,6 +47,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     tableView.delegate = self
     
     frc = getFrc()
+    
+    do {
+      try frc?.performFetch()
+    } catch {
+      print("stop trying to make fetch happen")
+    }
   }
   
   override func didReceiveMemoryWarning() {
