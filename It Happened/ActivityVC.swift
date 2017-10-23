@@ -209,7 +209,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    var objects = frc.fetchedObjects as! [Activity]
+    var objects = frc.fetchedObjects! //as! [Activity]
     self.frc.delegate = nil
     
     let object = objects[sourceIndexPath.row]
