@@ -98,6 +98,7 @@
 		1034A8FA1F9A72D500174411 /* todayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = todayWidget.entitlements; sourceTree = "<group>"; };
 		1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityPopoverVC.swift; sourceTree = "<group>"; };
 		1040F4941F65DBC700893F7D /* IncrementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementButton.swift; sourceTree = "<group>"; };
+		1042BAB81F9E1E3800888169 /* It_Happened SortOrder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "It_Happened SortOrder.xcdatamodel"; sourceTree = "<group>"; };
 		104463671F5AF33D00312E5A /* InstanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceCell.swift; sourceTree = "<group>"; };
 		104463691F5B001600312E5A /* EditInstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInstanceVC.swift; sourceTree = "<group>"; };
 		1044636B1F5B048800312E5A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
@@ -785,6 +786,7 @@
 		10A7DF081F584CE8004C4F61 /* It_Happened.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1042BAB81F9E1E3800888169 /* It_Happened SortOrder.xcdatamodel */,
 				10A7DF091F584CE8004C4F61 /* It_Happened.xcdatamodel */,
 			);
 			currentVersion = 10A7DF091F584CE8004C4F61 /* It_Happened.xcdatamodel */;
