@@ -22,6 +22,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   var audioPlayer: AVAudioPlayer?
   var generator = UINotificationFeedbackGenerator()
   var settings = Settings()
+  var longPress: UILongPressGestureRecognizer?
   
   fileprivate var frc: NSFetchedResultsController<Activity> = {
     let dm = DataManager()
@@ -47,6 +48,60 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     updateView()
     themeSwitch.setOn(settings.getColorThemeName() == .dark, animated: false)
     styleViews()
+    longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressStarted(sender:)))
+    view.addGestureRecognizer(longPress!)
+  }
+  
+  @objc func longPressStarted(sender: UILongPressGestureRecognizer) {
+    let state = sender.state
+    let location = sender.location(in: self.tableView)
+    let indexPath = tableView.indexPathForRow(at: location)
+    
+    var snapshot: UIView? = nil
+    var sourceIndexPath: IndexPath? = nil
+    
+    switch state {
+    case .began:
+      if indexPath != nil {
+        sourceIndexPath = indexPath
+        let cell = self.tableView.cellForRow(at: indexPath!)!
+        snapshot = customSnapshotFromView(inputView: cell)
+        var center = cell.center
+        snapshot!.center = center
+        snapshot!.alpha = 0.0
+        tableView.addSubview(snapshot!)
+        
+        UIView.animate(withDuration: 0.25, animations: {
+          center.y = location.y
+          snapshot!.center = center
+          snapshot!.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+          snapshot!.alpha = 0.98
+          
+          cell.alpha = 0.0
+        }, completion: { (finished) in
+          cell.isHidden = true
+        })
+        
+      }
+    default:
+      break
+    }
+  }
+  
+  func customSnapshotFromView(inputView: UIView) -> UIView {
+    UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
+    inputView.layer.render(in: UIGraphicsGetCurrentContext()!)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    let snapshot = UIImageView.init(image: image)
+    snapshot.layer.masksToBounds = false
+    snapshot.layer.cornerRadius = 0.0
+    snapshot.layer.shadowRadius = 5.0
+    snapshot.layer.shadowOffset = CGSize(width: -5, height: -0)
+    snapshot.layer.shadowOpacity = 0.4
+    
+    return shapshot
   }
   
   func styleViews() {
