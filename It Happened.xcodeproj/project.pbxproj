@@ -19,7 +19,6 @@
 		1034A8EF1F9A6F7F00174411 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1034A8ED1F9A6F7F00174411 /* MainInterface.storyboard */; };
 		1034A8F31F9A6F7F00174411 /* todayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1034A8E71F9A6F7F00174411 /* todayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1034A8F81F9A712400174411 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1034A8EB1F9A6F7F00174411 /* TodayViewController.swift */; };
-		1034A8FB1F9A735400174411 /* It_Happened.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF081F584CE8004C4F61 /* It_Happened.xcdatamodeld */; };
 		1034A8FC1F9A736500174411 /* Instance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CB1F585BB700D06941 /* Instance+CoreDataClass.swift */; };
 		1034A8FD1F9A736500174411 /* Instance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */; };
 		1034A8FE1F9A736500174411 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */; };
@@ -27,6 +26,7 @@
 		1034A9001F9A737E00174411 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72B1F60204C00F36249 /* Extensions.swift */; };
 		1039AE951F6C182300218D5B /* NewActivityPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */; };
 		1040F4951F65DBC700893F7D /* IncrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040F4941F65DBC700893F7D /* IncrementButton.swift */; };
+		1042BABE1F9E1FE800888169 /* It_Happened.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1042BABC1F9E1FE800888169 /* It_Happened.xcdatamodeld */; };
 		104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463671F5AF33D00312E5A /* InstanceCell.swift */; };
 		1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463691F5B001600312E5A /* EditInstanceVC.swift */; };
 		1044636C1F5B048800312E5A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044636B1F5B048800312E5A /* BaseButton.swift */; };
@@ -40,7 +40,6 @@
 		10A7DF021F584CE8004C4F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF011F584CE8004C4F61 /* AppDelegate.swift */; };
 		10A7DF041F584CE8004C4F61 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF031F584CE8004C4F61 /* ActivityVC.swift */; };
 		10A7DF071F584CE8004C4F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DF051F584CE8004C4F61 /* Main.storyboard */; };
-		10A7DF0A1F584CE8004C4F61 /* It_Happened.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF081F584CE8004C4F61 /* It_Happened.xcdatamodeld */; };
 		10A7DF0C1F584CE8004C4F61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DF0B1F584CE8004C4F61 /* Assets.xcassets */; };
 		10A7DF0F1F584CE8004C4F61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DF0D1F584CE8004C4F61 /* LaunchScreen.storyboard */; };
 		10A7DF171F585153004C4F61 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF161F585153004C4F61 /* DataManager.swift */; };
@@ -98,7 +97,7 @@
 		1034A8FA1F9A72D500174411 /* todayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = todayWidget.entitlements; sourceTree = "<group>"; };
 		1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityPopoverVC.swift; sourceTree = "<group>"; };
 		1040F4941F65DBC700893F7D /* IncrementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementButton.swift; sourceTree = "<group>"; };
-		1042BAB81F9E1E3800888169 /* It_Happened SortOrder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "It_Happened SortOrder.xcdatamodel"; sourceTree = "<group>"; };
+		1042BABD1F9E1FE800888169 /* It_Happened.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = It_Happened.xcdatamodel; sourceTree = "<group>"; };
 		104463671F5AF33D00312E5A /* InstanceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceCell.swift; sourceTree = "<group>"; };
 		104463691F5B001600312E5A /* EditInstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInstanceVC.swift; sourceTree = "<group>"; };
 		1044636B1F5B048800312E5A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
@@ -113,7 +112,6 @@
 		10A7DF011F584CE8004C4F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10A7DF031F584CE8004C4F61 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
 		10A7DF061F584CE8004C4F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		10A7DF091F584CE8004C4F61 /* It_Happened.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = It_Happened.xcdatamodel; sourceTree = "<group>"; };
 		10A7DF0B1F584CE8004C4F61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10A7DF0E1F584CE8004C4F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10A7DF101F584CE8004C4F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,7 +234,7 @@
 				10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */,
 				10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */,
 				10F926CE1F585BB700D06941 /* Activity+CoreDataProperties.swift */,
-				10A7DF081F584CE8004C4F61 /* It_Happened.xcdatamodeld */,
+				1042BABC1F9E1FE800888169 /* It_Happened.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -487,7 +485,6 @@
 				1034A8FF1F9A736500174411 /* Activity+CoreDataProperties.swift in Sources */,
 				1034A8EC1F9A6F7F00174411 /* TodayViewController.swift in Sources */,
 				1034A8FC1F9A736500174411 /* Instance+CoreDataClass.swift in Sources */,
-				1034A8FB1F9A735400174411 /* It_Happened.xcdatamodeld in Sources */,
 				1034A9001F9A737E00174411 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,11 +514,11 @@
 				105AD72C1F60204C00F36249 /* Extensions.swift in Sources */,
 				106C3A7D1F647D2800E3D7F3 /* NewButton.swift in Sources */,
 				1044636C1F5B048800312E5A /* BaseButton.swift in Sources */,
+				1042BABE1F9E1FE800888169 /* It_Happened.xcdatamodeld in Sources */,
 				104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */,
 				107F788E1F92373C00834CE0 /* Animations.swift in Sources */,
 				1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */,
 				1039AE951F6C182300218D5B /* NewActivityPopoverVC.swift in Sources */,
-				10A7DF0A1F584CE8004C4F61 /* It_Happened.xcdatamodeld in Sources */,
 				101AE24A1F617A7A00F2EC17 /* Delegates.swift in Sources */,
 				101AE2481F61798B00F2EC17 /* DatePickerVC.swift in Sources */,
 			);
@@ -783,13 +780,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		10A7DF081F584CE8004C4F61 /* It_Happened.xcdatamodeld */ = {
+		1042BABC1F9E1FE800888169 /* It_Happened.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1042BAB81F9E1E3800888169 /* It_Happened SortOrder.xcdatamodel */,
-				10A7DF091F584CE8004C4F61 /* It_Happened.xcdatamodel */,
+				1042BABD1F9E1FE800888169 /* It_Happened.xcdatamodel */,
 			);
-			currentVersion = 10A7DF091F584CE8004C4F61 /* It_Happened.xcdatamodel */;
+			currentVersion = 1042BABD1F9E1FE800888169 /* It_Happened.xcdatamodel */;
 			path = It_Happened.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

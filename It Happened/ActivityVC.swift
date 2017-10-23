@@ -27,7 +27,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let dm = DataManager()
     let context = dm.context
     let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: true)]
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true), NSSortDescriptor(key: "created", ascending: true)]
     let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
   }()
@@ -208,6 +208,25 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     return true
   }
   
+  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    var objects = frc.fetchedObjects as! [Activity]
+    self.frc.delegate = nil
+    
+    let object = objects[sourceIndexPath.row]
+    objects.remove(at: sourceIndexPath.row)
+    objects.insert(object, at: destinationIndexPath.row)
+    
+    var i: Int32 = 0
+    for object in objects {
+      object.sortOrder = i
+      i = i + 1
+    }
+    
+    DataManager().save()
+    
+    frc.delegate = self
+  }
+  
   // MARK: NSFetchedResultsController
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -230,6 +249,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     case .delete:
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+    case .move:
+      if let indexPath = indexPath, let newIndexPath = newIndexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.insertRows(at: [newIndexPath], with: .fade)
       }
     default:
       print("default we messed up")
