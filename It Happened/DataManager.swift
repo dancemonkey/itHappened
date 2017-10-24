@@ -26,6 +26,7 @@ class DataManager {
     let activity = Activity(context: context)
     activity.name = name
     activity.created = Date() as NSDate
+    activity.sortOrder = Int32(try! self.context.count(for: Activity.fetchRequest()))
   }
   
   func setLastOpen() {

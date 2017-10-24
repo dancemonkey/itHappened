@@ -23,6 +23,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   var generator = UINotificationFeedbackGenerator()
   var settings = Settings()
   var longPress: UILongPressGestureRecognizer?
+  var snapshot: UIView? = nil
+  var sourceIndexPath: IndexPath? = nil
   
   fileprivate var frc: NSFetchedResultsController<Activity> = {
     let dm = DataManager()
@@ -57,9 +59,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let location = sender.location(in: self.tableView)
     let indexPath = tableView.indexPathForRow(at: location)
     
-    var snapshot: UIView? = nil
-    var sourceIndexPath: IndexPath? = nil
-    
     switch state {
     case .began:
       if indexPath != nil {
@@ -73,18 +72,66 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         UIView.animate(withDuration: 0.25, animations: {
           center.y = location.y
-          snapshot!.center = center
-          snapshot!.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-          snapshot!.alpha = 0.98
+          self.snapshot!.center = center
+          self.snapshot!.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+          self.snapshot!.alpha = 0.98
           
           cell.alpha = 0.0
         }, completion: { (finished) in
           cell.isHidden = true
         })
+      }
+    case .changed:
+      var center = snapshot!.center
+      center.y = location.y
+      snapshot!.center = center
+      
+      if indexPath != nil && !(indexPath! == sourceIndexPath!) {
         
+        frc.delegate = nil
+        var objects = frc.fetchedObjects!
+        let objectToMove = objects.remove(at: sourceIndexPath!.row)
+        objects.insert(objectToMove, at: indexPath!.row)
+        objectToMove.setSortOrder(to: indexPath!.row)
+        var position = 0
+        for object in objects {
+          object.setSortOrder(to: position)
+          position = position + 1
+        }
+        DataManager().save()
+        tableView.moveRow(at: sourceIndexPath!, to: indexPath!)
+        sourceIndexPath = indexPath
+        frc.delegate = self
+        
+        // this succesfully sets new sort order for the object that was moved, but not for rest of table
+        
+//        frc.delegate = nil
+//        let object = frc.fetchedObjects![sourceIndexPath!.row]
+//        object.setSortOrder(to: Int(indexPath!.row))
+//        print("set \(object.name) to \(object.sortOrder)")
+//        try! frc.performFetch()
+//        var newOrder = 0
+//        for object in frc.fetchedObjects! {
+//          object.setSortOrder(to: newOrder)
+//          newOrder = newOrder + 1
+//        }
+//        DataManager().save()
+//        frc.delegate = self
       }
     default:
-      break
+      let cell = tableView.cellForRow(at: sourceIndexPath!)
+      cell?.isHidden = false
+      cell?.alpha = 0.0
+      UIView.animate(withDuration: 0.25, animations: {
+        self.snapshot!.center = cell!.center
+        self.snapshot!.transform = CGAffineTransform.identity
+        self.snapshot!.alpha = 0.0
+        cell?.alpha = 1.0
+      }, completion: { (finished) in
+        self.sourceIndexPath = nil
+        self.snapshot?.removeFromSuperview()
+        self.snapshot = nil
+      })
     }
   }
   
@@ -101,7 +148,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     snapshot.layer.shadowOffset = CGSize(width: -5, height: -0)
     snapshot.layer.shadowOpacity = 0.4
     
-    return shapshot
+    return snapshot
   }
   
   func styleViews() {
@@ -207,6 +254,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if let cell = tableView.dequeueReusableCell(withIdentifier: CellIDs.activityCell) as? ActivityCell {
       configure(cell: cell, at: indexPath)
+      print(frc.fetchedObjects![indexPath.row].sortOrder)
       return cell
     }
     return ActivityCell()
@@ -263,25 +311,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     return true
   }
   
-  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    var objects = frc.fetchedObjects! //as! [Activity]
-    self.frc.delegate = nil
-    
-    let object = objects[sourceIndexPath.row]
-    objects.remove(at: sourceIndexPath.row)
-    objects.insert(object, at: destinationIndexPath.row)
-    
-    var i: Int32 = 0
-    for object in objects {
-      object.sortOrder = i
-      i = i + 1
-    }
-    
-    DataManager().save()
-    
-    frc.delegate = self
-  }
-  
   // MARK: NSFetchedResultsController
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -310,8 +339,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         tableView.deleteRows(at: [indexPath], with: .fade)
         tableView.insertRows(at: [newIndexPath], with: .fade)
       }
-    default:
-      print("default we messed up")
     }
   }
   
