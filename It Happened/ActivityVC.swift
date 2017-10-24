@@ -26,17 +26,20 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   var snapshot: UIView? = nil
   var sourceIndexPath: IndexPath? = nil
   
-  fileprivate var frc: NSFetchedResultsController<Activity> = {
-    let dm = DataManager()
-    let context = dm.context
-    let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true), NSSortDescriptor(key: "created", ascending: true)]
-    let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-    return fetchedResultsController
-  }()
+  //  fileprivate var frc: NSFetchedResultsController<Activity> = {
+  //    let dm = DataManager()
+  //    let context = dm.context
+  //    let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+  //    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true), NSSortDescriptor(key: "created", ascending: true)]
+  //    let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+  //    return fetchedResultsController
+  //  }()
+  
+  var frc: NSFetchedResultsController<Activity>!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    frc = initializeFRC()
     setupAudioSession()
     NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.appBecameActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     tableView.delegate = self
@@ -52,6 +55,15 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     styleViews()
     longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressStarted(sender:)))
     view.addGestureRecognizer(longPress!)
+  }
+  
+  func initializeFRC() -> NSFetchedResultsController<Activity> {
+    let dm = DataManager()
+    let context = dm.context
+    let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true), NSSortDescriptor(key: "created", ascending: true)]
+    let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    return fetchedResultsController
   }
   
   @objc func longPressStarted(sender: UILongPressGestureRecognizer) {
@@ -85,38 +97,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       var center = snapshot!.center
       center.y = location.y
       snapshot!.center = center
-      
       if indexPath != nil && !(indexPath! == sourceIndexPath!) {
-        
-        frc.delegate = nil
-        var objects = frc.fetchedObjects!
-        let objectToMove = objects.remove(at: sourceIndexPath!.row)
-        objects.insert(objectToMove, at: indexPath!.row)
-        objectToMove.setSortOrder(to: indexPath!.row)
-        var position = 0
-        for object in objects {
-          object.setSortOrder(to: position)
-          position = position + 1
-        }
-        DataManager().save()
         tableView.moveRow(at: sourceIndexPath!, to: indexPath!)
         sourceIndexPath = indexPath
-        frc.delegate = self
-        
-        // this succesfully sets new sort order for the object that was moved, but not for rest of table
-        
-//        frc.delegate = nil
-//        let object = frc.fetchedObjects![sourceIndexPath!.row]
-//        object.setSortOrder(to: Int(indexPath!.row))
-//        print("set \(object.name) to \(object.sortOrder)")
-//        try! frc.performFetch()
-//        var newOrder = 0
-//        for object in frc.fetchedObjects! {
-//          object.setSortOrder(to: newOrder)
-//          newOrder = newOrder + 1
-//        }
-//        DataManager().save()
-//        frc.delegate = self
       }
     default:
       let cell = tableView.cellForRow(at: sourceIndexPath!)
@@ -356,6 +339,5 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       destVC?.activity = activity
     }
   }
-  
 }
 
