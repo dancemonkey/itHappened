@@ -25,15 +25,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   var longPress: UILongPressGestureRecognizer?
   var snapshot: UIView? = nil
   var sourceIndexPath: IndexPath? = nil
-  
-  //  fileprivate var frc: NSFetchedResultsController<Activity> = {
-  //    let dm = DataManager()
-  //    let context = dm.context
-  //    let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
-  //    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true), NSSortDescriptor(key: "created", ascending: true)]
-  //    let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-  //    return fetchedResultsController
-  //  }()
+  var isUserDrivenUpate: Bool = false
   
   var frc: NSFetchedResultsController<Activity>!
   
@@ -248,6 +240,26 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     performSegue(withIdentifier: SegueIDs.showInstanceList, sender: self)
   }
   
+  func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    print("moveRowAt called")
+    isUserDrivenUpate = true
+    var objects = frc.fetchedObjects!
+    let object = objects.remove(at: sourceIndexPath.row)
+    objects.insert(object, at: destinationIndexPath.row)
+    
+    var i = 0
+    for object in objects {
+      object.sortOrder = Int32(i)
+      i = i + 1
+    }
+    DataManager().save()
+    isUserDrivenUpate = false
+  }
+  
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
   }
   
@@ -306,6 +318,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    
+    guard isUserDrivenUpate == false else {
+      return
+    }
+    
     switch (type) {
     case .update:
       tableView.reloadRows(at: [indexPath!], with: .fade)
