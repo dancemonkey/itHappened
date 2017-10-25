@@ -16,12 +16,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   var activities: [Activity]?
   
   lazy var persistentContainer: NSPersistentContainer = {
-    /*
-     The persistent container for the application. This implementation
-     creates and returns a container, having loaded the store for the
-     application to it. This property is optional since there are legitimate
-     error conditions that could cause the creation of the store to fail.
-     */
     let container = NSPersistentContainer(name: "It_Happened")
     var persistentStoreDescriptions: NSPersistentStoreDescription
     let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.drewlanning.It-Happened.todayWidget")?.appendingPathComponent("It_Happened.sqlite")
@@ -69,10 +63,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
       print("stop trying to make fetch happen")
     }
     
-    // If an error is encountered, use NCUpdateResult.Failed
-    // If there's no update required, use NCUpdateResult.NoData
-    // If there's an update, use NCUpdateResult.NewData
-    
     completionHandler(NCUpdateResult.newData)
   }
   
@@ -92,7 +82,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   func getFrc() -> NSFetchedResultsController<Activity> {
     let context = persistentContainer.viewContext
     let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: true)]
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true),NSSortDescriptor(key: "created", ascending: true)]
     let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
   }
@@ -103,7 +93,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return frc?.fetchedObjects?.count ?? 0
+    let count = frc?.fetchedObjects?.count ?? 0
+    return count <= 3 ? count : 3
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
