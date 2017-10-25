@@ -46,7 +46,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
       try frc?.performFetch()
     } catch {
       print("stop trying to make fetch happen")
-    }
+    }    
   }
   
   override func didReceiveMemoryWarning() {
@@ -64,6 +64,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     }
     
     completionHandler(NCUpdateResult.newData)
+  }
+  
+  func configure(cell: TodayViewCell, at indexPath: IndexPath, withContext context: NSManagedObjectContext) {
+    cell.configureCell(with: frc!.object(at: indexPath), inContext: context)
   }
   
   // CoreData
@@ -98,8 +102,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
-    cell.textLabel?.text = (frc?.fetchedObjects![indexPath.row])?.name ?? "No activities fetched"
+    let cell = tableView.dequeueReusableCell(withIdentifier: "todayViewCell") as! TodayViewCell
+    configure(cell: cell, at: indexPath, withContext: persistentContainer.viewContext)
     return cell
   }
   

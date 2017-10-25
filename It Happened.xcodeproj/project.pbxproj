@@ -49,6 +49,11 @@
 		10E2C7B41F732852002D1073 /* analogue_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10E2C7B31F732850002D1073 /* analogue_click1.wav */; };
 		10E2C7B61F7328D7002D1073 /* techy_affirm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10E2C7B51F7328D5002D1073 /* techy_affirm.wav */; };
 		10EA3EA61F7158AD00778ADF /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */; };
+		10EDEE311FA0CCE40079091E /* TodayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EDEE301FA0CCE40079091E /* TodayViewCell.swift */; };
+		10EDEE321FA0CE030079091E /* IncrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040F4941F65DBC700893F7D /* IncrementButton.swift */; };
+		10EDEE331FA0CEAB0079091E /* TodayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EDEE301FA0CCE40079091E /* TodayViewCell.swift */; };
+		10EDEE351FA0DAC30079091E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102942B31F74AD700042F87B /* Settings.swift */; };
+		10EDEE361FA0DAD30079091E /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF181F58515C004C4F61 /* Style.swift */; };
 		10F926CF1F585BB700D06941 /* Instance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CB1F585BB700D06941 /* Instance+CoreDataClass.swift */; };
 		10F926D01F585BB700D06941 /* Instance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */; };
 		10F926D11F585BB700D06941 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */; };
@@ -122,6 +127,7 @@
 		10E2C7B31F732850002D1073 /* analogue_click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = analogue_click1.wav; sourceTree = "<group>"; };
 		10E2C7B51F7328D5002D1073 /* techy_affirm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = techy_affirm.wav; sourceTree = "<group>"; };
 		10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		10EDEE301FA0CCE40079091E /* TodayViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewCell.swift; sourceTree = "<group>"; };
 		10F926CB1F585BB700D06941 /* Instance+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instance+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 			children = (
 				1034A8FA1F9A72D500174411 /* todayWidget.entitlements */,
 				1034A8EB1F9A6F7F00174411 /* TodayViewController.swift */,
+				10EDEE301FA0CCE40079091E /* TodayViewCell.swift */,
 				1034A8ED1F9A6F7F00174411 /* MainInterface.storyboard */,
 				1034A8F01F9A6F7F00174411 /* Info.plist */,
 			);
@@ -481,11 +488,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1034A8FD1F9A736500174411 /* Instance+CoreDataProperties.swift in Sources */,
+				10EDEE321FA0CE030079091E /* IncrementButton.swift in Sources */,
 				1034A8FE1F9A736500174411 /* Activity+CoreDataClass.swift in Sources */,
 				1034A8FF1F9A736500174411 /* Activity+CoreDataProperties.swift in Sources */,
 				1034A8EC1F9A6F7F00174411 /* TodayViewController.swift in Sources */,
 				1034A8FC1F9A736500174411 /* Instance+CoreDataClass.swift in Sources */,
+				10EDEE351FA0DAC30079091E /* Settings.swift in Sources */,
+				10EDEE311FA0CCE40079091E /* TodayViewCell.swift in Sources */,
 				1034A9001F9A737E00174411 /* Extensions.swift in Sources */,
+				10EDEE361FA0DAD30079091E /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +526,7 @@
 				106C3A7D1F647D2800E3D7F3 /* NewButton.swift in Sources */,
 				1044636C1F5B048800312E5A /* BaseButton.swift in Sources */,
 				1042BABE1F9E1FE800888169 /* It_Happened.xcdatamodeld in Sources */,
+				10EDEE331FA0CEAB0079091E /* TodayViewCell.swift in Sources */,
 				104463681F5AF33D00312E5A /* InstanceCell.swift in Sources */,
 				107F788E1F92373C00834CE0 /* Animations.swift in Sources */,
 				1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */,
