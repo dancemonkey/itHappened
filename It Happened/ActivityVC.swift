@@ -92,7 +92,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       if indexPath != nil && !(indexPath! == sourceIndexPath!) {
         tableView.moveRow(at: sourceIndexPath!, to: indexPath!)
         
-        // test putting this here
         isUserDrivenUpate = true
         var objects = frc.fetchedObjects!
         let object = objects.remove(at: sourceIndexPath!.row)
@@ -105,7 +104,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
         DataManager().save()
         isUserDrivenUpate = false
-        // end test
         
         sourceIndexPath = indexPath
       }
@@ -258,22 +256,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
     return true
-  }
-  
-  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    print("moveRowAt called")
-    isUserDrivenUpate = true
-    var objects = frc.fetchedObjects!
-    let object = objects.remove(at: sourceIndexPath.row)
-    objects.insert(object, at: destinationIndexPath.row)
-    
-    var i = 0
-    for object in objects {
-      object.sortOrder = Int32(i)
-      i = i + 1
-    }
-    DataManager().save()
-    isUserDrivenUpate = false
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
