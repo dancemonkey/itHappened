@@ -91,6 +91,22 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       snapshot!.center = center
       if indexPath != nil && !(indexPath! == sourceIndexPath!) {
         tableView.moveRow(at: sourceIndexPath!, to: indexPath!)
+        
+        // test putting this here
+        isUserDrivenUpate = true
+        var objects = frc.fetchedObjects!
+        let object = objects.remove(at: sourceIndexPath!.row)
+        objects.insert(object, at: indexPath!.row)
+        
+        var i = 0
+        for object in objects {
+          object.sortOrder = Int32(i)
+          i = i + 1
+        }
+        DataManager().save()
+        isUserDrivenUpate = false
+        // end test
+        
         sourceIndexPath = indexPath
       }
     default:
@@ -318,11 +334,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-    
     guard isUserDrivenUpate == false else {
       return
     }
-    
     switch (type) {
     case .update:
       tableView.reloadRows(at: [indexPath!], with: .fade)
