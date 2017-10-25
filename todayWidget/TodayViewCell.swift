@@ -13,6 +13,7 @@ class TodayViewCell: UITableViewCell {
   
   @IBOutlet weak var activityTitle: UILabel!
   @IBOutlet weak var newIncidentBtn: IncrementButton!
+  @IBOutlet weak var todayTotalLbl: UILabel!
   
   var addNewInstance: (() -> ())?
   let generator = UINotificationFeedbackGenerator()
@@ -26,11 +27,14 @@ class TodayViewCell: UITableViewCell {
     super.setSelected(selected, animated: animated)    
   }
   
+  func setIncrementCounter(to count: Int) {
+    self.todayTotalLbl.text = " - \(count) today"
+  }
+  
   func configureCell(with activity: Activity, inContext context: NSManagedObjectContext) {
     self.context = context
     activityTitle.text = activity.name
-//    lastIncidentLbl.text = activity.lastInstance?.getColloquialDateAndTime()
-//    setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
+    setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
     addNewInstance = { [weak self] in
       activity.addNewInstance(withContext: self!.context!)
     }
@@ -39,14 +43,14 @@ class TodayViewCell: UITableViewCell {
   
   @IBAction func activityHappened(sender: IncrementButton) {
     UIView.animate(withDuration: 0.0, delay: 0, options: .transitionCrossDissolve, animations: {
-      self.newIncidentBtn.setCheckImage()
+//      self.newIncidentBtn.setCheckImage()
       self.generator.notificationOccurred(.success)
     }, completion: { finished in
       UIView.animate(withDuration: 0.4, delay: 0.2, animations: {
-        self.newIncidentBtn.alpha = 0.0
+//        self.newIncidentBtn.alpha = 0.0
       }, completion: { (finished) in
-        self.newIncidentBtn.setDefaultImage()
-        self.newIncidentBtn.alpha = 1.0
+//        self.newIncidentBtn.setDefaultImage()
+//        self.newIncidentBtn.alpha = 1.0
         if let addNew = self.addNewInstance {
           addNew()
           try! self.context!.save()

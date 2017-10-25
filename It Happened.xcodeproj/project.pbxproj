@@ -54,6 +54,7 @@
 		10EDEE331FA0CEAB0079091E /* TodayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EDEE301FA0CCE40079091E /* TodayViewCell.swift */; };
 		10EDEE351FA0DAC30079091E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102942B31F74AD700042F87B /* Settings.swift */; };
 		10EDEE361FA0DAD30079091E /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF181F58515C004C4F61 /* Style.swift */; };
+		10EDEE371FA152590079091E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10A7DF0B1F584CE8004C4F61 /* Assets.xcassets */; };
 		10F926CF1F585BB700D06941 /* Instance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CB1F585BB700D06941 /* Instance+CoreDataClass.swift */; };
 		10F926D01F585BB700D06941 /* Instance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */; };
 		10F926D11F585BB700D06941 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */; };
@@ -392,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10EDEE371FA152590079091E /* Assets.xcassets in Resources */,
 				1034A8EF1F9A6F7F00174411 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,12 +29,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-rR-26P">
-                                                    <rect key="frame" x="16" y="9.5" width="84" height="17"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-py-Bez">
+                                                    <rect key="frame" x="16" y="8.5" width="196.5" height="18"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-rR-26P">
+                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="18"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# times today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV7-Vn-4H8">
+                                                            <rect key="frame" x="97" y="0.0" width="99.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mv-Ip-bTq" customClass="IncrementButton" customModule="It_Happened">
                                                     <rect key="frame" x="274" y="2.5" width="30" height="30"/>
                                                     <constraints>
@@ -47,8 +59,8 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="joA-rR-26P" firstAttribute="centerY" secondItem="teH-lG-9g0" secondAttribute="centerY" id="HPK-kD-LSS"/>
-                                                <constraint firstItem="joA-rR-26P" firstAttribute="leading" secondItem="teH-lG-9g0" secondAttribute="leading" constant="16" id="Ogj-VC-yyc"/>
+                                                <constraint firstItem="mRc-py-Bez" firstAttribute="leading" secondItem="teH-lG-9g0" secondAttribute="leading" constant="16" id="4AA-1b-ynz"/>
+                                                <constraint firstItem="mRc-py-Bez" firstAttribute="centerY" secondItem="teH-lG-9g0" secondAttribute="centerY" id="WyP-tP-ejR"/>
                                                 <constraint firstItem="7mv-Ip-bTq" firstAttribute="centerY" secondItem="teH-lG-9g0" secondAttribute="centerY" id="aZz-cs-qjA"/>
                                                 <constraint firstAttribute="trailing" secondItem="7mv-Ip-bTq" secondAttribute="trailing" constant="16" id="eoR-CC-Rua"/>
                                             </constraints>
@@ -56,9 +68,14 @@
                                         <connections>
                                             <outlet property="activityTitle" destination="joA-rR-26P" id="XcZ-8U-sLq"/>
                                             <outlet property="newIncidentBtn" destination="7mv-Ip-bTq" id="fkh-pF-YUT"/>
+                                            <outlet property="todayTotalLbl" destination="UV7-Vn-4H8" id="vfL-yB-fRf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="hda-OB-h3K"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="2J1-J9-Nav"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <constraints>
