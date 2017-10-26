@@ -14,6 +14,7 @@ class TodayViewCell: UITableViewCell {
   @IBOutlet weak var activityTitle: UILabel!
   @IBOutlet weak var newIncidentBtn: IncrementButton!
   @IBOutlet weak var todayTotalLbl: UILabel!
+  @IBOutlet weak var mostRecentLbl: UILabel!
   
   var addNewInstance: (() -> ())?
   let generator = UINotificationFeedbackGenerator()
@@ -28,16 +29,22 @@ class TodayViewCell: UITableViewCell {
   }
   
   func setIncrementCounter(to count: Int) {
-    self.todayTotalLbl.text = "today: \(count)"
+    self.todayTotalLbl.text = "(\(count))"
+  }
+  
+  func setMostRecent(to dateString: String?) {
+    mostRecentLbl.text = dateString != nil ? "- " + dateString! : ""
   }
   
   func configureCell(with activity: Activity, inContext context: NSManagedObjectContext) {
     self.context = context
     activityTitle.text = activity.name
     setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
+    setMostRecent(to: activity.lastInstance?.getColloquialDateAndTime())
     addNewInstance = { [weak self] in
       activity.addNewInstance(withContext: self!.context!)
       self?.setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
+      self?.setMostRecent(to: activity.lastInstance?.getColloquialDateAndTime())
     }
     self.selectionStyle = .none
   }

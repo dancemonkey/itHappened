@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,30 +28,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-py-Bez">
-                                                    <rect key="frame" x="16" y="8.5" width="242" height="18"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-py-Bez">
+                                                    <rect key="frame" x="16" y="9" width="242" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-rR-26P">
-                                                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="18"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="# times today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV7-Vn-4H8">
-                                                            <rect key="frame" x="142.5" y="0.0" width="99.5" height="18"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <rect key="frame" x="91" y="0.0" width="93.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="last" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9WW-Dw-leV">
+                                                            <rect key="frame" x="186.5" y="0.0" width="55.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mv-Ip-bTq" customClass="IncrementButton" customModule="It_Happened">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mv-Ip-bTq" customClass="IncrementButton" customModule="It_Happened">
                                                     <rect key="frame" x="274" y="2.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0lF-iL-6Lj"/>
                                                         <constraint firstAttribute="width" constant="30" id="tAa-Zk-F5l"/>
                                                     </constraints>
-                                                    <state key="normal" image="+ Button"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                                    <state key="normal" title="+">
+                                                        <color key="titleColor" red="0.027450980390000001" green="0.74509803919999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" red="0.039215686270000001" green="0.1176470588" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="activityHappenedWithSender:" destination="vex-J4-a6y" eventType="touchUpInside" id="wSe-8y-67M"/>
                                                     </connections>
@@ -68,6 +78,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="activityTitle" destination="joA-rR-26P" id="XcZ-8U-sLq"/>
+                                            <outlet property="mostRecentLbl" destination="9WW-Dw-leV" id="ejX-rX-Kq3"/>
                                             <outlet property="newIncidentBtn" destination="7mv-Ip-bTq" id="fkh-pF-YUT"/>
                                             <outlet property="todayTotalLbl" destination="UV7-Vn-4H8" id="vfL-yB-fRf"/>
                                         </connections>
@@ -98,7 +109,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="+ Button" width="75" height="75"/>
-    </resources>
 </document>
