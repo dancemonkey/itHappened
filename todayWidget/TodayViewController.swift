@@ -112,4 +112,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     return cell
   }
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("going back to app")
+  }
+  
 }

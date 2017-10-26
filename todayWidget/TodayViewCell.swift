@@ -49,10 +49,6 @@ class TodayViewCell: UITableViewCell {
     self.selectionStyle = .none
   }
   
-  @IBAction func backToAppTapped(sender: UIButton) {
-    print("tapped button to go back to app")
-  }
-  
   @IBAction func activityHappened(sender: IncrementButton) {
     UIView.animate(withDuration: 0.0, delay: 0, options: .transitionCrossDissolve, animations: {
       self.generator.notificationOccurred(.success)

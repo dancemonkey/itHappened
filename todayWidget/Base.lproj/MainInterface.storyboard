@@ -29,34 +29,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-py-Bez">
-                                                    <rect key="frame" x="16" y="3" width="242" height="30"/>
+                                                    <rect key="frame" x="16" y="9" width="242" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-rR-26P">
-                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="18"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="# times today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV7-Vn-4H8">
-                                                            <rect key="frame" x="91" y="0.0" width="93.5" height="30"/>
+                                                            <rect key="frame" x="91" y="0.0" width="93.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="last" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9WW-Dw-leV">
-                                                            <rect key="frame" x="186.5" y="0.0" width="55.5" height="30"/>
+                                                            <rect key="frame" x="186.5" y="0.0" width="55.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIG-m0-bdP">
-                                                    <rect key="frame" x="16" y="3" width="212" height="30"/>
-                                                    <connections>
-                                                        <action selector="backToAppTappedWithSender:" destination="vex-J4-a6y" eventType="touchUpInside" id="LOY-p9-CQj"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mv-Ip-bTq" customClass="IncrementButton" customModule="It_Happened">
                                                     <rect key="frame" x="274" y="2.5" width="30" height="30"/>
                                                     <constraints>
@@ -75,12 +69,8 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="NIG-m0-bdP" firstAttribute="centerY" secondItem="mRc-py-Bez" secondAttribute="centerY" id="1t2-xm-07G"/>
                                                 <constraint firstItem="7mv-Ip-bTq" firstAttribute="leading" secondItem="mRc-py-Bez" secondAttribute="trailing" constant="16" id="3m3-mt-Bcz"/>
                                                 <constraint firstItem="mRc-py-Bez" firstAttribute="leading" secondItem="teH-lG-9g0" secondAttribute="leading" constant="16" id="4AA-1b-ynz"/>
-                                                <constraint firstItem="NIG-m0-bdP" firstAttribute="height" secondItem="mRc-py-Bez" secondAttribute="height" id="BWt-sb-S9u"/>
-                                                <constraint firstItem="NIG-m0-bdP" firstAttribute="leading" secondItem="mRc-py-Bez" secondAttribute="leading" id="Eoq-z7-Xhc"/>
-                                                <constraint firstItem="NIG-m0-bdP" firstAttribute="trailing" secondItem="mRc-py-Bez" secondAttribute="trailing" constant="-30" id="P0j-Gk-LLl"/>
                                                 <constraint firstItem="mRc-py-Bez" firstAttribute="centerY" secondItem="teH-lG-9g0" secondAttribute="centerY" id="WyP-tP-ejR"/>
                                                 <constraint firstItem="7mv-Ip-bTq" firstAttribute="centerY" secondItem="teH-lG-9g0" secondAttribute="centerY" id="aZz-cs-qjA"/>
                                                 <constraint firstAttribute="trailing" secondItem="7mv-Ip-bTq" secondAttribute="trailing" constant="16" id="eoR-CC-Rua"/>
