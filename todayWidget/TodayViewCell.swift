@@ -44,23 +44,16 @@ class TodayViewCell: UITableViewCell {
   
   @IBAction func activityHappened(sender: IncrementButton) {
     UIView.animate(withDuration: 0.0, delay: 0, options: .transitionCrossDissolve, animations: {
-//      self.newIncidentBtn.setCheckImage()
       self.generator.notificationOccurred(.success)
     }, completion: { finished in
-      UIView.animate(withDuration: 0.4, delay: 0.2, animations: {
-//        self.newIncidentBtn.alpha = 0.0
-      }, completion: { (finished) in
-//        self.newIncidentBtn.setDefaultImage()
-//        self.newIncidentBtn.alpha = 1.0
-        if let addNew = self.addNewInstance {
-          addNew()
-          do {
-            try self.context?.save()
-          } catch {
-            print("could not save to context in today widget")
-          }
+      if let addNew = self.addNewInstance {
+        addNew()
+        do {
+          try self.context?.save()
+        } catch {
+          print("could not save to context in today widget")
         }
-      })
+      }
     })
   }
   

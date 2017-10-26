@@ -34,7 +34,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     frc = initializeFRC()
     setupAudioSession()
     NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.appBecameActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.managedObjectContextDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: DataManager().context)
     tableView.delegate = self
     tableView.dataSource = self
     frc.delegate = self
@@ -336,10 +335,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         tableView.insertRows(at: [newIndexPath], with: .fade)
       }
     }
-  }
-  
-  @objc func managedObjectContextDidSave(notification: Notification) {
-    print("context saved")
   }
   
   // MARK: PresentationController delegate

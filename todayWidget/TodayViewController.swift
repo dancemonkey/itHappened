@@ -30,6 +30,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         fatalError("unresolved error \(error), \(error.userInfo)")
       }
     })
+    container.viewContext.stalenessInterval = 0
     return container
   }()
   
@@ -38,6 +39,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    NotificationCenter.default.addObserver(self, selector: #selector(TodayViewController.managedObjectContextDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
+
     tableView.dataSource = self
     tableView.delegate = self
     
@@ -56,14 +59,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   }
   
   func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-    // Perform any setup necessary in order to update the view.
-    
     do {
       try frc?.performFetch()
     } catch {
       print("stop trying to make fetch happen")
     }
-    
     completionHandler(NCUpdateResult.newData)
   }
   
@@ -90,6 +90,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true),NSSortDescriptor(key: "created", ascending: true)]
     let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     return fetchedResultsController
+  }
+  
+  @objc func managedObjectContextDidSave(notification: Notification) {
+    
   }
   
   // Tableview methods

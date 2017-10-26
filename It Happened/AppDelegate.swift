@@ -31,11 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func applicationWillEnterForeground(_ application: UIApplication) {
-    //    if let activityView =
   }
   
   func applicationDidBecomeActive(_ application: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    persistentContainer.viewContext.refreshAllObjects()
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
@@ -47,12 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // MARK: - Core Data stack
   
   lazy var persistentContainer: NSPersistentContainer = {
-    /*
-     The persistent container for the application. This implementation
-     creates and returns a container, having loaded the store for the
-     application to it. This property is optional since there are legitimate
-     error conditions that could cause the creation of the store to fail.
-     */
     let container = NSPersistentContainer(name: "It_Happened")
     var persistentStoreDescriptions: NSPersistentStoreDescription
     let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.drewlanning.It-Happened.todayWidget")?.appendingPathComponent("It_Happened.sqlite")

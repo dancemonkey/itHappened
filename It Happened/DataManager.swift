@@ -13,7 +13,9 @@ class DataManager {
   
   var context: NSManagedObjectContext {
     get {
-      return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+      let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+      context.stalenessInterval = 0
+      return context
     }
   }
   
