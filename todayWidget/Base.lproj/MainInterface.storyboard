@@ -30,16 +30,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-py-Bez">
-                                                    <rect key="frame" x="16" y="8.5" width="196.5" height="18"/>
+                                                    <rect key="frame" x="16" y="8.5" width="242" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-rR-26P">
-                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# times today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV7-Vn-4H8">
-                                                            <rect key="frame" x="97" y="0.0" width="99.5" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="# times today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV7-Vn-4H8">
+                                                            <rect key="frame" x="142.5" y="0.0" width="99.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -59,6 +59,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="7mv-Ip-bTq" firstAttribute="leading" secondItem="mRc-py-Bez" secondAttribute="trailing" constant="16" id="3m3-mt-Bcz"/>
                                                 <constraint firstItem="mRc-py-Bez" firstAttribute="leading" secondItem="teH-lG-9g0" secondAttribute="leading" constant="16" id="4AA-1b-ynz"/>
                                                 <constraint firstItem="mRc-py-Bez" firstAttribute="centerY" secondItem="teH-lG-9g0" secondAttribute="centerY" id="WyP-tP-ejR"/>
                                                 <constraint firstItem="7mv-Ip-bTq" firstAttribute="centerY" secondItem="teH-lG-9g0" secondAttribute="centerY" id="aZz-cs-qjA"/>

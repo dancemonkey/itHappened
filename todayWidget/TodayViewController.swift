@@ -37,6 +37,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     tableView.dataSource = self
     tableView.delegate = self
     

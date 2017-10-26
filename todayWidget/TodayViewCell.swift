@@ -28,7 +28,7 @@ class TodayViewCell: UITableViewCell {
   }
   
   func setIncrementCounter(to count: Int) {
-    self.todayTotalLbl.text = " - \(count) today"
+    self.todayTotalLbl.text = "today: \(count)"
   }
   
   func configureCell(with activity: Activity, inContext context: NSManagedObjectContext) {
@@ -37,6 +37,7 @@ class TodayViewCell: UITableViewCell {
     setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
     addNewInstance = { [weak self] in
       activity.addNewInstance(withContext: self!.context!)
+      self?.setIncrementCounter(to: activity.getInstanceCount(forDate: Date()))
     }
     self.selectionStyle = .none
   }
@@ -53,7 +54,11 @@ class TodayViewCell: UITableViewCell {
 //        self.newIncidentBtn.alpha = 1.0
         if let addNew = self.addNewInstance {
           addNew()
-          try! self.context!.save()
+          do {
+            try self.context?.save()
+          } catch {
+            print("could not save to context in today widget")
+          }
         }
       })
     })
