@@ -14,7 +14,7 @@ public class Instance: NSManagedObject {
 
   func getFormattedDate() -> String {
     let formatter = DateFormatter()
-    formatter.dateFormat = "EEEE, MMM d, yyyy"
+    formatter.dateFormat = "EEEE MMM d, yyyy"
     return formatter.string(from: self.date! as Date)
   }
   
