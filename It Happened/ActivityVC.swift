@@ -22,18 +22,16 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   var audioPlayer: AVAudioPlayer?
   var generator = UINotificationFeedbackGenerator()
   var settings = Settings()
+  var longPress: UILongPressGestureRecognizer?
+  var snapshot: UIView? = nil
+  var sourceIndexPath: IndexPath? = nil
+  var isUserDrivenUpate: Bool = false
   
-  fileprivate var frc: NSFetchedResultsController<Activity> = {
-    let dm = DataManager()
-    let context = dm.context
-    let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created", ascending: true)]
-    let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-    return fetchedResultsController
-  }()
+  var frc: NSFetchedResultsController<Activity>!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    frc = initializeFRC()
     setupAudioSession()
     NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.appBecameActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     tableView.delegate = self
@@ -47,6 +45,99 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     updateView()
     themeSwitch.setOn(settings.getColorThemeName() == .dark, animated: false)
     styleViews()
+    longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressStarted(sender:)))
+    view.addGestureRecognizer(longPress!)
+  }
+  
+  func initializeFRC() -> NSFetchedResultsController<Activity> {
+    let dm = DataManager()
+    let context = dm.context
+    let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sortOrder", ascending: true), NSSortDescriptor(key: "created", ascending: true)]
+    let fetchedResultsController: NSFetchedResultsController<Activity> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    return fetchedResultsController
+  }
+  
+  @objc func longPressStarted(sender: UILongPressGestureRecognizer) {
+    let state = sender.state
+    let location = sender.location(in: self.tableView)
+    let indexPath = tableView.indexPathForRow(at: location)
+    
+    switch state {
+    case .began:
+      if indexPath != nil {
+        sourceIndexPath = indexPath
+        let cell = self.tableView.cellForRow(at: indexPath!)!
+        snapshot = customSnapshotFromView(inputView: cell)
+        var center = cell.center
+        snapshot!.center = center
+        snapshot!.alpha = 0.0
+        tableView.addSubview(snapshot!)
+        
+        UIView.animate(withDuration: 0.25, animations: {
+          center.y = location.y
+          self.snapshot!.center = center
+          self.snapshot!.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+          self.snapshot!.alpha = 0.98
+          
+          cell.alpha = 0.0
+        }, completion: { (finished) in
+          cell.isHidden = true
+        })
+      }
+    case .changed:
+      var center = snapshot!.center
+      center.y = location.y
+      snapshot!.center = center
+      if indexPath != nil && !(indexPath! == sourceIndexPath!) {
+        tableView.moveRow(at: sourceIndexPath!, to: indexPath!)
+        
+        isUserDrivenUpate = true
+        var objects = frc.fetchedObjects!
+        let object = objects.remove(at: sourceIndexPath!.row)
+        objects.insert(object, at: indexPath!.row)
+        
+        var i = 0
+        for object in objects {
+          object.sortOrder = Int32(i)
+          i = i + 1
+        }
+        DataManager().save()
+        isUserDrivenUpate = false
+        
+        sourceIndexPath = indexPath
+      }
+    default:
+      let cell = tableView.cellForRow(at: sourceIndexPath!)
+      cell?.isHidden = false
+      cell?.alpha = 0.0
+      UIView.animate(withDuration: 0.25, animations: {
+        self.snapshot!.center = cell!.center
+        self.snapshot!.transform = CGAffineTransform.identity
+        self.snapshot!.alpha = 0.0
+        cell?.alpha = 1.0
+      }, completion: { (finished) in
+        self.sourceIndexPath = nil
+        self.snapshot?.removeFromSuperview()
+        self.snapshot = nil
+      })
+    }
+  }
+  
+  func customSnapshotFromView(inputView: UIView) -> UIView {
+    UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
+    inputView.layer.render(in: UIGraphicsGetCurrentContext()!)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    let snapshot = UIImageView.init(image: image)
+    snapshot.layer.masksToBounds = false
+    snapshot.layer.cornerRadius = 0.0
+    snapshot.layer.shadowRadius = 5.0
+    snapshot.layer.shadowOffset = CGSize(width: -5, height: -0)
+    snapshot.layer.shadowOpacity = 0.4
+    
+    return snapshot
   }
   
   func styleViews() {
@@ -162,6 +253,10 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     performSegue(withIdentifier: SegueIDs.showInstanceList, sender: self)
   }
   
+  func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
   }
   
@@ -220,6 +315,9 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    guard isUserDrivenUpate == false else {
+      return
+    }
     switch (type) {
     case .update:
       tableView.reloadRows(at: [indexPath!], with: .fade)
@@ -231,8 +329,11 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       if let indexPath = indexPath {
         tableView.deleteRows(at: [indexPath], with: .fade)
       }
-    default:
-      print("default we messed up")
+    case .move:
+      if let indexPath = indexPath, let newIndexPath = newIndexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.insertRows(at: [newIndexPath], with: .fade)
+      }
     }
   }
   
@@ -250,6 +351,5 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       destVC?.activity = activity
     }
   }
-  
 }
 
