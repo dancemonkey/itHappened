@@ -46,6 +46,7 @@
 		10A7DF191F58515C004C4F61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF181F58515C004C4F61 /* Style.swift */; };
 		10A7DF1F1F585321004C4F61 /* InstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF1E1F585321004C4F61 /* InstanceVC.swift */; };
 		10D06D451F70B7CF00646197 /* PopoverPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */; };
+		10D66C271FA4BABA005BAD03 /* It_Happened.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1042BABC1F9E1FE800888169 /* It_Happened.xcdatamodeld */; };
 		10E2C7B41F732852002D1073 /* analogue_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10E2C7B31F732850002D1073 /* analogue_click1.wav */; };
 		10E2C7B61F7328D7002D1073 /* techy_affirm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10E2C7B51F7328D5002D1073 /* techy_affirm.wav */; };
 		10EA3EA61F7158AD00778ADF /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */; };
@@ -496,6 +497,7 @@
 				1034A8EC1F9A6F7F00174411 /* TodayViewController.swift in Sources */,
 				1034A8FC1F9A736500174411 /* Instance+CoreDataClass.swift in Sources */,
 				10EDEE351FA0DAC30079091E /* Settings.swift in Sources */,
+				10D66C271FA4BABA005BAD03 /* It_Happened.xcdatamodeld in Sources */,
 				10EDEE311FA0CCE40079091E /* TodayViewCell.swift in Sources */,
 				1034A9001F9A737E00174411 /* Extensions.swift in Sources */,
 				10EDEE361FA0DAD30079091E /* Style.swift in Sources */,

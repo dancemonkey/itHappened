@@ -39,18 +39,18 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(TodayViewController.managedObjectContextDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(TodayViewController.managedObjectContextDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
 
     tableView.dataSource = self
     tableView.delegate = self
-    
+
     frc = getFrc()
-    
+
     do {
       try frc?.performFetch()
     } catch {
       print("stop trying to make fetch happen")
-    }    
+    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -92,9 +92,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     return fetchedResultsController
   }
   
-  @objc func managedObjectContextDidSave(notification: Notification) {
-    
-  }
+//  @objc func managedObjectContextDidSave(notification: Notification) {
+//    
+//  }
   
   // Tableview methods
   func numberOfSections(in tableView: UITableView) -> Int {

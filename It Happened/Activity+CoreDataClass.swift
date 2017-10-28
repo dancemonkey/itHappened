@@ -45,7 +45,7 @@ public class Activity: NSManagedObject {
     if let instances = self.instance {
       let total: Int = instances.filter({ (inst) -> Bool in
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMM d, yyyy"
+        formatter.dateFormat = "EEEE MMM d, yyyy"
         let dateToFind = formatter.string(from: date)
         return dateToFind == (inst as? Instance)?.getFormattedDate()
       }).count
