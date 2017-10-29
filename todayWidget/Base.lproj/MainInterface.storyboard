@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No activities to track." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swz-Q4-Qhq">
+                                <rect key="frame" x="79" y="89" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tyr-2g-yGO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,20 +38,20 @@
                                                     <rect key="frame" x="16" y="9" width="242" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-rR-26P">
-                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="18"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="86" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="# times today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV7-Vn-4H8">
-                                                            <rect key="frame" x="91" y="0.0" width="93.5" height="18"/>
+                                                            <rect key="frame" x="88" y="0.0" width="93.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="last" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9WW-Dw-leV">
-                                                            <rect key="frame" x="186.5" y="0.0" width="55.5" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <rect key="frame" x="183.5" y="0.0" width="58.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -61,7 +67,7 @@
                                                     <size key="titleShadowOffset" width="1" height="1"/>
                                                     <state key="normal" title="+">
                                                         <color key="titleColor" red="0.027450980390000001" green="0.74509803919999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" red="0.039215686270000001" green="0.1176470588" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="activityHappenedWithSender:" destination="vex-J4-a6y" eventType="touchUpInside" id="wSe-8y-67M"/>
@@ -92,7 +98,9 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="Tyr-2g-yGO" firstAttribute="height" secondItem="ssy-KU-ocm" secondAttribute="height" id="Pcq-Af-ZSk"/>
+                            <constraint firstItem="swz-Q4-Qhq" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="SF2-wy-Nxu"/>
                             <constraint firstItem="Tyr-2g-yGO" firstAttribute="width" secondItem="ssy-KU-ocm" secondAttribute="width" id="UIp-iV-Pne"/>
+                            <constraint firstItem="swz-Q4-Qhq" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="YAz-St-PfT"/>
                             <constraint firstItem="Tyr-2g-yGO" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="YER-hT-IJ4"/>
                             <constraint firstItem="Tyr-2g-yGO" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="rWz-3t-aA6"/>
                         </constraints>
@@ -102,6 +110,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="200"/>
                     <connections>
+                        <outlet property="emptyDataLbl" destination="swz-Q4-Qhq" id="N0W-Nh-eRH"/>
                         <outlet property="tableView" destination="Tyr-2g-yGO" id="102-pB-Kz1"/>
                     </connections>
                 </viewController>

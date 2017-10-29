@@ -12,7 +12,9 @@ import CoreData
 
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate, UITableViewDataSource {
   
+  // MARK: Properties
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var emptyDataLbl: UILabel!
   var activities: [Activity]?
   
   lazy var persistentContainer: NSPersistentContainer = {
@@ -36,6 +38,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   
   var frc: NSFetchedResultsController<Activity>?
   
+  // MARK: Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -51,6 +54,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     } catch {
       print("stop trying to make fetch happen")
     }
+    
+    updateView()
   }
   
   override func didReceiveMemoryWarning() {
@@ -71,7 +76,16 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     cell.configureCell(with: frc!.object(at: indexPath), inContext: context)
   }
   
-  // CoreData
+  fileprivate func updateView() {
+    var hasActivities = false
+    if let activities = frc?.fetchedObjects {
+      hasActivities = activities.count > 0
+    }
+    tableView.isHidden = !hasActivities
+    emptyDataLbl.isHidden = hasActivities
+  }
+  
+  // MARK: CoreData
   
   func saveContext () {
     let context = persistentContainer.viewContext
@@ -92,11 +106,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     return fetchedResultsController
   }
   
-//  @objc func managedObjectContextDidSave(notification: Notification) {
-//    
-//  }
-  
-  // Tableview methods
+  // MARK: Tableview methods
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
