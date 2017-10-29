@@ -16,7 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+//    UserDefaults().set(false, forKey: "migrated")
+//    print(UserDefaults().bool(forKey: "migrated"))
+    
+    if !UserDefaults().bool(forKey: "migrated") {
+      let oldPsc = oldPersistentContainer.persistentStoreCoordinator
+      for store in oldPsc.persistentStores {
+        if let url = store.url, let oldStore = oldPsc.persistentStore(for: url) {
+          if let newURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.drewlanning.It-Happened.todayWidget")?.appendingPathComponent("It_Happened.sqlite") {
+            migrate(store: oldStore, from: url, to: newURL)
+            try! oldPsc.destroyPersistentStore(at: url, ofType: NSSQLiteStoreType, options: nil)
+            print("migration attempted")
+          }
+        } else {
+          print("no store found at oldPSC")
+        }
+      }
+    }
+    
     return true
   }
   
@@ -45,6 +62,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   // MARK: - Core Data stack
+  
+  lazy var oldPersistentContainer: NSPersistentContainer = {
+    /*
+     The persistent container for the application. This implementation
+     creates and returns a container, having loaded the store for the
+     application to it. This property is optional since there are legitimate
+     error conditions that could cause the creation of the store to fail.
+     */
+    let container = NSPersistentContainer(name: "It_Happened")
+    container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+      if let error = error as NSError? {
+        // Replace this implementation with code to handle the error appropriately.
+        // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        
+        /*
+         Typical reasons for an error here include:
+         * The parent directory does not exist, cannot be created, or disallows writing.
+         * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+         * The device is out of space.
+         * The store could not be migrated to the current model version.
+         Check the error message to determine what the actual problem was.
+         */
+        fatalError("Unresolved error \(error), \(error.userInfo)")
+      }
+    })
+    return container
+  }()
   
   lazy var persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "It_Happened")
@@ -77,6 +121,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nserror = error as NSError
         fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
       }
+    }
+  }
+  
+  func migrate(store: NSPersistentStore, from oldURL: URL, to newURL: URL) {
+    let psc = (UIApplication.shared.delegate as! AppDelegate).oldPersistentContainer.persistentStoreCoordinator
+    do {
+      try psc.migratePersistentStore(store, to: newURL, options: nil, withType: NSSQLiteStoreType)
+      try! psc.destroyPersistentStore(at: oldURL, ofType: NSSQLiteStoreType, options: nil)
+      UserDefaults().set(true, forKey: "migrated")
+    } catch {
+      print("Failed to move from: \(oldURL) to \(newURL)")
     }
   }
   
