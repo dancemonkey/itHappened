@@ -13,6 +13,7 @@ import ViewAnimator
 
 class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter, AudioPlayer {
   
+  // MARK: Properties
   @IBOutlet weak var tableView: ActivityTableView!
   @IBOutlet weak var newButton: NewButton!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -29,6 +30,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   var frc: NSFetchedResultsController<Activity>!
   
+  // MARK: Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     frc = initializeFRC()
@@ -66,6 +68,8 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     switch state {
     case .began:
       if indexPath != nil {
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
         sourceIndexPath = indexPath
         let cell = self.tableView.cellForRow(at: indexPath!)!
         snapshot = customSnapshotFromView(inputView: cell)
