@@ -49,12 +49,23 @@ class TodayViewCell: UITableViewCell {
     self.selectionStyle = .none
   }
   
+  func flashCell() {
+    UIView.animate(withDuration: 0, animations: {
+      self.contentView.backgroundColor = .white
+    }) { (complete) in
+      UIView.animate(withDuration: 1.0, animations: {
+        self.contentView.backgroundColor = .clear
+      })
+    }
+  }
+  
   @IBAction func activityHappened(sender: IncrementButton) {
     UIView.animate(withDuration: 0.0, delay: 0, options: .transitionCrossDissolve, animations: {
       self.generator.notificationOccurred(.success)
     }, completion: { finished in
       if let addNew = self.addNewInstance {
         addNew()
+        self.flashCell()
         do {
           try self.context?.save()
         } catch {
