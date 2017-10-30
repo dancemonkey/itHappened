@@ -30,7 +30,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   var frc: NSFetchedResultsController<Activity>!
   
-  // MARK: Methods
+  // MARK: Class & IB Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     frc = initializeFRC()
@@ -49,6 +49,40 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     styleViews()
     longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressStarted(sender:)))
     view.addGestureRecognizer(longPress!)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    tableView.reloadData()
+    
+    newButton.animate(animationType: Animations.newButtonIn)
+    tableView.animateViews(animationType: Animations.tableRowsIn)
+    
+    styleNavBar()
+    
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d, yyyy"
+    self.title = formatter.string(from: Date())
+  }
+  
+  @IBAction func newPressed(sender: UIButton) {
+    playSound(called: Sound.buttonPress)
+    let popOver = activityCreateAndUpdate(withActivity: nil)
+    popOver.popoverPresentationController!.delegate = self
+    popOver.popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
+    popOver.popoverPresentationController?.sourceView = self.view
+    popOver.popoverPresentationController?.sourceRect = self.view.bounds
+    generator.notificationOccurred(.success)
+    
+    self.present(popOver, animated: true, completion: nil)
+  }
+  
+  @IBAction func themeSwitched(sender: UISwitch) {
+    let theme: ThemeType = sender.isOn ? .dark : .light
+    settings.setColorTheme(to: theme)
+    styleViews()
+    for cell in tableView.visibleCells {
+      (cell as! ActivityCell).styleViews()
+    }
   }
   
   func initializeFRC() -> NSFetchedResultsController<Activity> {
@@ -150,10 +184,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
     newButton.tintColor = Settings().colorTheme[.primary]
     
-    navigationController?.navigationBar.tintColor = Settings().colorTheme[.navElement]
-    UINavigationBar.appearance().barTintColor = Settings().colorTheme[.accent1]
-    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
-    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.background]
+    styleNavBar()
     
     switch settings.getColorThemeName() {
     case .dark:
@@ -166,6 +197,15 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     themeSwitch.alpha = 0.3
   }
   
+  func styleNavBar() {
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.primary] as Any]
+    navigationController?.navigationBar.tintColor = Settings().colorTheme[.navElement]
+    UINavigationBar.appearance().barTintColor = Settings().colorTheme[.accent1]
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
+    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.background]
+  }
+  
   fileprivate func updateView() {
     var hasActivities = false
     if let activities = frc.fetchedObjects {
@@ -174,22 +214,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     tableView.isHidden = !hasActivities
     emptyDataLbl.isHidden = hasActivities
     activityIndicator.stopAnimating()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    navigationController?.navigationBar.prefersLargeTitles = true
-    navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.primary] as Any]
-    UINavigationBar.appearance().barTintColor = Settings().colorTheme[.accent1]
-    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: Settings().colorTheme[.navElement]!]
-    navigationController?.navigationBar.barTintColor = Settings().colorTheme[.background]
-    tableView.reloadData()
-    
-    let formatter = DateFormatter()
-    formatter.dateFormat = "MMM d, yyyy"
-    self.title = formatter.string(from: Date())
-    
-    newButton.animate(animationType: Animations.newButtonIn)
-    tableView.animateViews(animationType: Animations.tableRowsIn)
   }
   
   @objc func appBecameActive() {
@@ -205,27 +229,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
       }
     } else {
       DataManager().setLastOpen()
-    }
-  }
-  
-  @IBAction func newPressed(sender: UIButton) {
-    playSound(called: Sound.buttonPress)
-    let popOver = activityCreateAndUpdate(withActivity: nil)
-    popOver.popoverPresentationController!.delegate = self
-    popOver.popoverPresentationController?.permittedArrowDirections = .init(rawValue: 0)
-    popOver.popoverPresentationController?.sourceView = self.view
-    popOver.popoverPresentationController?.sourceRect = self.view.bounds
-    generator.notificationOccurred(.success)
-    
-    self.present(popOver, animated: true, completion: nil)
-  }
-  
-  @IBAction func themeSwitched(sender: UISwitch) {
-    let theme: ThemeType = sender.isOn ? .dark : .light
-    settings.setColorTheme(to: theme)
-    styleViews()
-    for cell in tableView.visibleCells {
-      (cell as! ActivityCell).styleViews()
     }
   }
   
