@@ -1,11 +1,11 @@
 PODS:
-  - ViewAnimator (1.0.0)
+  - ViewAnimator (1.0.2)
 
 DEPENDENCIES:
   - ViewAnimator
 
 SPEC CHECKSUMS:
-  ViewAnimator: ae94bb7d19728ecc061465b00f491bfd855053cd
+  ViewAnimator: d7b18e0be98e05807f61ad886a36363727209377
 
 PODFILE CHECKSUM: 5a62e4d094fc95f8ca2d4bff9e7e38b9a6a3c975
 

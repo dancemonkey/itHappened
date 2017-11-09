@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AVFoundation
+import ViewAnimator
 
 class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UIPopoverPresentationControllerDelegate, PopoverPresenter, AudioPlayer {
   
@@ -51,6 +52,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     updateView()
+    animateViews()
   }
   
   func styleViews() {
@@ -64,9 +66,12 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.navigationBar.prefersLargeTitles = true
-    
-    tableView.animateViews(animationType: Animations.tableRowsIn)
-    newButton.animate(animationType: Animations.newButtonIn)
+    animateViews()
+  }
+  
+  func animateViews() {
+    newButton.animate(animations: [Animations.newButtonIn])
+    tableView.animateAll(animations: [Animations.tableRowsIn])
   }
   
   fileprivate func updateView() {

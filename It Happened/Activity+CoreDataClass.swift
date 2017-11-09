@@ -54,6 +54,21 @@ public class Activity: NSManagedObject {
     return instanceCount
   }
   
+  func getAllDates() -> [String]? {
+    guard let instances = self.instance else {
+      return nil
+    }
+    let formatter = DateFormatter()
+    formatter.dateFormat = "EEEE MMM d, yyyy"
+    
+    var returnSet = Set<String>()
+    for instance in instances {
+      returnSet.insert(formatter.string(from: (instance as! Instance).date! as Date))
+    }
+    
+    return Array(returnSet)
+  }
+  
   func getAveragePerDay() -> Double {
     
     guard let inst = instance, inst.count > 0 else {

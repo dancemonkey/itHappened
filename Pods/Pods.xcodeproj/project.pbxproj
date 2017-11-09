@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23F9ED853BED67CA2EE480B4C9F99308 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08AF1DC7121594696A320173E13F231 /* Utilities.swift */; };
-		345F7B8171BB9381230E377A9A091CBD /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8127CC03CA84BADBBBA167A3228370 /* AnimationType.swift */; };
-		5A4D2E196AB0525E67A38B3B0DFFD9C1 /* ViewAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37072057992656F27648CF0F93E595FA /* ViewAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75F0E157A76962AC33ACA154CEE4EA1B /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573604CF68B4187BABB762A9F4308685 /* Animatable.swift */; };
-		9B54C5C570695A7F46E1E4237FAFF92E /* ViewAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 831DC3B74F707F1B3696868DBFAD673F /* ViewAnimator-dummy.m */; };
+		1EEDDCC681E8957E7D709F6B10681308 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C8FCC9D3EB49A29F05EC32CDCD5CA6 /* ViewAnimator.swift */; };
+		27BC9DF891EC4F16C226E3F8699F7E3D /* ViewAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B35911146AFF66A6622DE0FBAEE1A8 /* ViewAnimator-dummy.m */; };
+		32061B09B363B705395A46521CD21A47 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7BBDDFDCDC84C4538E540AF44DC34 /* Utilities.swift */; };
+		5A4D2E196AB0525E67A38B3B0DFFD9C1 /* ViewAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C3996ACCA6A7225D87EE1879A4846B /* ViewAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7713805D9109DC63AD15BD7E75A787F4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1EF64F930CD86B5BF82B0C7CA81F3 /* Animation.swift */; };
+		93FA4EA64E269D50A41CF913911D4B89 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE014C3C33558602B99E1FF98E0E38A /* Animatable.swift */; };
+		953896B62AF13FE9D47F4AB01FA81B8F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908EE52B2D966C6C1CAFE772BBEDF384 /* Direction.swift */; };
+		990D482B8D587022A751B426D1D8EAD7 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C2DCA6455998DC19092B7EBBA535D /* ViewAnimatorConfig.swift */; };
 		9FE426EBCFAC4CFE304AFC1D924AF93C /* Pods-It Happened-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3864112B0E8C66E14D3AA77D30D9D029 /* Pods-It Happened-dummy.m */; };
+		B721800AE31C9BF2EBBD5F817FDF9D52 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7EF26866352B936710D4EC24D839F /* AnimationType.swift */; };
 		B925E1651B45C6BFAB5979EFC3BDA7EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		D45189E32A10045F01379AAEDA11E12C /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20D08F8CCE88B271E80F3CC615BDBBE /* Direction.swift */; };
 		DA691C14AA3ABD7DD0D43C05FBA54F78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		E57D609C7B4984D80FE76F3CB770A92B /* Pods-It Happened-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5042C893DAB2EA722E08458E6206D02 /* Pods-It Happened-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEFAE5A1EA7E0C7B1F6C622FDFA332C5 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE5B5CB5C53D4CA0047E78D8355420 /* ViewAnimator.swift */; };
-		FCA22A9178B38BA722803EAC0994849C /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15132E727F8A44901A6FA54AA523B3 /* ViewAnimatorConfig.swift */; };
+		EA5C6F850B18423FD761EE27D3785F00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91E7361A02BC9DD960B01818F6062D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,30 +35,32 @@
 
 /* Begin PBXFileReference section */
 		02D506DFAA4E8DD2D27FF4718A908CCF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03DC9E42093038FD933536EAA1D4FBDC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04122962699370BC505082B1D932D9A9 /* Pods-It Happened-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-It Happened-frameworks.sh"; sourceTree = "<group>"; };
 		0416F92A8A7D39D559AB9E5EE7DC0439 /* Pods-It Happened-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-It Happened-acknowledgements.plist"; sourceTree = "<group>"; };
-		252B632CC407E2D99A82ADA3B3684483 /* ViewAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-prefix.pch"; sourceTree = "<group>"; };
-		27E6443ADEBC99A8556328A77D2D770F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D91E7361A02BC9DD960B01818F6062D /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ViewAnimator/Classes/Constants.swift; sourceTree = "<group>"; };
+		1FD1EF64F930CD86B5BF82B0C7CA81F3 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = ViewAnimator/Classes/Animation.swift; sourceTree = "<group>"; };
+		22F7BBDDFDCDC84C4538E540AF44DC34 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ViewAnimator/Classes/Utilities.swift; sourceTree = "<group>"; };
 		2F129EFB8FC2891AEF3F0B5FA888AC37 /* Pods_It_Happened.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_It_Happened.framework; path = "Pods-It Happened.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F8127CC03CA84BADBBBA167A3228370 /* AnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = ViewAnimator/Classes/AnimationType.swift; sourceTree = "<group>"; };
-		37072057992656F27648CF0F93E595FA /* ViewAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-umbrella.h"; sourceTree = "<group>"; };
+		342C2DCA6455998DC19092B7EBBA535D /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimatorConfig.swift; path = ViewAnimator/Classes/ViewAnimatorConfig.swift; sourceTree = "<group>"; };
 		3864112B0E8C66E14D3AA77D30D9D029 /* Pods-It Happened-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-It Happened-dummy.m"; sourceTree = "<group>"; };
+		3AE014C3C33558602B99E1FF98E0E38A /* Animatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = ViewAnimator/Classes/Animatable.swift; sourceTree = "<group>"; };
+		40C8FCC9D3EB49A29F05EC32CDCD5CA6 /* ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimator.swift; path = ViewAnimator/Classes/ViewAnimator.swift; sourceTree = "<group>"; };
 		4A7B2663674A4F329017A4ED4790C5B7 /* Pods-It Happened-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-It Happened-resources.sh"; sourceTree = "<group>"; };
-		573604CF68B4187BABB762A9F4308685 /* Animatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = ViewAnimator/Classes/Animatable.swift; sourceTree = "<group>"; };
 		5F543072EC5F9E4C04EC0838BAEEECDA /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ViewAnimator.framework; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		831DC3B74F707F1B3696868DBFAD673F /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
-		8E15132E727F8A44901A6FA54AA523B3 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimatorConfig.swift; path = ViewAnimator/Classes/ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		724430393B44E4F724B3AEE645ECE9B8 /* ViewAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-prefix.pch"; sourceTree = "<group>"; };
+		83B35911146AFF66A6622DE0FBAEE1A8 /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
+		908EE52B2D966C6C1CAFE772BBEDF384 /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ViewAnimator/Classes/Direction.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9757089DC6D5437C1FA15F3EDB01EE1B /* Pods-It Happened-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-It Happened-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9EFBD416231E4277EB71FD84CA781DA0 /* ViewAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.xcconfig; sourceTree = "<group>"; };
-		A20D08F8CCE88B271E80F3CC615BDBBE /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ViewAnimator/Classes/Direction.swift; sourceTree = "<group>"; };
-		C08AF1DC7121594696A320173E13F231 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ViewAnimator/Classes/Utilities.swift; sourceTree = "<group>"; };
-		C82E22B549D885207C591B094F3853EC /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
+		A8C3996ACCA6A7225D87EE1879A4846B /* ViewAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-umbrella.h"; sourceTree = "<group>"; };
+		C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.xcconfig; sourceTree = "<group>"; };
+		D2A39E9870AD2BDFCA5010342C0D76C6 /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
 		E9414014E07937159B9974E314CAEDE3 /* Pods-It Happened.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-It Happened.modulemap"; sourceTree = "<group>"; };
 		EDC63EF9A9AC723F789E9E71FD9E7C19 /* Pods-It Happened.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-It Happened.debug.xcconfig"; sourceTree = "<group>"; };
+		F1E7EF26866352B936710D4EC24D839F /* AnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = ViewAnimator/Classes/AnimationType.swift; sourceTree = "<group>"; };
 		F5042C893DAB2EA722E08458E6206D02 /* Pods-It Happened-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-It Happened-umbrella.h"; sourceTree = "<group>"; };
-		F9FE5B5CB5C53D4CA0047E78D8355420 /* ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimator.swift; path = ViewAnimator/Classes/ViewAnimator.swift; sourceTree = "<group>"; };
 		FFB7200A7B1990D687FAF79EA8AA9017 /* Pods-It Happened.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-It Happened.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,21 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1BAC40AA146B5A0EA0897643A897F550 /* ViewAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				573604CF68B4187BABB762A9F4308685 /* Animatable.swift */,
-				2F8127CC03CA84BADBBBA167A3228370 /* AnimationType.swift */,
-				A20D08F8CCE88B271E80F3CC615BDBBE /* Direction.swift */,
-				C08AF1DC7121594696A320173E13F231 /* Utilities.swift */,
-				F9FE5B5CB5C53D4CA0047E78D8355420 /* ViewAnimator.swift */,
-				8E15132E727F8A44901A6FA54AA523B3 /* ViewAnimatorConfig.swift */,
-				C99AECD6584F3302D9619975A3B4CE36 /* Support Files */,
-			);
-			name = ViewAnimator;
-			path = ViewAnimator;
-			sourceTree = "<group>";
-		};
 		50D9D0CEEC44E1514BFD30BD326B7C3A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +98,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				BB44FA6CA9AAB02243D57D202541DCE5 /* Pods */,
+				F9E2B5265F599D9565D6012321E048D3 /* Pods */,
 				50D9D0CEEC44E1514BFD30BD326B7C3A /* Products */,
 				E1679440A749D875174540998FD877F8 /* Targets Support Files */,
 			);
@@ -133,14 +122,6 @@
 			path = "Target Support Files/Pods-It Happened";
 			sourceTree = "<group>";
 		};
-		BB44FA6CA9AAB02243D57D202541DCE5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1BAC40AA146B5A0EA0897643A897F550 /* ViewAnimator */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,18 +130,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C99AECD6584F3302D9619975A3B4CE36 /* Support Files */ = {
+		C5217B70C376BE3802AD3F2EBAC6B6C4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				27E6443ADEBC99A8556328A77D2D770F /* Info.plist */,
-				C82E22B549D885207C591B094F3853EC /* ViewAnimator.modulemap */,
-				9EFBD416231E4277EB71FD84CA781DA0 /* ViewAnimator.xcconfig */,
-				831DC3B74F707F1B3696868DBFAD673F /* ViewAnimator-dummy.m */,
-				252B632CC407E2D99A82ADA3B3684483 /* ViewAnimator-prefix.pch */,
-				37072057992656F27648CF0F93E595FA /* ViewAnimator-umbrella.h */,
+				03DC9E42093038FD933536EAA1D4FBDC /* Info.plist */,
+				D2A39E9870AD2BDFCA5010342C0D76C6 /* ViewAnimator.modulemap */,
+				C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */,
+				83B35911146AFF66A6622DE0FBAEE1A8 /* ViewAnimator-dummy.m */,
+				724430393B44E4F724B3AEE645ECE9B8 /* ViewAnimator-prefix.pch */,
+				A8C3996ACCA6A7225D87EE1879A4846B /* ViewAnimator-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ViewAnimator";
+			sourceTree = "<group>";
+		};
+		C58D9AC123CA03917C71D3B9A30D048E /* ViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				3AE014C3C33558602B99E1FF98E0E38A /* Animatable.swift */,
+				1FD1EF64F930CD86B5BF82B0C7CA81F3 /* Animation.swift */,
+				F1E7EF26866352B936710D4EC24D839F /* AnimationType.swift */,
+				0D91E7361A02BC9DD960B01818F6062D /* Constants.swift */,
+				908EE52B2D966C6C1CAFE772BBEDF384 /* Direction.swift */,
+				22F7BBDDFDCDC84C4538E540AF44DC34 /* Utilities.swift */,
+				40C8FCC9D3EB49A29F05EC32CDCD5CA6 /* ViewAnimator.swift */,
+				342C2DCA6455998DC19092B7EBBA535D /* ViewAnimatorConfig.swift */,
+				C5217B70C376BE3802AD3F2EBAC6B6C4 /* Support Files */,
+			);
+			name = ViewAnimator;
+			path = ViewAnimator;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -177,6 +175,14 @@
 				987636DEDF769160B023154F160DBBA5 /* Pods-It Happened */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F9E2B5265F599D9565D6012321E048D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C58D9AC123CA03917C71D3B9A30D048E /* ViewAnimator */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8B81EABF9A627952A72DDAEEDC5F4F8 /* Build configuration list for PBXNativeTarget "ViewAnimator" */;
 			buildPhases = (
-				29918287AFCA99F876B730CC4175842F /* Sources */,
+				A1FC15EC878837EFE92DB91C05C14683 /* Sources */,
 				5750F98EFBB8B77FA1F51971CA011652 /* Frameworks */,
 				AAC344B07E918487D04EB2048ED40E7D /* Headers */,
 			);
@@ -264,17 +270,19 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		29918287AFCA99F876B730CC4175842F /* Sources */ = {
+		A1FC15EC878837EFE92DB91C05C14683 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75F0E157A76962AC33ACA154CEE4EA1B /* Animatable.swift in Sources */,
-				345F7B8171BB9381230E377A9A091CBD /* AnimationType.swift in Sources */,
-				D45189E32A10045F01379AAEDA11E12C /* Direction.swift in Sources */,
-				23F9ED853BED67CA2EE480B4C9F99308 /* Utilities.swift in Sources */,
-				9B54C5C570695A7F46E1E4237FAFF92E /* ViewAnimator-dummy.m in Sources */,
-				EEFAE5A1EA7E0C7B1F6C622FDFA332C5 /* ViewAnimator.swift in Sources */,
-				FCA22A9178B38BA722803EAC0994849C /* ViewAnimatorConfig.swift in Sources */,
+				93FA4EA64E269D50A41CF913911D4B89 /* Animatable.swift in Sources */,
+				7713805D9109DC63AD15BD7E75A787F4 /* Animation.swift in Sources */,
+				B721800AE31C9BF2EBBD5F817FDF9D52 /* AnimationType.swift in Sources */,
+				EA5C6F850B18423FD761EE27D3785F00 /* Constants.swift in Sources */,
+				953896B62AF13FE9D47F4AB01FA81B8F /* Direction.swift in Sources */,
+				32061B09B363B705395A46521CD21A47 /* Utilities.swift in Sources */,
+				27BC9DF891EC4F16C226E3F8699F7E3D /* ViewAnimator-dummy.m in Sources */,
+				1EEDDCC681E8957E7D709F6B10681308 /* ViewAnimator.swift in Sources */,
+				990D482B8D587022A751B426D1D8EAD7 /* ViewAnimatorConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,37 +306,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		091CEC488F8D6FF23A6CBE51DBA6AA76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EFBD416231E4277EB71FD84CA781DA0 /* ViewAnimator.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ViewAnimator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
-				PRODUCT_NAME = ViewAnimator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -381,6 +358,38 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2C4671EFBE081CC99AE9E1BFC4A94A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ViewAnimator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
+				PRODUCT_NAME = ViewAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -444,38 +453,6 @@
 			};
 			name = Debug;
 		};
-		9FD71DB6A94005801C9BFBF2A833B260 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EFBD416231E4277EB71FD84CA781DA0 /* ViewAnimator.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ViewAnimator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
-				PRODUCT_NAME = ViewAnimator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		B878D033C01E8D6350CDE4F8247C87A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDC63EF9A9AC723F789E9E71FD9E7C19 /* Pods-It Happened.debug.xcconfig */;
@@ -504,6 +481,37 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B9C42023E3219AD0E3E6461D89FC5308 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ViewAnimator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
+				PRODUCT_NAME = ViewAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -568,8 +576,8 @@
 		A8B81EABF9A627952A72DDAEEDC5F4F8 /* Build configuration list for PBXNativeTarget "ViewAnimator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				091CEC488F8D6FF23A6CBE51DBA6AA76 /* Debug */,
-				9FD71DB6A94005801C9BFBF2A833B260 /* Release */,
+				B9C42023E3219AD0E3E6461D89FC5308 /* Debug */,
+				2C4671EFBE081CC99AE9E1BFC4A94A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
