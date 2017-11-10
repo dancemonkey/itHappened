@@ -49,15 +49,12 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     styleViews()
     longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressStarted(sender:)))
     view.addGestureRecognizer(longPress!)
-    
-    animateViews()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     tableView.reloadData()
-    
-    styleNavBar()
     animateViews()
+    styleNavBar()
     
     let formatter = DateFormatter()
     formatter.dateFormat = "MMM d, yyyy"
@@ -66,7 +63,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func animateViews() {
     newButton.animate(animations: [Animations.newButtonIn])
-    tableView.animateAll(animations: [Animations.tableRowsIn])
+//    tableView.animateAll(animations: [Animations.tableRowsIn])
   }
   
   @IBAction func newPressed(sender: UIButton) {

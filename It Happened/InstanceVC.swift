@@ -52,9 +52,6 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     updateView()
-    animateViews()
-    
-    print(activity!.getAllDates()!)
   }
   
   func styleViews() {
@@ -73,7 +70,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func animateViews() {
     newButton.animate(animations: [Animations.newButtonIn])
-    tableView.animateAll(animations: [Animations.tableRowsIn])
+//    tableView.animateAll(animations: [Animations.tableRowsIn])
   }
   
   fileprivate func updateView() {
@@ -168,7 +165,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     for view in headerView.subviews {
       view.removeFromSuperview()
     }
-    headerView.backgroundColor = Settings().colorTheme[.primary]
+    headerView.backgroundColor = .clear
     
     let title = UILabel()
     title.frame = CGRect(x: 8, y: 0, width: tableView.frame.width, height: 40)
