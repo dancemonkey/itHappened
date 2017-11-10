@@ -54,16 +54,19 @@ public class Activity: NSManagedObject {
     return instanceCount
   }
   
-  func getAllDates() -> [String]? {
+  func getAllDates() -> [Date]? {
     guard let instances = self.instance else {
       return nil
     }
-    let formatter = DateFormatter()
-    formatter.dateFormat = "EEEE MMM d, yyyy"
+//    let formatter = DateFormatter()
+//    formatter.dateFormat = "MM/d/yy"
     
-    var returnSet = Set<String>()
+    var returnSet = Set<Date>()
+    let cal = Calendar(identifier: .gregorian)
     for instance in instances {
-      returnSet.insert(formatter.string(from: (instance as! Instance).date! as Date))
+      if let date = (instance as! Instance).date {
+        returnSet.insert(cal.startOfDay(for: (date as Date)))
+      }
     }
     
     return Array(returnSet)

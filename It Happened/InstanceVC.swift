@@ -53,6 +53,8 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     updateView()
     animateViews()
+    
+    print(activity!.getAllDates()!)
   }
   
   func styleViews() {
