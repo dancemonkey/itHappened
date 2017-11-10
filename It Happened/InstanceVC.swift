@@ -38,6 +38,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     setupAudioSession()
     self.navigationController?.setNavigationBarHidden(false, animated: true)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Chart", style: .plain, target: self, action: #selector(chartTapped))
     
     styleViews()
     tableView.delegate = self
@@ -52,6 +53,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     updateView()
+  }
+  
+  @objc func chartTapped() {
+    
   }
   
   func styleViews() {

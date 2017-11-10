@@ -134,6 +134,7 @@
 		10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10F926CE1F585BB700D06941 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		10FC50B81FB5EB7200CDCD20 /* It Happened-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "It Happened-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D789A23A16887B21F69C8E6 /* Pods-It Happened.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It Happened.release.xcconfig"; path = "Pods/Target Support Files/Pods-It Happened/Pods-It Happened.release.xcconfig"; sourceTree = "<group>"; };
 		6ACEE88B9BD61F98CD7CF440 /* Pods-It Happened.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It Happened.debug.xcconfig"; path = "Pods/Target Support Files/Pods-It Happened/Pods-It Happened.debug.xcconfig"; sourceTree = "<group>"; };
 		EBACC69CB3223D71835B0F20 /* Pods_It_Happened.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_It_Happened.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +193,7 @@
 				10A7DEFF1F584CE8004C4F61 /* Products */,
 				4064E4BF06B90FF6E154ACCF /* Pods */,
 				C98EFCF80C7E1B02C32E6C10 /* Frameworks */,
+				10FC50B81FB5EB7200CDCD20 /* It Happened-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -745,6 +747,7 @@
 			baseConfigurationReference = 6ACEE88B9BD61F98CD7CF440 /* Pods-It Happened.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "It Happened/It Happened.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = TFEDY5M56J;
@@ -752,6 +755,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.It-Happened";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "It Happened-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -763,6 +768,7 @@
 			baseConfigurationReference = 4D789A23A16887B21F69C8E6 /* Pods-It Happened.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "It Happened/It Happened.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = TFEDY5M56J;
@@ -770,6 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.It-Happened";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "It Happened-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
