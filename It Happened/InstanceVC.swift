@@ -56,7 +56,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   }
   
   @objc func chartTapped() {
-    
+    performSegue(withIdentifier: SegueIDs.showChart, sender: self.activity)
   }
   
   func styleViews() {
@@ -263,6 +263,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     if segue.identifier == SegueIDs.editInstance, let instance = tableView.selectedInstance {
       let destVC = segue.destination as? EditInstanceVC
       destVC?.instance = instance
+    }
+    if segue.identifier == SegueIDs.showChart, let activity = sender {
+      let destVC = segue.destination as? ChartVC
+      destVC?.activity = activity as! Activity
     }
   }
   

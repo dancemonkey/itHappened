@@ -31,6 +31,7 @@
 		1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463691F5B001600312E5A /* EditInstanceVC.swift */; };
 		1044636C1F5B048800312E5A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044636B1F5B048800312E5A /* BaseButton.swift */; };
 		10464D471F6D50D200AF1D27 /* DeleteConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */; };
+		104F23A01FB737FA001F9F30 /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F239F1FB737FA001F9F30 /* ChartVC.swift */; };
 		105A759D1F96349F00903AC9 /* ActivityInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A759C1F96349F00903AC9 /* ActivityInfoVC.swift */; };
 		105AD72C1F60204C00F36249 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72B1F60204C00F36249 /* Extensions.swift */; };
 		105AD72E1F6020D100F36249 /* ActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72D1F6020D100F36249 /* ActivityTableView.swift */; };
@@ -109,6 +110,7 @@
 		104463691F5B001600312E5A /* EditInstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInstanceVC.swift; sourceTree = "<group>"; };
 		1044636B1F5B048800312E5A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteConfirmationVC.swift; sourceTree = "<group>"; };
+		104F239F1FB737FA001F9F30 /* ChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
 		105A759C1F96349F00903AC9 /* ActivityInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoVC.swift; sourceTree = "<group>"; };
 		105AD72B1F60204C00F36249 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		105AD72D1F6020D100F36249 /* ActivityTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */,
 				10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */,
 				105A759C1F96349F00903AC9 /* ActivityInfoVC.swift */,
+				104F239F1FB737FA001F9F30 /* ChartVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -471,10 +474,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-It Happened/Pods-It Happened-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JBChartView/JBChartView.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JBChartView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +539,7 @@
 				10F926D21F585BB700D06941 /* Activity+CoreDataProperties.swift in Sources */,
 				1040F4951F65DBC700893F7D /* IncrementButton.swift in Sources */,
 				1034A8F81F9A712400174411 /* TodayViewController.swift in Sources */,
+				104F23A01FB737FA001F9F30 /* ChartVC.swift in Sources */,
 				10A7DF191F58515C004C4F61 /* Style.swift in Sources */,
 				10A7DF171F585153004C4F61 /* DataManager.swift in Sources */,
 				102942B41F74AD700042F87B /* Settings.swift in Sources */,

@@ -278,6 +278,7 @@
                         <outlet property="newButton" destination="NDa-Ha-TvP" id="d2m-xi-Rg9"/>
                         <outlet property="tableView" destination="ecT-w9-1Wz" id="4Sv-TE-dHG"/>
                         <segue destination="SCM-PO-hly" kind="show" identifier="editInstance" id="KJR-zG-MLM"/>
+                        <segue destination="XB9-s3-Ovc" kind="show" identifier="showChart" id="7Re-Tv-25O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVY-vC-OIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -621,6 +622,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1p8-EM-830" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1336" y="629"/>
+        </scene>
+        <!--Chart-->
+        <scene sceneID="vXB-Fi-Qno">
+            <objects>
+                <viewController storyboardIdentifier="chartView" title="Chart" id="XB9-s3-Ovc" customClass="ChartVC" customModule="It_Happened" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MMm-yd-8tq"/>
+                        <viewControllerLayoutGuide type="bottom" id="svv-L0-9HG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ckJ-Zq-Exo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No activity to chart." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-Ca-k7g">
+                                <rect key="frame" x="106.5" y="291" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerX" secondItem="ckJ-Zq-Exo" secondAttribute="centerX" id="7dn-6w-3Uh"/>
+                            <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerY" secondItem="ckJ-Zq-Exo" secondAttribute="centerY" id="qPN-d8-una"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emptyDataLbl" destination="fVE-Ca-k7g" id="fbi-oU-TmR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="url-qu-U5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="839"/>
         </scene>
         <!--Activity InfoVC-->
         <scene sceneID="lSb-eO-ICX">
