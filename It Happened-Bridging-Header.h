@@ -9,5 +9,9 @@
 #ifndef It_Happened_Bridging_Header_h
 #define It_Happened_Bridging_Header_h
 
+#import <UIKit/UIKit.h>
+/* #import "JBChartView.h"
+#import "JBBarChartView.h"
+#import "JBLineChartView.h" */
 
 #endif /* It_Happened_Bridging_Header_h */

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import JBChartView
 
 class ChartVC: UIViewController {
   
   // MARK: Properties
   var activity: Activity?
   @IBOutlet weak var emptyDataLbl: UILabel!
+  @IBOutlet weak var chartView: JBChartView!
   
   // MARK: Methods
   override func viewDidLoad() {
@@ -29,12 +31,15 @@ class ChartVC: UIViewController {
     self.view.backgroundColor = Settings().colorTheme[.background]
     self.title = activity?.name!
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
+    chartView.backgroundColor = .red
   }
   
   fileprivate func updateViews() {
     let hasActivity = self.activity!.instance!.count > 0
     emptyDataLbl.isHidden = hasActivity
-    // also SHOW chart view if there is no activity
+    chartView.isHidden = !hasActivity
   }
+  
+  // MARK: Chart Methods
   
 }

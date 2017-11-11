@@ -641,14 +641,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urs-m9-VUs" customClass="JBChartView">
+                                <rect key="frame" x="16" y="16" width="343" height="571"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerX" secondItem="ckJ-Zq-Exo" secondAttribute="centerX" id="7dn-6w-3Uh"/>
+                            <constraint firstItem="svv-L0-9HG" firstAttribute="top" secondItem="urs-m9-VUs" secondAttribute="bottom" constant="16" id="T0B-Mk-lJ0"/>
+                            <constraint firstAttribute="trailing" secondItem="urs-m9-VUs" secondAttribute="trailing" constant="16" id="Xuy-B5-cLV"/>
+                            <constraint firstItem="urs-m9-VUs" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="bqG-aC-Dsr"/>
+                            <constraint firstItem="urs-m9-VUs" firstAttribute="top" secondItem="MMm-yd-8tq" secondAttribute="bottom" constant="16" id="l5u-Og-BVa"/>
                             <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerY" secondItem="ckJ-Zq-Exo" secondAttribute="centerY" id="qPN-d8-una"/>
+                            <constraint firstItem="urs-m9-VUs" firstAttribute="centerX" secondItem="ckJ-Zq-Exo" secondAttribute="centerX" id="vG9-Dv-Qgf"/>
+                            <constraint firstItem="urs-m9-VUs" firstAttribute="centerY" secondItem="ckJ-Zq-Exo" secondAttribute="centerY" id="z62-Zw-SVC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chartView" destination="urs-m9-VUs" id="ESY-zy-AEx"/>
                         <outlet property="emptyDataLbl" destination="fVE-Ca-k7g" id="fbi-oU-TmR"/>
                     </connections>
                 </viewController>
