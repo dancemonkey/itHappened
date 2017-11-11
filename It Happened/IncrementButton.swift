@@ -13,9 +13,9 @@ class IncrementButton: UIButton {
   var defaultImage: UIImage = UIImage(named: "+ Button")!
   var checkImage: UIImage = UIImage(named: "Check Button")!
   
-  override func layoutSubviews() {
-    super.layoutSubviews()
-  }
+//  override func layoutSubviews() {
+//    super.layoutSubviews()
+//  }
   
   override func awakeFromNib() {
   }

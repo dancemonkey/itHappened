@@ -12,7 +12,7 @@ import JBChartView
 class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSource {
   
   // MARK: Properties
-  var activity: Activity?
+  var activity: Activity!
   @IBOutlet weak var emptyDataLbl: UILabel!
   @IBOutlet weak var chartView: JBBarChartView!
   
@@ -41,8 +41,6 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     emptyDataLbl.isHidden = hasActivity
     chartView.isHidden = !hasActivity
     if !chartView.isHidden {
-      chartView.minimumValue = 0.0
-      chartView.maximumValue = 100.0
       chartView.reloadData()
     }
   }
@@ -50,15 +48,27 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   // MARK: Chart Methods
   
   func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
-    return 10
+    print(activity.getAllDates()!.count)
+    return UInt(activity.getAllDates()!.count)
   }
   
   func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
-    return 50
+    let date = activity.getAllDates()![Int(index)]
+    print(date)
+    return CGFloat(activity.getInstanceCount(forDate: date))
   }
   
   func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
-    return .red
+    return Settings().colorTheme[.primary]
+  }
+  
+  func barChartView(_ barChartView: JBBarChartView!, barViewAt index: UInt) -> UIView! {
+    let bar = chartView.barView(at: index)
+    print(bar)
+    let labelText = activity.getAllDates()![Int(index)].description
+    print(labelText)
+    bar?.setLabel(withText: labelText)
+    return bar
   }
   
 }
