@@ -42,7 +42,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    NotificationCenter.default.addObserver(self, selector: #selector(TodayViewController.managedObjectContextDidSave), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
+    self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
 
     tableView.dataSource = self
     tableView.delegate = self
@@ -112,8 +112,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let count = frc?.fetchedObjects?.count ?? 0
-    return count <= 3 ? count : 3
+    return frc?.fetchedObjects?.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,6 +125,18 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     print("going back to app")
     if let url: URL = URL(string: "It-Happened://") {
       self.extensionContext?.open(url, completionHandler: nil)
+    }
+  }
+  
+  // MARK: Widget Protocol Methods
+  
+  func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+    switch activeDisplayMode {
+    case .expanded:
+      let items = frc?.fetchedObjects?.count ?? 0
+      preferredContentSize = CGSize(width: 0, height: Int(tableView.rowHeight) * items)
+    case .compact:
+      preferredContentSize = maxSize
     }
   }
   

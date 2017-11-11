@@ -126,6 +126,7 @@
 		10A7DF181F58515C004C4F61 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		10A7DF1E1F585321004C4F61 /* InstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceVC.swift; sourceTree = "<group>"; };
 		10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenterProtocol.swift; sourceTree = "<group>"; };
+		10DABDEF1FB7354A00CFF19C /* It Happened-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "It Happened-Bridging-Header.h"; sourceTree = "<group>"; };
 		10E2C7B31F732850002D1073 /* analogue_click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = analogue_click1.wav; sourceTree = "<group>"; };
 		10E2C7B51F7328D5002D1073 /* techy_affirm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = techy_affirm.wav; sourceTree = "<group>"; };
 		10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 		10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10F926CE1F585BB700D06941 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		10FC50B81FB5EB7200CDCD20 /* It Happened-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "It Happened-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D789A23A16887B21F69C8E6 /* Pods-It Happened.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It Happened.release.xcconfig"; path = "Pods/Target Support Files/Pods-It Happened/Pods-It Happened.release.xcconfig"; sourceTree = "<group>"; };
 		6ACEE88B9BD61F98CD7CF440 /* Pods-It Happened.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-It Happened.debug.xcconfig"; path = "Pods/Target Support Files/Pods-It Happened/Pods-It Happened.debug.xcconfig"; sourceTree = "<group>"; };
 		EBACC69CB3223D71835B0F20 /* Pods_It_Happened.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_It_Happened.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,12 +188,12 @@
 		10A7DEF51F584CE7004C4F61 = {
 			isa = PBXGroup;
 			children = (
+				10DABDEF1FB7354A00CFF19C /* It Happened-Bridging-Header.h */,
 				10A7DF001F584CE8004C4F61 /* It Happened */,
 				1034A8EA1F9A6F7F00174411 /* todayWidget */,
 				10A7DEFF1F584CE8004C4F61 /* Products */,
 				4064E4BF06B90FF6E154ACCF /* Pods */,
 				C98EFCF80C7E1B02C32E6C10 /* Frameworks */,
-				10FC50B81FB5EB7200CDCD20 /* It Happened-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
