@@ -30,10 +30,12 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     allDatesForActivity = activity.getAllDates()
     let cal = Calendar(identifier: .gregorian)
     let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
-    for d in 1 ... 7 {
+    print(startDate)
+    for d in 1 ..< 8 {
       let newDate = Calendar.current.date(byAdding: .day, value: d, to: startDate)
       dateRange.append(cal.startOfDay(for: newDate!))
     }
+    print(dateRange)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -62,14 +64,13 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   
   func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
 //    return UInt(activity.getAllDates()!.count)
-    // just show one week
     return UInt(dateRange.count)
   }
   
   func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
 //    let date = activity.getAllDates()![Int(index)]
     if allDatesForActivity.contains(dateRange[Int(index)]) {
-      let date = allDatesForActivity[Int(index)]
+      let date = dateRange[Int(index)]
       return CGFloat(activity.getInstanceCount(forDate: date))
     } else {
       return 0
