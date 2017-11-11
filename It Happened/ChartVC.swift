@@ -13,6 +13,9 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   
   // MARK: Properties
   var activity: Activity!
+  var allDatesForActivity: [Date]!
+  var dateRange: [Date] = [Date]()
+//  var dateRange: (from: Date, to: Date)!
   @IBOutlet weak var emptyDataLbl: UILabel!
   @IBOutlet weak var chartView: JBBarChartView!
   
@@ -20,8 +23,17 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   override func viewDidLoad() {
     super.viewDidLoad()
     styleViews()
+    
     chartView.dataSource = self
     chartView.delegate = self
+    
+    allDatesForActivity = activity.getAllDates()
+    let cal = Calendar(identifier: .gregorian)
+    let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+    for d in 1 ... 7 {
+      let newDate = Calendar.current.date(byAdding: .day, value: d, to: startDate)
+      dateRange.append(cal.startOfDay(for: newDate!))
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +45,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     self.view.backgroundColor = Settings().colorTheme[.background]
     self.title = activity?.name!
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
-    chartView.backgroundColor = .black
+    chartView.backgroundColor = Settings().colorTheme[.background]
   }
   
   fileprivate func updateViews() {
@@ -41,6 +53,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     emptyDataLbl.isHidden = hasActivity
     chartView.isHidden = !hasActivity
     if !chartView.isHidden {
+      chartView.minimumValue = 0
       chartView.reloadData()
     }
   }
@@ -48,27 +61,33 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   // MARK: Chart Methods
   
   func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
-    print(activity.getAllDates()!.count)
-    return UInt(activity.getAllDates()!.count)
+//    return UInt(activity.getAllDates()!.count)
+    // just show one week
+    return UInt(dateRange.count)
   }
   
   func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
-    let date = activity.getAllDates()![Int(index)]
-    print(date)
-    return CGFloat(activity.getInstanceCount(forDate: date))
+//    let date = activity.getAllDates()![Int(index)]
+    if allDatesForActivity.contains(dateRange[Int(index)]) {
+      let date = allDatesForActivity[Int(index)]
+      return CGFloat(activity.getInstanceCount(forDate: date))
+    } else {
+      return 0
+    }
   }
   
   func barChartView(_ barChartView: JBBarChartView!, colorForBarViewAt index: UInt) -> UIColor! {
     return Settings().colorTheme[.primary]
   }
   
-  func barChartView(_ barChartView: JBBarChartView!, barViewAt index: UInt) -> UIView! {
-    let bar = chartView.barView(at: index)
-    print(bar)
-    let labelText = activity.getAllDates()![Int(index)].description
-    print(labelText)
-    bar?.setLabel(withText: labelText)
-    return bar
+  func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
+    let date = dateRange[Int(index)]
+    print(date)
+    print(activity.getInstanceCount(forDate: date))
+  }
+  
+  func didDeselect(_ barChartView: JBBarChartView!) {
+    print("-=-=-=-=")
   }
   
 }

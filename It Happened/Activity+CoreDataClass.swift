@@ -57,10 +57,7 @@ public class Activity: NSManagedObject {
   func getAllDates() -> [Date]? {
     guard let instances = self.instance else {
       return nil
-    }
-//    let formatter = DateFormatter()
-//    formatter.dateFormat = "MM/d/yy"
-    
+    }    
     var returnSet = Set<Date>()
     let cal = Calendar(identifier: .gregorian)
     for instance in instances {

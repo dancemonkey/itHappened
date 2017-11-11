@@ -174,7 +174,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     let title = UILabel()
     title.frame = CGRect(x: 8, y: 0, width: tableView.frame.width, height: 40)
-    title.textColor = UIColor.white
+    title.textColor = Settings().colorTheme[.navElement]
     title.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
     title.text = (self.tableView(tableView, titleForHeaderInSection: section))?.uppercased()
     title.baselineAdjustment = .alignCenters
