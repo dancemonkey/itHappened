@@ -40,7 +40,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     allDatesForActivity = activity.getAllDates()
     let cal = Calendar(identifier: .gregorian)
     let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
-    for d in 1 ..< 8 {
+    for d in 1 ... 7 {
       let newDate = Calendar.current.date(byAdding: .day, value: d, to: startDate)
       dateRange.append(cal.startOfDay(for: newDate!))
     }
@@ -105,5 +105,10 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   
   // MARK: Segemented control
   
+  func dateRangeSelected(sender: UISegmentedControl) {
+    switch sender.selectedSegmentIndex {
+      
+    }
+  }
   
 }

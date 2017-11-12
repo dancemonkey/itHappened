@@ -9,9 +9,16 @@
 import Foundation
 import CoreData
 
+enum DateRange: Int {
+  case week = 7
+  case month = 30
+  case quarter = 90
+  case year = 365
+}
+
 @objc(Activity)
 public class Activity: NSManagedObject {
-  
+
   var lastInstance: Instance? {
     get {
       guard let instances = self.instance else {
@@ -81,6 +88,17 @@ public class Activity: NSManagedObject {
     let diff = Double(Date().interval(ofComponent: .day, fromDate: earlierDate)) + 1
     
     return (totalCount / diff).roundTo(2)
+  }
+  
+  func getDateRange(for range: DateRange) -> [Date] {
+    let cal = Calendar(identifier: .gregorian)
+    var dateRange: [Date] = [Date]()
+    let startDate = Calendar.current.date(byAdding: .day, value: -(range.rawValue), to: Date())!
+    for d in 1 ... range.rawValue {
+      let newDate = Calendar.current.date(byAdding: .day, value: d, to: startDate)
+      dateRange.append(cal.startOfDay(for: newDate!))
+    }
+    return dateRange
   }
 
 }
