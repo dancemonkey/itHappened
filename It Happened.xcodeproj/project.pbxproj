@@ -46,6 +46,7 @@
 		10A7DF171F585153004C4F61 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF161F585153004C4F61 /* DataManager.swift */; };
 		10A7DF191F58515C004C4F61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF181F58515C004C4F61 /* Style.swift */; };
 		10A7DF1F1F585321004C4F61 /* InstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF1E1F585321004C4F61 /* InstanceVC.swift */; };
+		10BB92BA1FB8B07900C5EBB3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB92B91FB8B07900C5EBB3 /* InfoView.swift */; };
 		10D06D451F70B7CF00646197 /* PopoverPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */; };
 		10D66C271FA4BABA005BAD03 /* It_Happened.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1042BABC1F9E1FE800888169 /* It_Happened.xcdatamodeld */; };
 		10E2C7B41F732852002D1073 /* analogue_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10E2C7B31F732850002D1073 /* analogue_click1.wav */; };
@@ -127,6 +128,7 @@
 		10A7DF161F585153004C4F61 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		10A7DF181F58515C004C4F61 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		10A7DF1E1F585321004C4F61 /* InstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceVC.swift; sourceTree = "<group>"; };
+		10BB92B91FB8B07900C5EBB3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenterProtocol.swift; sourceTree = "<group>"; };
 		10DABDEF1FB7354A00CFF19C /* It Happened-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "It Happened-Bridging-Header.h"; sourceTree = "<group>"; };
 		10E2C7B31F732850002D1073 /* analogue_click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = analogue_click1.wav; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				105AD72D1F6020D100F36249 /* ActivityTableView.swift */,
 				106C3A7C1F647D2800E3D7F3 /* NewButton.swift */,
 				1040F4941F65DBC700893F7D /* IncrementButton.swift */,
+				10BB92B91FB8B07900C5EBB3 /* InfoView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				105A759D1F96349F00903AC9 /* ActivityInfoVC.swift in Sources */,
 				10A7DF041F584CE8004C4F61 /* ActivityVC.swift in Sources */,
 				105AD72E1F6020D100F36249 /* ActivityTableView.swift in Sources */,
+				10BB92BA1FB8B07900C5EBB3 /* InfoView.swift in Sources */,
 				10A7DF1F1F585321004C4F61 /* InstanceVC.swift in Sources */,
 				10D06D451F70B7CF00646197 /* PopoverPresenterProtocol.swift in Sources */,
 				10F926D21F585BB700D06941 /* Activity+CoreDataProperties.swift in Sources */,

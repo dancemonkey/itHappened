@@ -15,9 +15,12 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   var activity: Activity!
   var allDatesForActivity: [Date]!
   var dateRange: [Date] = [Date]()
-//  var dateRange: (from: Date, to: Date)!
+  var formatter: DateFormatter!
   @IBOutlet weak var emptyDataLbl: UILabel!
   @IBOutlet weak var chartView: JBBarChartView!
+  @IBOutlet weak var leftLbl: UILabel!
+  @IBOutlet weak var rightLbl: UILabel!
+  @IBOutlet weak var infoView: InfoView!
   
   // MARK: Methods
   override func viewDidLoad() {
@@ -27,15 +30,16 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     chartView.dataSource = self
     chartView.delegate = self
     
+    formatter = DateFormatter()
+    formatter.dateFormat = "MMM d"
+      
     allDatesForActivity = activity.getAllDates()
     let cal = Calendar(identifier: .gregorian)
     let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
-    print(startDate)
     for d in 1 ..< 8 {
       let newDate = Calendar.current.date(byAdding: .day, value: d, to: startDate)
       dateRange.append(cal.startOfDay(for: newDate!))
     }
-    print(dateRange)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -58,17 +62,21 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
       chartView.minimumValue = 0
       chartView.reloadData()
     }
+    leftLbl.text = formatter.string(from: dateRange.first!)
+    leftLbl.textColor = .white
+    rightLbl.text = "Today"
+    rightLbl.textColor = .white
+    
+    infoView.hideSubviews()
   }
   
   // MARK: Chart Methods
   
   func numberOfBars(in barChartView: JBBarChartView!) -> UInt {
-//    return UInt(activity.getAllDates()!.count)
     return UInt(dateRange.count)
   }
   
   func barChartView(_ barChartView: JBBarChartView!, heightForBarViewAt index: UInt) -> CGFloat {
-//    let date = activity.getAllDates()![Int(index)]
     if allDatesForActivity.contains(dateRange[Int(index)]) {
       let date = dateRange[Int(index)]
       return CGFloat(activity.getInstanceCount(forDate: date))
@@ -83,12 +91,11 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   
   func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
     let date = dateRange[Int(index)]
-    print(date)
-    print(activity.getInstanceCount(forDate: date))
+    infoView.configureSubviews(withActivity: self.activity, forDate: date)
   }
   
   func didDeselect(_ barChartView: JBBarChartView!) {
-    print("-=-=-=-=")
+    infoView.hideSubviews()
   }
   
 }
