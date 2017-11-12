@@ -21,6 +21,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   @IBOutlet weak var leftLbl: UILabel!
   @IBOutlet weak var rightLbl: UILabel!
   @IBOutlet weak var infoView: InfoView!
+  @IBOutlet weak var dateRangeSgmt: UISegmentedControl!
   
   // MARK: Methods
   override func viewDidLoad() {
@@ -32,7 +33,10 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     
     formatter = DateFormatter()
     formatter.dateFormat = "MMM d"
-      
+    
+    // create date range here based on segmented view selection
+    // get data for that range from model
+    
     allDatesForActivity = activity.getAllDates()
     let cal = Calendar(identifier: .gregorian)
     let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
@@ -52,6 +56,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     self.title = activity?.name!
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
     chartView.backgroundColor = Settings().colorTheme[.background]
+    dateRangeSgmt.tintColor = Settings().colorTheme[.accent2]
   }
   
   fileprivate func updateViews() {
@@ -97,5 +102,8 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   func didDeselect(_ barChartView: JBBarChartView!) {
     infoView.hideSubviews()
   }
+  
+  // MARK: Segemented control
+  
   
 }

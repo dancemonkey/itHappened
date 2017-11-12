@@ -648,7 +648,7 @@
                                     <constraint firstAttribute="height" constant="300" id="ocR-z4-cg7"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-o7-TKT">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-o7-TKT" userLabel="Legend Label Stack">
                                 <rect key="frame" x="16" y="324" width="343" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xu-7h-7J8">
@@ -666,26 +666,26 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-BX-WSA" customClass="InfoView" customModule="It_Happened" customModuleProvider="target">
-                                <rect key="frame" x="16" y="352" width="343" height="235"/>
+                                <rect key="frame" x="16" y="352" width="343" height="191"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="qHS-05-6aC">
-                                        <rect key="frame" x="0.0" y="8" width="343" height="109.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="qHS-05-6aC" userLabel="Info Label Stack">
+                                        <rect key="frame" x="0.0" y="8" width="343" height="113"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvJ-lP-sIL">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ig-1D-4ze">
-                                                <rect key="frame" x="0.0" y="44.5" width="343" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="48" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCA-cD-WKB">
-                                                <rect key="frame" x="0.0" y="89" width="343" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="92.5" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -704,25 +704,38 @@
                                     <outlet property="totalLbl" destination="2ig-1D-4ze" id="4oD-ZO-a0Q"/>
                                 </connections>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ugl-v6-Izb">
+                                <rect key="frame" x="16" y="559" width="343" height="29"/>
+                                <segments>
+                                    <segment title="7d"/>
+                                    <segment title="30d"/>
+                                    <segment title="90d"/>
+                                    <segment title="1yr"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ibH-BX-WSA" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="2ed-vS-OeF"/>
+                            <constraint firstAttribute="trailing" secondItem="Ugl-v6-Izb" secondAttribute="trailing" constant="16" id="6gO-0d-SRM"/>
                             <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerX" secondItem="ckJ-Zq-Exo" secondAttribute="centerX" id="7dn-6w-3Uh"/>
                             <constraint firstItem="ibH-BX-WSA" firstAttribute="top" secondItem="xFb-o7-TKT" secondAttribute="bottom" constant="8" id="8r9-KW-hY9"/>
                             <constraint firstItem="xFb-o7-TKT" firstAttribute="top" secondItem="urs-m9-VUs" secondAttribute="bottom" constant="8" id="8wM-48-p0u"/>
-                            <constraint firstItem="svv-L0-9HG" firstAttribute="top" secondItem="ibH-BX-WSA" secondAttribute="bottom" constant="16" id="Eq0-aO-QeB"/>
                             <constraint firstItem="urs-m9-VUs" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="FXZ-gd-Fuc"/>
                             <constraint firstAttribute="trailing" secondItem="ibH-BX-WSA" secondAttribute="trailing" constant="16" id="M2D-hl-FiG"/>
+                            <constraint firstItem="Ugl-v6-Izb" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="amQ-Uz-vvS"/>
                             <constraint firstAttribute="trailing" secondItem="xFb-o7-TKT" secondAttribute="trailing" constant="16" id="axt-XN-Jsq"/>
                             <constraint firstItem="urs-m9-VUs" firstAttribute="top" secondItem="MMm-yd-8tq" secondAttribute="bottom" constant="16" id="fjx-1a-jLR"/>
+                            <constraint firstItem="svv-L0-9HG" firstAttribute="top" secondItem="Ugl-v6-Izb" secondAttribute="bottom" constant="16" id="fsu-jU-hud"/>
                             <constraint firstItem="xFb-o7-TKT" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="gaB-eQ-Sj9"/>
                             <constraint firstAttribute="trailing" secondItem="urs-m9-VUs" secondAttribute="trailing" constant="16" id="qEp-em-xGC"/>
                             <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerY" secondItem="ckJ-Zq-Exo" secondAttribute="centerY" id="qPN-d8-una"/>
+                            <constraint firstItem="Ugl-v6-Izb" firstAttribute="top" secondItem="ibH-BX-WSA" secondAttribute="bottom" constant="16" id="u86-Nb-jSl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="chartView" destination="urs-m9-VUs" id="Wi6-2D-qqM"/>
+                        <outlet property="dateRangeSgmt" destination="Ugl-v6-Izb" id="uSN-fF-VDA"/>
                         <outlet property="emptyDataLbl" destination="fVE-Ca-k7g" id="fbi-oU-TmR"/>
                         <outlet property="infoView" destination="ibH-BX-WSA" id="yli-VV-uPd"/>
                         <outlet property="leftLbl" destination="9xu-7h-7J8" id="Kpa-hE-2ab"/>
