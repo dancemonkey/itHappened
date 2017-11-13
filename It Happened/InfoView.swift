@@ -13,6 +13,7 @@ class InfoView: UIView {
   @IBOutlet weak var dateLbl: UILabel!
   @IBOutlet weak var totalLbl: UILabel!
   @IBOutlet weak var average: UILabel!
+  @IBOutlet weak var labelStack: UIStackView!
   
   var formatter: DateFormatter!
   
@@ -24,7 +25,7 @@ class InfoView: UIView {
   }
   
   func configureSubviews(withActivity activity: Activity, forDate date: Date) {
-    for view in self.subviews {
+    for view in labelStack.subviews {
       view.isHidden = false
     }
     dateLbl.text = formatter.string(from: date)
@@ -33,7 +34,7 @@ class InfoView: UIView {
   }
   
   func hideSubviews() {
-    for view in self.subviews {
+    for view in labelStack.subviews {
       view.isHidden = true
     }
   }
@@ -43,6 +44,16 @@ class InfoView: UIView {
     dateLbl.textColor = .white
     totalLbl.textColor = .white
     average.textColor = .white
+  }
+  
+  func chartIsUpdating(_ updating: Bool) {
+    self.isHidden = false
+    dateLbl.isHidden = !updating
+    if updating {
+      dateLbl.text = "UPDATING..."
+    } else {
+      dateLbl.text = ""
+    }
   }
   
 }

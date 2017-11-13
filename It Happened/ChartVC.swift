@@ -22,6 +22,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   @IBOutlet weak var rightLbl: UILabel!
   @IBOutlet weak var infoView: InfoView!
   @IBOutlet weak var dateRangeSgmt: UISegmentedControl!
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
   // MARK: Methods
   override func viewDidLoad() {
@@ -33,9 +34,6 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     
     formatter = DateFormatter()
     formatter.dateFormat = "MMM d"
-    
-    // create date range here based on segmented view selection
-    // get data for that range from model
     
     allDatesForActivity = activity.getAllDates()
     let cal = Calendar(identifier: .gregorian)
@@ -57,6 +55,8 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     emptyDataLbl.textColor = Settings().colorTheme[.accent2]
     chartView.backgroundColor = Settings().colorTheme[.background]
     dateRangeSgmt.tintColor = Settings().colorTheme[.accent2]
+    activityIndicator.hidesWhenStopped = true
+    activityIndicator.color = Settings().colorTheme[.accent2]
   }
   
   fileprivate func updateViews() {
@@ -67,10 +67,8 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
       chartView.minimumValue = 0
       chartView.reloadData()
     }
-    leftLbl.text = formatter.string(from: dateRange.first!)
-    leftLbl.textColor = .white
-    rightLbl.text = "Today"
-    rightLbl.textColor = .white
+    
+    updateChartLabels()
     
     infoView.hideSubviews()
   }
@@ -103,6 +101,13 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     infoView.hideSubviews()
   }
   
+  func updateChartLabels() {
+    leftLbl.text = formatter.string(from: dateRange.first!)
+    leftLbl.textColor = .white
+    rightLbl.text = "Today"
+    rightLbl.textColor = .white
+  }
+  
   // MARK: Segemented control
   
   @IBAction func dateRangeSelected(sender: UISegmentedControl) {
@@ -118,7 +123,16 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     default:
       dateRange = activity.getDateRange(for: .week)
     }
-    chartView.reloadData()
+    self.activityIndicator.isHidden = false
+    self.activityIndicator.startAnimating()
+    self.infoView.chartIsUpdating(true)
+    
+    DispatchQueue.main.async {
+      self.chartView.reloadData()
+      self.updateChartLabels()
+      self.infoView.chartIsUpdating(false)
+      self.activityIndicator.stopAnimating()
+    }
   }
   
 }

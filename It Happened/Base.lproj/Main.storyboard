@@ -648,6 +648,13 @@
                                     <constraint firstAttribute="height" constant="300" id="ocR-z4-cg7"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FCW-Qh-YMV" userLabel="Activity Indicator">
+                                <rect key="frame" x="150" y="128" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="VKI-W7-L0c"/>
+                                    <constraint firstAttribute="height" constant="75" id="dLm-aT-KWM"/>
+                                </constraints>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-o7-TKT" userLabel="Legend Label Stack">
                                 <rect key="frame" x="16" y="324" width="343" height="20.5"/>
                                 <subviews>
@@ -701,6 +708,7 @@
                                 <connections>
                                     <outlet property="average" destination="xCA-cD-WKB" id="2wr-9A-75s"/>
                                     <outlet property="dateLbl" destination="PvJ-lP-sIL" id="QJ9-vR-YF7"/>
+                                    <outlet property="labelStack" destination="qHS-05-6aC" id="RUD-WO-JI5"/>
                                     <outlet property="totalLbl" destination="2ig-1D-4ze" id="4oD-ZO-a0Q"/>
                                 </connections>
                             </view>
@@ -725,6 +733,7 @@
                             <constraint firstItem="ibH-BX-WSA" firstAttribute="top" secondItem="xFb-o7-TKT" secondAttribute="bottom" constant="8" id="8r9-KW-hY9"/>
                             <constraint firstItem="xFb-o7-TKT" firstAttribute="top" secondItem="urs-m9-VUs" secondAttribute="bottom" constant="8" id="8wM-48-p0u"/>
                             <constraint firstItem="urs-m9-VUs" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="FXZ-gd-Fuc"/>
+                            <constraint firstItem="FCW-Qh-YMV" firstAttribute="centerX" secondItem="urs-m9-VUs" secondAttribute="centerX" id="Ju1-wH-LML"/>
                             <constraint firstAttribute="trailing" secondItem="ibH-BX-WSA" secondAttribute="trailing" constant="16" id="M2D-hl-FiG"/>
                             <constraint firstItem="Ugl-v6-Izb" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="amQ-Uz-vvS"/>
                             <constraint firstAttribute="trailing" secondItem="xFb-o7-TKT" secondAttribute="trailing" constant="16" id="axt-XN-Jsq"/>
@@ -734,9 +743,11 @@
                             <constraint firstAttribute="trailing" secondItem="urs-m9-VUs" secondAttribute="trailing" constant="16" id="qEp-em-xGC"/>
                             <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerY" secondItem="ckJ-Zq-Exo" secondAttribute="centerY" id="qPN-d8-una"/>
                             <constraint firstItem="Ugl-v6-Izb" firstAttribute="top" secondItem="ibH-BX-WSA" secondAttribute="bottom" constant="16" id="u86-Nb-jSl"/>
+                            <constraint firstItem="FCW-Qh-YMV" firstAttribute="centerY" secondItem="urs-m9-VUs" secondAttribute="centerY" id="xZw-4h-eXz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="FCW-Qh-YMV" id="R8K-tg-ybw"/>
                         <outlet property="chartView" destination="urs-m9-VUs" id="Wi6-2D-qqM"/>
                         <outlet property="dateRangeSgmt" destination="Ugl-v6-Izb" id="uSN-fF-VDA"/>
                         <outlet property="emptyDataLbl" destination="fVE-Ca-k7g" id="fbi-oU-TmR"/>
