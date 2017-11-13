@@ -105,10 +105,20 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   
   // MARK: Segemented control
   
-  func dateRangeSelected(sender: UISegmentedControl) {
+  @IBAction func dateRangeSelected(sender: UISegmentedControl) {
     switch sender.selectedSegmentIndex {
-      
+    case 0:
+      dateRange = activity.getDateRange(for: .week)
+    case 1:
+      dateRange = activity.getDateRange(for: .month)
+    case 2:
+      dateRange = activity.getDateRange(for: .quarter)
+    case 3:
+      dateRange = activity.getDateRange(for: .year)
+    default:
+      dateRange = activity.getDateRange(for: .week)
     }
+    chartView.reloadData()
   }
   
 }

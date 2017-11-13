@@ -712,6 +712,9 @@
                                     <segment title="90d"/>
                                     <segment title="1yr"/>
                                 </segments>
+                                <connections>
+                                    <action selector="dateRangeSelectedWithSender:" destination="XB9-s3-Ovc" eventType="valueChanged" id="CSg-H8-390"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
