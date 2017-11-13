@@ -642,21 +642,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urs-m9-VUs" customClass="JBBarChartView">
-                                <rect key="frame" x="16" y="16" width="343" height="300"/>
+                                <rect key="frame" x="16" y="16" width="343" height="341"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="ocR-z4-cg7"/>
-                                </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FCW-Qh-YMV" userLabel="Activity Indicator">
-                                <rect key="frame" x="150" y="128" width="75" height="75"/>
+                                <rect key="frame" x="150" y="148.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="VKI-W7-L0c"/>
                                     <constraint firstAttribute="height" constant="75" id="dLm-aT-KWM"/>
                                 </constraints>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-o7-TKT" userLabel="Legend Label Stack">
-                                <rect key="frame" x="16" y="324" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="365" width="343" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xu-7h-7J8">
                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="20.5"/>
@@ -673,7 +670,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-BX-WSA" customClass="InfoView" customModule="It_Happened" customModuleProvider="target">
-                                <rect key="frame" x="16" y="352" width="343" height="191"/>
+                                <rect key="frame" x="16" y="393" width="343" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="qHS-05-6aC" userLabel="Info Label Stack">
                                         <rect key="frame" x="0.0" y="8" width="343" height="113"/>
@@ -684,13 +681,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ig-1D-4ze">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2ig-1D-4ze">
                                                 <rect key="frame" x="0.0" y="48" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCA-cD-WKB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xCA-cD-WKB">
                                                 <rect key="frame" x="0.0" y="92.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -702,6 +699,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qHS-05-6aC" secondAttribute="trailing" id="05S-y3-4y7"/>
+                                    <constraint firstAttribute="height" constant="150" id="1ff-Xt-odF"/>
                                     <constraint firstItem="qHS-05-6aC" firstAttribute="leading" secondItem="ibH-BX-WSA" secondAttribute="leading" id="5R4-0q-jii"/>
                                     <constraint firstItem="qHS-05-6aC" firstAttribute="top" secondItem="ibH-BX-WSA" secondAttribute="top" constant="8" id="SgO-gE-Hh2"/>
                                 </constraints>

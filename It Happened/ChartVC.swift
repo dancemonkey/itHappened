@@ -71,6 +71,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     updateChartLabels()
     
     infoView.hideSubviews()
+    infoView.showHint()
   }
   
   // MARK: Chart Methods

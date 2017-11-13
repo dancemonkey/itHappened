@@ -30,7 +30,7 @@ class InfoView: UIView {
     }
     dateLbl.text = formatter.string(from: date)
     totalLbl.text = "Total for this day: \(activity.getInstanceCount(forDate: date))"
-    average.text = "Average: \(activity.getAveragePerDay()) per day"
+    average.text = "Historical average: \(activity.getAveragePerDay()) per day"
   }
   
   func hideSubviews() {
@@ -47,13 +47,20 @@ class InfoView: UIView {
   }
   
   func chartIsUpdating(_ updating: Bool) {
-    self.isHidden = false
     dateLbl.isHidden = !updating
+    totalLbl.isHidden = !updating
     if updating {
       dateLbl.text = "UPDATING..."
+      totalLbl.text = "Large date ranges may take a few moments..."
     } else {
       dateLbl.text = ""
+      totalLbl.text = ""
     }
+  }
+  
+  func showHint() {
+    totalLbl.isHidden = false
+    totalLbl.text = "Tap and hold on chart for more information..."
   }
   
 }
