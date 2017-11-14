@@ -109,7 +109,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     rightLbl.textColor = .white
   }
   
-  // MARK: Segemented control
+  // MARK: Segmented control
   
   @IBAction func dateRangeSelected(sender: UISegmentedControl) {
     switch sender.selectedSegmentIndex {

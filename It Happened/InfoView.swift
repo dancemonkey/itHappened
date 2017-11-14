@@ -51,7 +51,7 @@ class InfoView: UIView {
     totalLbl.isHidden = !updating
     if updating {
       dateLbl.text = "UPDATING..."
-      totalLbl.text = "Large date ranges may take a few moments..."
+      totalLbl.text = "Large data sets may take a few moments to load..."
     } else {
       dateLbl.text = ""
       totalLbl.text = ""
@@ -60,7 +60,7 @@ class InfoView: UIView {
   
   func showHint() {
     totalLbl.isHidden = false
-    totalLbl.text = "Tap and hold on chart for more information..."
+    totalLbl.text = "Tap and hold on a bar for more details..."
   }
   
 }
