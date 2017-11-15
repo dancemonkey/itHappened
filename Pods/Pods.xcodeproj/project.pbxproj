@@ -7,90 +7,192 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EEDDCC681E8957E7D709F6B10681308 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C8FCC9D3EB49A29F05EC32CDCD5CA6 /* ViewAnimator.swift */; };
-		27BC9DF891EC4F16C226E3F8699F7E3D /* ViewAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B35911146AFF66A6622DE0FBAEE1A8 /* ViewAnimator-dummy.m */; };
-		32061B09B363B705395A46521CD21A47 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7BBDDFDCDC84C4538E540AF44DC34 /* Utilities.swift */; };
-		5A4D2E196AB0525E67A38B3B0DFFD9C1 /* ViewAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C3996ACCA6A7225D87EE1879A4846B /* ViewAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7713805D9109DC63AD15BD7E75A787F4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1EF64F930CD86B5BF82B0C7CA81F3 /* Animation.swift */; };
-		93FA4EA64E269D50A41CF913911D4B89 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE014C3C33558602B99E1FF98E0E38A /* Animatable.swift */; };
-		953896B62AF13FE9D47F4AB01FA81B8F /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908EE52B2D966C6C1CAFE772BBEDF384 /* Direction.swift */; };
-		990D482B8D587022A751B426D1D8EAD7 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C2DCA6455998DC19092B7EBBA535D /* ViewAnimatorConfig.swift */; };
-		9FE426EBCFAC4CFE304AFC1D924AF93C /* Pods-It Happened-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3864112B0E8C66E14D3AA77D30D9D029 /* Pods-It Happened-dummy.m */; };
-		B721800AE31C9BF2EBBD5F817FDF9D52 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7EF26866352B936710D4EC24D839F /* AnimationType.swift */; };
-		B925E1651B45C6BFAB5979EFC3BDA7EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		DA691C14AA3ABD7DD0D43C05FBA54F78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		E57D609C7B4984D80FE76F3CB770A92B /* Pods-It Happened-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5042C893DAB2EA722E08458E6206D02 /* Pods-It Happened-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA5C6F850B18423FD761EE27D3785F00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D91E7361A02BC9DD960B01818F6062D /* Constants.swift */; };
+		06848D8F1919E99943B5381205F99E86 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020F6FDE9EB2F3D6759EADF881EFFB56 /* Animation.swift */; };
+		0798B06AE546C65867F15A8F62C72BD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		139DF8B9AD013E4DE9C795B72D6B215A /* JBGradientBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9253667398752B885F5134F2942F5A1 /* JBGradientBarView.m */; };
+		1B949AA92EF7496882E4478B9AA6E0CF /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB288D95635FC1CA9E69CF5C8BA65E5 /* AnimationType.swift */; };
+		2157E68D351AE5CA57E69C9A46B0B088 /* JBLineChartLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A84633A00E814BDD6532F4AE933E0B6B /* JBLineChartLine.m */; };
+		299881057FB2CA560B3112BA2557FA3D /* JBLineChartDotsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FA55D024599D011E07BE67CB13239D /* JBLineChartDotsView.m */; };
+		2E0CC98B7167514DAF53AA90EAA85FB5 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6C08A87364CC67299894A00FBD5CE /* ViewAnimatorConfig.swift */; };
+		2E38BFF8237A73E24D8EF5F168155719 /* JBChartView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC88832B1EB5793345B4676DEEAA563 /* JBChartView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37AAAF3981518676B7FDF98764CC7277 /* ViewAnimator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ED7896FC61694ED4464D2FE72F2E712 /* ViewAnimator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38CA890E59175CCB854195F625542345 /* JBShapeLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3A6ACCB6043D32AA3590141CF61FA4 /* JBShapeLineLayer.m */; };
+		3B059AE9D1BCDB673D012857263B9D4C /* JBBarChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BE588F6F9459501068443A8D1FEED61 /* JBBarChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		423FB12FD58688ED84997BF59F746989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		426A42796485A71F96D24CCF1E859DF8 /* JBChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A09FA552B75EF8E1920B0638FFACEF /* JBChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		445851C633A5424160C4EE15304459C8 /* JBLineChartLinesView.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A4C4D8919B7EA3DD30D485EABF0219 /* JBLineChartLinesView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51F96C9AB940B0632F0B8F5CCB837D6D /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C356F49F0B7991653AA5B195D917B5F8 /* JBBarChartView.m */; };
+		5A2B0C434CCB0D1CD3F49DFF060D4936 /* JBLineChartLine.h in Headers */ = {isa = PBXBuildFile; fileRef = AD08544726B3FBC10D67C759040B84D6 /* JBLineChartLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E6E4ADAAEDAE01B904B99B98F5DB3A1 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE281C12E3A6740EA234957D64DDE2F /* Animatable.swift */; };
+		6A86D83775F51E702C21210516163C74 /* JBLineChartDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0741103B3B4ACD23FFDB27DE33C1D5 /* JBLineChartDotView.m */; };
+		6C1386F661AC0C53389F9D0AD88D0428 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC6111470449CF75117F7F34BB70DE9 /* Direction.swift */; };
+		706AFDB025E59E50ECB45F8DE2F35931 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC6989B9E2584B597A38EE4429D4EB /* ViewAnimator.swift */; };
+		732E83D919E45F18F1838E1D69ED471C /* JBLineChartPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D299F7CF13278EECF380A39C75B36DE /* JBLineChartPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74CFE7B7EAC9CE681E9AD6116FA9BE65 /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9001718ECF831D0A5B3E3CF522A585 /* JBLineChartView.m */; };
+		78120A3601A06D8A5EDFBFD585129753 /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D5ED73BCF8FCC380FA487C415FF93C7 /* JBChartView.m */; };
+		7A11B055C6ADDE38CD3713A6D346C09E /* Pods-It Happened-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5042C893DAB2EA722E08458E6206D02 /* Pods-It Happened-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89456D1FFDB323E816213F9A5CF4089D /* JBGradientLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0458C70F0ED92B1A0C8903F9D13E06 /* JBGradientLineLayer.m */; };
+		8A6FD4A5DDC300E8682D59EDF95857C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5401A7E17AA7B81DC2243EE7AB3D5CF /* Constants.swift */; };
+		93F689EB0FCCC0E426D47A629D398CB9 /* JBGradientLineLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D8BAFCE690C094698466A32326A37F60 /* JBGradientLineLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98DF62F047B5ACAA65EC3C159798A155 /* JBShapeLineLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B7E6DA11ECE28EA1879432D5B830712C /* JBShapeLineLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F0779951A822EA5DF0E31817411D9F1 /* NSMutableArray+JBStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 74642B43A9AE1EEA62DA87343A341BAA /* NSMutableArray+JBStack.m */; };
+		A10E78C5CE1F3930468BD336E1F31A4C /* NSMutableArray+JBStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A4D45BB9FC123A44231848E85C1D820 /* NSMutableArray+JBStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A63CDF2F0879C1B64D5B7EFB3D8DAF92 /* JBChartView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 100D5ECC35ADF9954198EFB4252C7E67 /* JBChartView-dummy.m */; };
+		AB0EA88D3ABD8AEFAC94E8681D3C3A30 /* Pods-It Happened-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3864112B0E8C66E14D3AA77D30D9D029 /* Pods-It Happened-dummy.m */; };
+		B55C23EFBE330672CC51B262346C9A58 /* JBGradientBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 705570F555D7500E9831945FB565D8E5 /* JBGradientBarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C29A8D155B910A825C9DB469A5415D98 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50EF1676428C9DDF3F19E62179F5B8 /* Utilities.swift */; };
+		C5A6F1F3F0C84AE88F9F96AD83F0062C /* JBLineChartLinesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493E1D4141C7344D261DEC142429898E /* JBLineChartLinesView.m */; };
+		CCA6BFF987DEE0C71CA6FFF87E82622C /* JBLineChartPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C06423BBDF9873EC72063C985A7601 /* JBLineChartPoint.m */; };
+		CDF46212B158D09548B56264C42CF247 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		D8C12D3990AF99FDA491BFF4CC0B42C1 /* JBLineChartDotsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2571A0A53B31D46015767165E6E47482 /* JBLineChartDotsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D969475FA12BC012A40CD8B6BC03874E /* JBLineChartDotView.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8DA380C1616173BC1986682FB19D7B /* JBLineChartDotView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E573529DC067A1DC86AC31C40744CE05 /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6609887198EC86338C32BD3DD66A31BA /* JBLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F45B298181BCD1B866E43E4088078B53 /* ViewAnimator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3881B13231F5EDDBA0820B213BFBB42C /* ViewAnimator-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6C423011B104D795C9483471671E7E84 /* PBXContainerItemProxy */ = {
+		1BB2DACBD26F8A34925670C7182670F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C123E3033B213EFA5552D9BA51A08E92;
+			remoteGlobalIDString = 7A4752E1A78EE7604F2EEFBC36866BB3;
+			remoteInfo = JBChartView;
+		};
+		96929D96623FEA3F5A1C571E75789FFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71A0558A0D7E150353BA4357122537F8;
 			remoteInfo = ViewAnimator;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020F6FDE9EB2F3D6759EADF881EFFB56 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = ViewAnimator/Classes/Animation.swift; sourceTree = "<group>"; };
 		02D506DFAA4E8DD2D27FF4718A908CCF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03DC9E42093038FD933536EAA1D4FBDC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04122962699370BC505082B1D932D9A9 /* Pods-It Happened-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-It Happened-frameworks.sh"; sourceTree = "<group>"; };
 		0416F92A8A7D39D559AB9E5EE7DC0439 /* Pods-It Happened-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-It Happened-acknowledgements.plist"; sourceTree = "<group>"; };
-		0D91E7361A02BC9DD960B01818F6062D /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ViewAnimator/Classes/Constants.swift; sourceTree = "<group>"; };
-		1FD1EF64F930CD86B5BF82B0C7CA81F3 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animation.swift; path = ViewAnimator/Classes/Animation.swift; sourceTree = "<group>"; };
-		22F7BBDDFDCDC84C4538E540AF44DC34 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ViewAnimator/Classes/Utilities.swift; sourceTree = "<group>"; };
-		2F129EFB8FC2891AEF3F0B5FA888AC37 /* Pods_It_Happened.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_It_Happened.framework; path = "Pods-It Happened.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		342C2DCA6455998DC19092B7EBBA535D /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimatorConfig.swift; path = ViewAnimator/Classes/ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		0BC6111470449CF75117F7F34BB70DE9 /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ViewAnimator/Classes/Direction.swift; sourceTree = "<group>"; };
+		100D5ECC35ADF9954198EFB4252C7E67 /* JBChartView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JBChartView-dummy.m"; sourceTree = "<group>"; };
+		15C06423BBDF9873EC72063C985A7601 /* JBLineChartPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBLineChartPoint.m; path = Classes/Line/Models/JBLineChartPoint.m; sourceTree = "<group>"; };
+		1756542C2B7A5925B523E5FD9BD34DDE /* JBChartView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JBChartView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4D45BB9FC123A44231848E85C1D820 /* NSMutableArray+JBStack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+JBStack.h"; path = "Classes/Additions/NSMutableArray+JBStack.h"; sourceTree = "<group>"; };
+		1ABEDB904D9AAE6E5617A693F510DCBB /* Pods_It_Happened.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_It_Happened.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24D896D8390018678CBCAEF8637ADD03 /* ViewAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-prefix.pch"; sourceTree = "<group>"; };
+		2571A0A53B31D46015767165E6E47482 /* JBLineChartDotsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBLineChartDotsView.h; path = Classes/Line/Views/JBLineChartDotsView.h; sourceTree = "<group>"; };
+		2D5ED73BCF8FCC380FA487C415FF93C7 /* JBChartView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBChartView.m; path = Classes/Base/JBChartView.m; sourceTree = "<group>"; };
+		2EB288D95635FC1CA9E69CF5C8BA65E5 /* AnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = ViewAnimator/Classes/AnimationType.swift; sourceTree = "<group>"; };
 		3864112B0E8C66E14D3AA77D30D9D029 /* Pods-It Happened-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-It Happened-dummy.m"; sourceTree = "<group>"; };
-		3AE014C3C33558602B99E1FF98E0E38A /* Animatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = ViewAnimator/Classes/Animatable.swift; sourceTree = "<group>"; };
-		40C8FCC9D3EB49A29F05EC32CDCD5CA6 /* ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimator.swift; path = ViewAnimator/Classes/ViewAnimator.swift; sourceTree = "<group>"; };
+		3881B13231F5EDDBA0820B213BFBB42C /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
+		3ED7896FC61694ED4464D2FE72F2E712 /* ViewAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-umbrella.h"; sourceTree = "<group>"; };
+		45FA55D024599D011E07BE67CB13239D /* JBLineChartDotsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBLineChartDotsView.m; path = Classes/Line/Views/JBLineChartDotsView.m; sourceTree = "<group>"; };
+		47175B04291E384D35B42023EF216AFB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493E1D4141C7344D261DEC142429898E /* JBLineChartLinesView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBLineChartLinesView.m; path = Classes/Line/Views/JBLineChartLinesView.m; sourceTree = "<group>"; };
 		4A7B2663674A4F329017A4ED4790C5B7 /* Pods-It Happened-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-It Happened-resources.sh"; sourceTree = "<group>"; };
-		5F543072EC5F9E4C04EC0838BAEEECDA /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ViewAnimator.framework; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D299F7CF13278EECF380A39C75B36DE /* JBLineChartPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBLineChartPoint.h; path = Classes/Line/Models/JBLineChartPoint.h; sourceTree = "<group>"; };
+		5D3A6ACCB6043D32AA3590141CF61FA4 /* JBShapeLineLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBShapeLineLayer.m; path = Classes/Line/Layers/JBShapeLineLayer.m; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		724430393B44E4F724B3AEE645ECE9B8 /* ViewAnimator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-prefix.pch"; sourceTree = "<group>"; };
-		83B35911146AFF66A6622DE0FBAEE1A8 /* ViewAnimator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ViewAnimator-dummy.m"; sourceTree = "<group>"; };
-		908EE52B2D966C6C1CAFE772BBEDF384 /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Direction.swift; path = ViewAnimator/Classes/Direction.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6609887198EC86338C32BD3DD66A31BA /* JBLineChartView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBLineChartView.h; path = Classes/Line/JBLineChartView.h; sourceTree = "<group>"; };
+		705570F555D7500E9831945FB565D8E5 /* JBGradientBarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBGradientBarView.h; path = Classes/Bar/Views/JBGradientBarView.h; sourceTree = "<group>"; };
+		738DF27F310B073225BF370794A3A209 /* JBChartView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JBChartView.modulemap; sourceTree = "<group>"; };
+		74642B43A9AE1EEA62DA87343A341BAA /* NSMutableArray+JBStack.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+JBStack.m"; path = "Classes/Additions/NSMutableArray+JBStack.m"; sourceTree = "<group>"; };
+		785131D11331178F56AD25911F8E36CB /* ViewAnimator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewAnimator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CFC6989B9E2584B597A38EE4429D4EB /* ViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimator.swift; path = ViewAnimator/Classes/ViewAnimator.swift; sourceTree = "<group>"; };
+		8F88A38D30FDF2E8D2E7A0F8372946C1 /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9757089DC6D5437C1FA15F3EDB01EE1B /* Pods-It Happened-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-It Happened-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A8C3996ACCA6A7225D87EE1879A4846B /* ViewAnimator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ViewAnimator-umbrella.h"; sourceTree = "<group>"; };
-		C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.xcconfig; sourceTree = "<group>"; };
-		D2A39E9870AD2BDFCA5010342C0D76C6 /* ViewAnimator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ViewAnimator.modulemap; sourceTree = "<group>"; };
-		E9414014E07937159B9974E314CAEDE3 /* Pods-It Happened.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-It Happened.modulemap"; sourceTree = "<group>"; };
+		9BE588F6F9459501068443A8D1FEED61 /* JBBarChartView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBBarChartView.h; path = Classes/Bar/JBBarChartView.h; sourceTree = "<group>"; };
+		9EC88832B1EB5793345B4676DEEAA563 /* JBChartView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JBChartView-umbrella.h"; sourceTree = "<group>"; };
+		A7A09FA552B75EF8E1920B0638FFACEF /* JBChartView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBChartView.h; path = Classes/Base/JBChartView.h; sourceTree = "<group>"; };
+		A7A4C4D8919B7EA3DD30D485EABF0219 /* JBLineChartLinesView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBLineChartLinesView.h; path = Classes/Line/Views/JBLineChartLinesView.h; sourceTree = "<group>"; };
+		A84633A00E814BDD6532F4AE933E0B6B /* JBLineChartLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBLineChartLine.m; path = Classes/Line/Models/JBLineChartLine.m; sourceTree = "<group>"; };
+		ABE281C12E3A6740EA234957D64DDE2F /* Animatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = ViewAnimator/Classes/Animatable.swift; sourceTree = "<group>"; };
+		AC470828E86F9855FA1A584080E17729 /* JBChartView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JBChartView.xcconfig; sourceTree = "<group>"; };
+		AD08544726B3FBC10D67C759040B84D6 /* JBLineChartLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBLineChartLine.h; path = Classes/Line/Models/JBLineChartLine.h; sourceTree = "<group>"; };
+		B7E6DA11ECE28EA1879432D5B830712C /* JBShapeLineLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBShapeLineLayer.h; path = Classes/Line/Layers/JBShapeLineLayer.h; sourceTree = "<group>"; };
+		BA0741103B3B4ACD23FFDB27DE33C1D5 /* JBLineChartDotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBLineChartDotView.m; path = Classes/Line/Views/JBLineChartDotView.m; sourceTree = "<group>"; };
+		C356F49F0B7991653AA5B195D917B5F8 /* JBBarChartView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBBarChartView.m; path = Classes/Bar/JBBarChartView.m; sourceTree = "<group>"; };
+		C3F2CF9127429EDEDCB81084455DD6B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5401A7E17AA7B81DC2243EE7AB3D5CF /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ViewAnimator/Classes/Constants.swift; sourceTree = "<group>"; };
+		CF9001718ECF831D0A5B3E3CF522A585 /* JBLineChartView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBLineChartView.m; path = Classes/Line/JBLineChartView.m; sourceTree = "<group>"; };
+		D2E6C08A87364CC67299894A00FBD5CE /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewAnimatorConfig.swift; path = ViewAnimator/Classes/ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		D8BAFCE690C094698466A32326A37F60 /* JBGradientLineLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBGradientLineLayer.h; path = Classes/Line/Layers/JBGradientLineLayer.h; sourceTree = "<group>"; };
+		E7774DDC0D3F4FB9507EAA3EEB07D007 /* JBChartView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JBChartView-prefix.pch"; sourceTree = "<group>"; };
+		E7A2169992A79DFCBE58486716CF259D /* ViewAnimator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ViewAnimator.xcconfig; sourceTree = "<group>"; };
+		E9253667398752B885F5134F2942F5A1 /* JBGradientBarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBGradientBarView.m; path = Classes/Bar/Views/JBGradientBarView.m; sourceTree = "<group>"; };
+		E9414014E07937159B9974E314CAEDE3 /* Pods-It Happened.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-It Happened.modulemap"; sourceTree = "<group>"; };
+		EA8DA380C1616173BC1986682FB19D7B /* JBLineChartDotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JBLineChartDotView.h; path = Classes/Line/Views/JBLineChartDotView.h; sourceTree = "<group>"; };
+		EB0458C70F0ED92B1A0C8903F9D13E06 /* JBGradientLineLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JBGradientLineLayer.m; path = Classes/Line/Layers/JBGradientLineLayer.m; sourceTree = "<group>"; };
+		ED50EF1676428C9DDF3F19E62179F5B8 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ViewAnimator/Classes/Utilities.swift; sourceTree = "<group>"; };
 		EDC63EF9A9AC723F789E9E71FD9E7C19 /* Pods-It Happened.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-It Happened.debug.xcconfig"; sourceTree = "<group>"; };
-		F1E7EF26866352B936710D4EC24D839F /* AnimationType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = ViewAnimator/Classes/AnimationType.swift; sourceTree = "<group>"; };
 		F5042C893DAB2EA722E08458E6206D02 /* Pods-It Happened-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-It Happened-umbrella.h"; sourceTree = "<group>"; };
 		FFB7200A7B1990D687FAF79EA8AA9017 /* Pods-It Happened.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-It Happened.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5750F98EFBB8B77FA1F51971CA011652 /* Frameworks */ = {
+		3124380E2BE7D6164303D8C31CF72B53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B925E1651B45C6BFAB5979EFC3BDA7EC /* Foundation.framework in Frameworks */,
+				423FB12FD58688ED84997BF59F746989 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57E39D6DA9B13EF8020E6B48A11B57D6 /* Frameworks */ = {
+		6D8589ACCA52ED6F7A32DC0BB5E65BE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA691C14AA3ABD7DD0D43C05FBA54F78 /* Foundation.framework in Frameworks */,
+				0798B06AE546C65867F15A8F62C72BD0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B044B919EA54ACA2A4C6DB168002A05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDF46212B158D09548B56264C42CF247 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50D9D0CEEC44E1514BFD30BD326B7C3A /* Products */ = {
+		1AAA0C1FFC1508A24D858E504F0FC97D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2F129EFB8FC2891AEF3F0B5FA888AC37 /* Pods_It_Happened.framework */,
-				5F543072EC5F9E4C04EC0838BAEEECDA /* ViewAnimator.framework */,
+				C3F2CF9127429EDEDCB81084455DD6B8 /* Info.plist */,
+				738DF27F310B073225BF370794A3A209 /* JBChartView.modulemap */,
+				AC470828E86F9855FA1A584080E17729 /* JBChartView.xcconfig */,
+				100D5ECC35ADF9954198EFB4252C7E67 /* JBChartView-dummy.m */,
+				E7774DDC0D3F4FB9507EAA3EEB07D007 /* JBChartView-prefix.pch */,
+				9EC88832B1EB5793345B4676DEEAA563 /* JBChartView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JBChartView";
+			sourceTree = "<group>";
+		};
+		1F8C6A7E29B3FB91FB954B0C07B6E3B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1756542C2B7A5925B523E5FD9BD34DDE /* JBChartView.framework */,
+				1ABEDB904D9AAE6E5617A693F510DCBB /* Pods_It_Happened.framework */,
+				785131D11331178F56AD25911F8E36CB /* ViewAnimator.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		58271F3E51FB68CEACD4FA3D21F7714E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				47175B04291E384D35B42023EF216AFB /* Info.plist */,
+				8F88A38D30FDF2E8D2E7A0F8372946C1 /* ViewAnimator.modulemap */,
+				E7A2169992A79DFCBE58486716CF259D /* ViewAnimator.xcconfig */,
+				3881B13231F5EDDBA0820B213BFBB42C /* ViewAnimator-dummy.m */,
+				24D896D8390018678CBCAEF8637ADD03 /* ViewAnimator-prefix.pch */,
+				3ED7896FC61694ED4464D2FE72F2E712 /* ViewAnimator-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ViewAnimator";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -98,8 +200,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				F9E2B5265F599D9565D6012321E048D3 /* Pods */,
-				50D9D0CEEC44E1514BFD30BD326B7C3A /* Products */,
+				E599EA2EA1F4106103B1638FCE0837A1 /* Pods */,
+				1F8C6A7E29B3FB91FB954B0C07B6E3B9 /* Products */,
 				E1679440A749D875174540998FD877F8 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -130,43 +232,60 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C5217B70C376BE3802AD3F2EBAC6B6C4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				03DC9E42093038FD933536EAA1D4FBDC /* Info.plist */,
-				D2A39E9870AD2BDFCA5010342C0D76C6 /* ViewAnimator.modulemap */,
-				C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */,
-				83B35911146AFF66A6622DE0FBAEE1A8 /* ViewAnimator-dummy.m */,
-				724430393B44E4F724B3AEE645ECE9B8 /* ViewAnimator-prefix.pch */,
-				A8C3996ACCA6A7225D87EE1879A4846B /* ViewAnimator-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ViewAnimator";
-			sourceTree = "<group>";
-		};
-		C58D9AC123CA03917C71D3B9A30D048E /* ViewAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				3AE014C3C33558602B99E1FF98E0E38A /* Animatable.swift */,
-				1FD1EF64F930CD86B5BF82B0C7CA81F3 /* Animation.swift */,
-				F1E7EF26866352B936710D4EC24D839F /* AnimationType.swift */,
-				0D91E7361A02BC9DD960B01818F6062D /* Constants.swift */,
-				908EE52B2D966C6C1CAFE772BBEDF384 /* Direction.swift */,
-				22F7BBDDFDCDC84C4538E540AF44DC34 /* Utilities.swift */,
-				40C8FCC9D3EB49A29F05EC32CDCD5CA6 /* ViewAnimator.swift */,
-				342C2DCA6455998DC19092B7EBBA535D /* ViewAnimatorConfig.swift */,
-				C5217B70C376BE3802AD3F2EBAC6B6C4 /* Support Files */,
-			);
-			name = ViewAnimator;
-			path = ViewAnimator;
-			sourceTree = "<group>";
-		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		DC0481A665CF43EDE12FA9A84C48A40A /* ViewAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				ABE281C12E3A6740EA234957D64DDE2F /* Animatable.swift */,
+				020F6FDE9EB2F3D6759EADF881EFFB56 /* Animation.swift */,
+				2EB288D95635FC1CA9E69CF5C8BA65E5 /* AnimationType.swift */,
+				C5401A7E17AA7B81DC2243EE7AB3D5CF /* Constants.swift */,
+				0BC6111470449CF75117F7F34BB70DE9 /* Direction.swift */,
+				ED50EF1676428C9DDF3F19E62179F5B8 /* Utilities.swift */,
+				7CFC6989B9E2584B597A38EE4429D4EB /* ViewAnimator.swift */,
+				D2E6C08A87364CC67299894A00FBD5CE /* ViewAnimatorConfig.swift */,
+				58271F3E51FB68CEACD4FA3D21F7714E /* Support Files */,
+			);
+			path = ViewAnimator;
+			sourceTree = "<group>";
+		};
+		DC578B7EBF231AAB24EF1880843CFAFD /* JBChartView */ = {
+			isa = PBXGroup;
+			children = (
+				9BE588F6F9459501068443A8D1FEED61 /* JBBarChartView.h */,
+				C356F49F0B7991653AA5B195D917B5F8 /* JBBarChartView.m */,
+				A7A09FA552B75EF8E1920B0638FFACEF /* JBChartView.h */,
+				2D5ED73BCF8FCC380FA487C415FF93C7 /* JBChartView.m */,
+				705570F555D7500E9831945FB565D8E5 /* JBGradientBarView.h */,
+				E9253667398752B885F5134F2942F5A1 /* JBGradientBarView.m */,
+				D8BAFCE690C094698466A32326A37F60 /* JBGradientLineLayer.h */,
+				EB0458C70F0ED92B1A0C8903F9D13E06 /* JBGradientLineLayer.m */,
+				2571A0A53B31D46015767165E6E47482 /* JBLineChartDotsView.h */,
+				45FA55D024599D011E07BE67CB13239D /* JBLineChartDotsView.m */,
+				EA8DA380C1616173BC1986682FB19D7B /* JBLineChartDotView.h */,
+				BA0741103B3B4ACD23FFDB27DE33C1D5 /* JBLineChartDotView.m */,
+				AD08544726B3FBC10D67C759040B84D6 /* JBLineChartLine.h */,
+				A84633A00E814BDD6532F4AE933E0B6B /* JBLineChartLine.m */,
+				A7A4C4D8919B7EA3DD30D485EABF0219 /* JBLineChartLinesView.h */,
+				493E1D4141C7344D261DEC142429898E /* JBLineChartLinesView.m */,
+				5D299F7CF13278EECF380A39C75B36DE /* JBLineChartPoint.h */,
+				15C06423BBDF9873EC72063C985A7601 /* JBLineChartPoint.m */,
+				6609887198EC86338C32BD3DD66A31BA /* JBLineChartView.h */,
+				CF9001718ECF831D0A5B3E3CF522A585 /* JBLineChartView.m */,
+				B7E6DA11ECE28EA1879432D5B830712C /* JBShapeLineLayer.h */,
+				5D3A6ACCB6043D32AA3590141CF61FA4 /* JBShapeLineLayer.m */,
+				1A4D45BB9FC123A44231848E85C1D820 /* NSMutableArray+JBStack.h */,
+				74642B43A9AE1EEA62DA87343A341BAA /* NSMutableArray+JBStack.m */,
+				1AAA0C1FFC1508A24D858E504F0FC97D /* Support Files */,
+			);
+			path = JBChartView;
 			sourceTree = "<group>";
 		};
 		E1679440A749D875174540998FD877F8 /* Targets Support Files */ = {
@@ -177,10 +296,11 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F9E2B5265F599D9565D6012321E048D3 /* Pods */ = {
+		E599EA2EA1F4106103B1638FCE0837A1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C58D9AC123CA03917C71D3B9A30D048E /* ViewAnimator */,
+				DC578B7EBF231AAB24EF1880843CFAFD /* JBChartView */,
+				DC0481A665CF43EDE12FA9A84C48A40A /* ViewAnimator */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -188,50 +308,52 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		57ECAF9B29F017FD35D3B79A27F321BB /* Headers */ = {
+		0CD3F2F5DC458028ED4B138B554028A9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E57D609C7B4984D80FE76F3CB770A92B /* Pods-It Happened-umbrella.h in Headers */,
+				37AAAF3981518676B7FDF98764CC7277 /* ViewAnimator-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAC344B07E918487D04EB2048ED40E7D /* Headers */ = {
+		17E55D650E4F86AAC20FCBCE0B86DA14 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A4D2E196AB0525E67A38B3B0DFFD9C1 /* ViewAnimator-umbrella.h in Headers */,
+				3B059AE9D1BCDB673D012857263B9D4C /* JBBarChartView.h in Headers */,
+				2E38BFF8237A73E24D8EF5F168155719 /* JBChartView-umbrella.h in Headers */,
+				426A42796485A71F96D24CCF1E859DF8 /* JBChartView.h in Headers */,
+				B55C23EFBE330672CC51B262346C9A58 /* JBGradientBarView.h in Headers */,
+				93F689EB0FCCC0E426D47A629D398CB9 /* JBGradientLineLayer.h in Headers */,
+				D8C12D3990AF99FDA491BFF4CC0B42C1 /* JBLineChartDotsView.h in Headers */,
+				D969475FA12BC012A40CD8B6BC03874E /* JBLineChartDotView.h in Headers */,
+				5A2B0C434CCB0D1CD3F49DFF060D4936 /* JBLineChartLine.h in Headers */,
+				445851C633A5424160C4EE15304459C8 /* JBLineChartLinesView.h in Headers */,
+				732E83D919E45F18F1838E1D69ED471C /* JBLineChartPoint.h in Headers */,
+				E573529DC067A1DC86AC31C40744CE05 /* JBLineChartView.h in Headers */,
+				98DF62F047B5ACAA65EC3C159798A155 /* JBShapeLineLayer.h in Headers */,
+				A10E78C5CE1F3930468BD336E1F31A4C /* NSMutableArray+JBStack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		490EC5FCD77E7D61DDFB19DD28B0ACFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A11B055C6ADDE38CD3713A6D346C09E /* Pods-It Happened-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5858E07879FDFD7CA1B37EDC91312C0F /* Pods-It Happened */ = {
+		71A0558A0D7E150353BA4357122537F8 /* ViewAnimator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D57509AF17AC86B6BC6B2975423839A /* Build configuration list for PBXNativeTarget "Pods-It Happened" */;
+			buildConfigurationList = C6D255054CD77045FB676C362454FF45 /* Build configuration list for PBXNativeTarget "ViewAnimator" */;
 			buildPhases = (
-				D9D1473DD570929DC2211ED5BF57BA7A /* Sources */,
-				57E39D6DA9B13EF8020E6B48A11B57D6 /* Frameworks */,
-				57ECAF9B29F017FD35D3B79A27F321BB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B4F39E8614CA4F69152F894077AAA382 /* PBXTargetDependency */,
-			);
-			name = "Pods-It Happened";
-			productName = "Pods-It Happened";
-			productReference = 2F129EFB8FC2891AEF3F0B5FA888AC37 /* Pods_It_Happened.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C123E3033B213EFA5552D9BA51A08E92 /* ViewAnimator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A8B81EABF9A627952A72DDAEEDC5F4F8 /* Build configuration list for PBXNativeTarget "ViewAnimator" */;
-			buildPhases = (
-				A1FC15EC878837EFE92DB91C05C14683 /* Sources */,
-				5750F98EFBB8B77FA1F51971CA011652 /* Frameworks */,
-				AAC344B07E918487D04EB2048ED40E7D /* Headers */,
+				DB582BA9AE7D456E2B54BBE4485472B3 /* Sources */,
+				6D8589ACCA52ED6F7A32DC0BB5E65BE3 /* Frameworks */,
+				0CD3F2F5DC458028ED4B138B554028A9 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -239,7 +361,43 @@
 			);
 			name = ViewAnimator;
 			productName = ViewAnimator;
-			productReference = 5F543072EC5F9E4C04EC0838BAEEECDA /* ViewAnimator.framework */;
+			productReference = 785131D11331178F56AD25911F8E36CB /* ViewAnimator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		79840849414B94EE60288E7C56A04B74 /* Pods-It Happened */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 025B5C22D48550599902CCB58CD9C7B6 /* Build configuration list for PBXNativeTarget "Pods-It Happened" */;
+			buildPhases = (
+				0F584B3BF3DED209C9C059ABC2B574D3 /* Sources */,
+				8B044B919EA54ACA2A4C6DB168002A05 /* Frameworks */,
+				490EC5FCD77E7D61DDFB19DD28B0ACFE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19DEF1FDA8F15241236BD3609FD5D0A3 /* PBXTargetDependency */,
+				2B86E9DBEB400899A50D51627B03D5D9 /* PBXTargetDependency */,
+			);
+			name = "Pods-It Happened";
+			productName = "Pods-It Happened";
+			productReference = 1ABEDB904D9AAE6E5617A693F510DCBB /* Pods_It_Happened.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7A4752E1A78EE7604F2EEFBC36866BB3 /* JBChartView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C42CC47ADC17459377FEDD18B0527A5 /* Build configuration list for PBXNativeTarget "JBChartView" */;
+			buildPhases = (
+				4EE56650C901C54760C962EA59495146 /* Sources */,
+				3124380E2BE7D6164303D8C31CF72B53 /* Frameworks */,
+				17E55D650E4F86AAC20FCBCE0B86DA14 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JBChartView;
+			productName = JBChartView;
+			productReference = 1756542C2B7A5925B523E5FD9BD34DDE /* JBChartView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +407,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -259,53 +417,110 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 50D9D0CEEC44E1514BFD30BD326B7C3A /* Products */;
+			productRefGroup = 1F8C6A7E29B3FB91FB954B0C07B6E3B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5858E07879FDFD7CA1B37EDC91312C0F /* Pods-It Happened */,
-				C123E3033B213EFA5552D9BA51A08E92 /* ViewAnimator */,
+				7A4752E1A78EE7604F2EEFBC36866BB3 /* JBChartView */,
+				79840849414B94EE60288E7C56A04B74 /* Pods-It Happened */,
+				71A0558A0D7E150353BA4357122537F8 /* ViewAnimator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A1FC15EC878837EFE92DB91C05C14683 /* Sources */ = {
+		0F584B3BF3DED209C9C059ABC2B574D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93FA4EA64E269D50A41CF913911D4B89 /* Animatable.swift in Sources */,
-				7713805D9109DC63AD15BD7E75A787F4 /* Animation.swift in Sources */,
-				B721800AE31C9BF2EBBD5F817FDF9D52 /* AnimationType.swift in Sources */,
-				EA5C6F850B18423FD761EE27D3785F00 /* Constants.swift in Sources */,
-				953896B62AF13FE9D47F4AB01FA81B8F /* Direction.swift in Sources */,
-				32061B09B363B705395A46521CD21A47 /* Utilities.swift in Sources */,
-				27BC9DF891EC4F16C226E3F8699F7E3D /* ViewAnimator-dummy.m in Sources */,
-				1EEDDCC681E8957E7D709F6B10681308 /* ViewAnimator.swift in Sources */,
-				990D482B8D587022A751B426D1D8EAD7 /* ViewAnimatorConfig.swift in Sources */,
+				AB0EA88D3ABD8AEFAC94E8681D3C3A30 /* Pods-It Happened-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9D1473DD570929DC2211ED5BF57BA7A /* Sources */ = {
+		4EE56650C901C54760C962EA59495146 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE426EBCFAC4CFE304AFC1D924AF93C /* Pods-It Happened-dummy.m in Sources */,
+				51F96C9AB940B0632F0B8F5CCB837D6D /* JBBarChartView.m in Sources */,
+				A63CDF2F0879C1B64D5B7EFB3D8DAF92 /* JBChartView-dummy.m in Sources */,
+				78120A3601A06D8A5EDFBFD585129753 /* JBChartView.m in Sources */,
+				139DF8B9AD013E4DE9C795B72D6B215A /* JBGradientBarView.m in Sources */,
+				89456D1FFDB323E816213F9A5CF4089D /* JBGradientLineLayer.m in Sources */,
+				299881057FB2CA560B3112BA2557FA3D /* JBLineChartDotsView.m in Sources */,
+				6A86D83775F51E702C21210516163C74 /* JBLineChartDotView.m in Sources */,
+				2157E68D351AE5CA57E69C9A46B0B088 /* JBLineChartLine.m in Sources */,
+				C5A6F1F3F0C84AE88F9F96AD83F0062C /* JBLineChartLinesView.m in Sources */,
+				CCA6BFF987DEE0C71CA6FFF87E82622C /* JBLineChartPoint.m in Sources */,
+				74CFE7B7EAC9CE681E9AD6116FA9BE65 /* JBLineChartView.m in Sources */,
+				38CA890E59175CCB854195F625542345 /* JBShapeLineLayer.m in Sources */,
+				9F0779951A822EA5DF0E31817411D9F1 /* NSMutableArray+JBStack.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB582BA9AE7D456E2B54BBE4485472B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E6E4ADAAEDAE01B904B99B98F5DB3A1 /* Animatable.swift in Sources */,
+				06848D8F1919E99943B5381205F99E86 /* Animation.swift in Sources */,
+				1B949AA92EF7496882E4478B9AA6E0CF /* AnimationType.swift in Sources */,
+				8A6FD4A5DDC300E8682D59EDF95857C3 /* Constants.swift in Sources */,
+				6C1386F661AC0C53389F9D0AD88D0428 /* Direction.swift in Sources */,
+				C29A8D155B910A825C9DB469A5415D98 /* Utilities.swift in Sources */,
+				F45B298181BCD1B866E43E4088078B53 /* ViewAnimator-dummy.m in Sources */,
+				706AFDB025E59E50ECB45F8DE2F35931 /* ViewAnimator.swift in Sources */,
+				2E0CC98B7167514DAF53AA90EAA85FB5 /* ViewAnimatorConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B4F39E8614CA4F69152F894077AAA382 /* PBXTargetDependency */ = {
+		19DEF1FDA8F15241236BD3609FD5D0A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JBChartView;
+			target = 7A4752E1A78EE7604F2EEFBC36866BB3 /* JBChartView */;
+			targetProxy = 1BB2DACBD26F8A34925670C7182670F9 /* PBXContainerItemProxy */;
+		};
+		2B86E9DBEB400899A50D51627B03D5D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ViewAnimator;
-			target = C123E3033B213EFA5552D9BA51A08E92 /* ViewAnimator */;
-			targetProxy = 6C423011B104D795C9483471671E7E84 /* PBXContainerItemProxy */;
+			target = 71A0558A0D7E150353BA4357122537F8 /* ViewAnimator */;
+			targetProxy = 96929D96623FEA3F5A1C571E75789FFE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		00B811956092D2F56F656B2AA73AFCDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC470828E86F9855FA1A584080E17729 /* JBChartView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JBChartView/JBChartView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JBChartView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JBChartView/JBChartView.modulemap";
+				PRODUCT_NAME = JBChartView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -357,13 +572,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		2C4671EFBE081CC99AE9E1BFC4A94A0C /* Release */ = {
+		42E24E44A279B2B59DBAD1F7381709A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */;
+			baseConfigurationReference = E7A2169992A79DFCBE58486716CF259D /* ViewAnimator.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -384,14 +600,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		59F0302F2371FCC6B73EF0A418D40734 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -453,7 +668,39 @@
 			};
 			name = Debug;
 		};
-		B878D033C01E8D6350CDE4F8247C87A1 /* Debug */ = {
+		AE12497257DEA91E333BF470AA5F4F19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7A2169992A79DFCBE58486716CF259D /* ViewAnimator.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ViewAnimator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
+				PRODUCT_NAME = ViewAnimator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA1E0D8EC8DBCE7893E0049DA4615C5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDC63EF9A9AC723F789E9E71FD9E7C19 /* Pods-It Happened.debug.xcconfig */;
 			buildSettings = {
@@ -487,38 +734,7 @@
 			};
 			name = Debug;
 		};
-		B9C42023E3219AD0E3E6461D89FC5308 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C46E82DF59EC54795EA8E267F5D5172D /* ViewAnimator.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ViewAnimator/ViewAnimator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ViewAnimator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ViewAnimator/ViewAnimator.modulemap";
-				PRODUCT_NAME = ViewAnimator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D334F3FC825E5485B0DDCA279A27536F /* Release */ = {
+		F7FC3E01622E1B7A865325DF22AE2FBC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFB7200A7B1990D687FAF79EA8AA9017 /* Pods-It Happened.release.xcconfig */;
 			buildSettings = {
@@ -552,14 +768,45 @@
 			};
 			name = Release;
 		};
+		FBDBCAA44D95CD60D2A1E0E5DB2B905B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC470828E86F9855FA1A584080E17729 /* JBChartView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JBChartView/JBChartView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JBChartView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JBChartView/JBChartView.modulemap";
+				PRODUCT_NAME = JBChartView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D57509AF17AC86B6BC6B2975423839A /* Build configuration list for PBXNativeTarget "Pods-It Happened" */ = {
+		025B5C22D48550599902CCB58CD9C7B6 /* Build configuration list for PBXNativeTarget "Pods-It Happened" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B878D033C01E8D6350CDE4F8247C87A1 /* Debug */,
-				D334F3FC825E5485B0DDCA279A27536F /* Release */,
+				BA1E0D8EC8DBCE7893E0049DA4615C5A /* Debug */,
+				F7FC3E01622E1B7A865325DF22AE2FBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -573,11 +820,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8B81EABF9A627952A72DDAEEDC5F4F8 /* Build configuration list for PBXNativeTarget "ViewAnimator" */ = {
+		5C42CC47ADC17459377FEDD18B0527A5 /* Build configuration list for PBXNativeTarget "JBChartView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B9C42023E3219AD0E3E6461D89FC5308 /* Debug */,
-				2C4671EFBE081CC99AE9E1BFC4A94A0C /* Release */,
+				00B811956092D2F56F656B2AA73AFCDE /* Debug */,
+				FBDBCAA44D95CD60D2A1E0E5DB2B905B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6D255054CD77045FB676C362454FF45 /* Build configuration list for PBXNativeTarget "ViewAnimator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E24E44A279B2B59DBAD1F7381709A5 /* Debug */,
+				AE12497257DEA91E333BF470AA5F4F19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

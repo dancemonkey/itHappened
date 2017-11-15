@@ -7,4 +7,6 @@ target 'It Happened' do
 
   # Pods for It Happened
   pod "ViewAnimator"	
+  pod 'JBChartView'
+  
 end

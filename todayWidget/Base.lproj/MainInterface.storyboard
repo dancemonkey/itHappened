@@ -23,19 +23,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tyr-2g-yGO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tyr-2g-yGO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayViewCell" id="vex-J4-a6y" customClass="TodayViewCell" customModule="todayWidget" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="35"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vex-J4-a6y" id="teH-lG-9g0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-py-Bez">
-                                                    <rect key="frame" x="16" y="9" width="242" height="18"/>
+                                                    <rect key="frame" x="16" y="17" width="222" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joA-rR-26P">
                                                             <rect key="frame" x="0.0" y="0.0" width="86" height="18"/>
@@ -50,7 +50,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="last" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9WW-Dw-leV">
-                                                            <rect key="frame" x="183.5" y="0.0" width="58.5" height="18"/>
+                                                            <rect key="frame" x="183.5" y="0.0" width="38.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -58,10 +58,10 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mv-Ip-bTq" customClass="IncrementButton" customModule="It_Happened">
-                                                    <rect key="frame" x="274" y="2.5" width="30" height="30"/>
+                                                    <rect key="frame" x="254" y="1" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="0lF-iL-6Lj"/>
-                                                        <constraint firstAttribute="width" constant="30" id="tAa-Zk-F5l"/>
+                                                        <constraint firstAttribute="height" constant="50" id="0lF-iL-6Lj"/>
+                                                        <constraint firstAttribute="width" constant="50" id="tAa-Zk-F5l"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <size key="titleShadowOffset" width="1" height="1"/>

@@ -38,6 +38,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     setupAudioSession()
     self.navigationController?.setNavigationBarHidden(false, animated: true)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Chart", style: .plain, target: self, action: #selector(chartTapped))
     
     styleViews()
     tableView.delegate = self
@@ -52,6 +53,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     
     updateView()
+  }
+  
+  @objc func chartTapped() {
+    performSegue(withIdentifier: SegueIDs.showChart, sender: self.activity)
   }
   
   func styleViews() {
@@ -70,7 +75,6 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func animateViews() {
     newButton.animate(animations: [Animations.newButtonIn])
-//    tableView.animateAll(animations: [Animations.tableRowsIn])
   }
   
   fileprivate func updateView() {
@@ -80,6 +84,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     tableView.isHidden = !hasInstances
     emptyDataLbl.isHidden = hasInstances
+    navigationItem.rightBarButtonItem?.isEnabled = hasInstances
     activityIndicator.stopAnimating()
   }
   
@@ -88,6 +93,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     playSound(called: Sound.numberRise)
     generator.notificationOccurred(.success)
     DataManager().save()
+    updateView()
   }
   
   func setHeader(forSection section: Int) {
@@ -169,7 +175,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     
     let title = UILabel()
     title.frame = CGRect(x: 8, y: 0, width: tableView.frame.width, height: 40)
-    title.textColor = UIColor.white
+    title.textColor = Settings().colorTheme[.navElement]
     title.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
     title.text = (self.tableView(tableView, titleForHeaderInSection: section))?.uppercased()
     title.baselineAdjustment = .alignCenters
@@ -258,6 +264,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     if segue.identifier == SegueIDs.editInstance, let instance = tableView.selectedInstance {
       let destVC = segue.destination as? EditInstanceVC
       destVC?.instance = instance
+    }
+    if segue.identifier == SegueIDs.showChart, let activity = sender {
+      let destVC = segue.destination as? ChartVC
+      destVC?.activity = activity as! Activity
     }
   }
   

@@ -23,7 +23,7 @@
 		1034A8FD1F9A736500174411 /* Instance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CC1F585BB700D06941 /* Instance+CoreDataProperties.swift */; };
 		1034A8FE1F9A736500174411 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CD1F585BB700D06941 /* Activity+CoreDataClass.swift */; };
 		1034A8FF1F9A736500174411 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F926CE1F585BB700D06941 /* Activity+CoreDataProperties.swift */; };
-		1034A9001F9A737E00174411 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72B1F60204C00F36249 /* Extensions.swift */; };
+		1039A2C01FB79DC300A34E25 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72B1F60204C00F36249 /* Extensions.swift */; };
 		1039AE951F6C182300218D5B /* NewActivityPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */; };
 		1040F4951F65DBC700893F7D /* IncrementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040F4941F65DBC700893F7D /* IncrementButton.swift */; };
 		1042BABE1F9E1FE800888169 /* It_Happened.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1042BABC1F9E1FE800888169 /* It_Happened.xcdatamodeld */; };
@@ -31,6 +31,7 @@
 		1044636A1F5B001600312E5A /* EditInstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104463691F5B001600312E5A /* EditInstanceVC.swift */; };
 		1044636C1F5B048800312E5A /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1044636B1F5B048800312E5A /* BaseButton.swift */; };
 		10464D471F6D50D200AF1D27 /* DeleteConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */; };
+		104F23A01FB737FA001F9F30 /* ChartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F239F1FB737FA001F9F30 /* ChartVC.swift */; };
 		105A759D1F96349F00903AC9 /* ActivityInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A759C1F96349F00903AC9 /* ActivityInfoVC.swift */; };
 		105AD72C1F60204C00F36249 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72B1F60204C00F36249 /* Extensions.swift */; };
 		105AD72E1F6020D100F36249 /* ActivityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105AD72D1F6020D100F36249 /* ActivityTableView.swift */; };
@@ -45,6 +46,7 @@
 		10A7DF171F585153004C4F61 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF161F585153004C4F61 /* DataManager.swift */; };
 		10A7DF191F58515C004C4F61 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF181F58515C004C4F61 /* Style.swift */; };
 		10A7DF1F1F585321004C4F61 /* InstanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7DF1E1F585321004C4F61 /* InstanceVC.swift */; };
+		10BB92BA1FB8B07900C5EBB3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB92B91FB8B07900C5EBB3 /* InfoView.swift */; };
 		10D06D451F70B7CF00646197 /* PopoverPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */; };
 		10D66C271FA4BABA005BAD03 /* It_Happened.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1042BABC1F9E1FE800888169 /* It_Happened.xcdatamodeld */; };
 		10E2C7B41F732852002D1073 /* analogue_click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 10E2C7B31F732850002D1073 /* analogue_click1.wav */; };
@@ -109,6 +111,7 @@
 		104463691F5B001600312E5A /* EditInstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInstanceVC.swift; sourceTree = "<group>"; };
 		1044636B1F5B048800312E5A /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteConfirmationVC.swift; sourceTree = "<group>"; };
+		104F239F1FB737FA001F9F30 /* ChartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVC.swift; sourceTree = "<group>"; };
 		105A759C1F96349F00903AC9 /* ActivityInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoVC.swift; sourceTree = "<group>"; };
 		105AD72B1F60204C00F36249 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		105AD72D1F6020D100F36249 /* ActivityTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableView.swift; sourceTree = "<group>"; };
@@ -125,7 +128,9 @@
 		10A7DF161F585153004C4F61 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		10A7DF181F58515C004C4F61 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		10A7DF1E1F585321004C4F61 /* InstanceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceVC.swift; sourceTree = "<group>"; };
+		10BB92B91FB8B07900C5EBB3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		10D06D441F70B7CF00646197 /* PopoverPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPresenterProtocol.swift; sourceTree = "<group>"; };
+		10DABDEF1FB7354A00CFF19C /* It Happened-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "It Happened-Bridging-Header.h"; sourceTree = "<group>"; };
 		10E2C7B31F732850002D1073 /* analogue_click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = analogue_click1.wav; sourceTree = "<group>"; };
 		10E2C7B51F7328D5002D1073 /* techy_affirm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = techy_affirm.wav; sourceTree = "<group>"; };
 		10EA3EA51F7158AD00778ADF /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -187,6 +192,7 @@
 		10A7DEF51F584CE7004C4F61 = {
 			isa = PBXGroup;
 			children = (
+				10DABDEF1FB7354A00CFF19C /* It Happened-Bridging-Header.h */,
 				10A7DF001F584CE8004C4F61 /* It Happened */,
 				1034A8EA1F9A6F7F00174411 /* todayWidget */,
 				10A7DEFF1F584CE8004C4F61 /* Products */,
@@ -232,6 +238,7 @@
 				1039AE941F6C182300218D5B /* NewActivityPopoverVC.swift */,
 				10464D461F6D50D200AF1D27 /* DeleteConfirmationVC.swift */,
 				105A759C1F96349F00903AC9 /* ActivityInfoVC.swift */,
+				104F239F1FB737FA001F9F30 /* ChartVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,6 +279,7 @@
 				105AD72D1F6020D100F36249 /* ActivityTableView.swift */,
 				106C3A7C1F647D2800E3D7F3 /* NewButton.swift */,
 				1040F4941F65DBC700893F7D /* IncrementButton.swift */,
+				10BB92B91FB8B07900C5EBB3 /* InfoView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -469,10 +477,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-It Happened/Pods-It Happened-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/JBChartView/JBChartView.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JBChartView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,7 +524,7 @@
 				10EDEE351FA0DAC30079091E /* Settings.swift in Sources */,
 				10D66C271FA4BABA005BAD03 /* It_Happened.xcdatamodeld in Sources */,
 				10EDEE311FA0CCE40079091E /* TodayViewCell.swift in Sources */,
-				1034A9001F9A737E00174411 /* Extensions.swift in Sources */,
+				1039A2C01FB79DC300A34E25 /* Extensions.swift in Sources */,
 				10EDEE361FA0DAD30079091E /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,11 +537,13 @@
 				105A759D1F96349F00903AC9 /* ActivityInfoVC.swift in Sources */,
 				10A7DF041F584CE8004C4F61 /* ActivityVC.swift in Sources */,
 				105AD72E1F6020D100F36249 /* ActivityTableView.swift in Sources */,
+				10BB92BA1FB8B07900C5EBB3 /* InfoView.swift in Sources */,
 				10A7DF1F1F585321004C4F61 /* InstanceVC.swift in Sources */,
 				10D06D451F70B7CF00646197 /* PopoverPresenterProtocol.swift in Sources */,
 				10F926D21F585BB700D06941 /* Activity+CoreDataProperties.swift in Sources */,
 				1040F4951F65DBC700893F7D /* IncrementButton.swift in Sources */,
 				1034A8F81F9A712400174411 /* TodayViewController.swift in Sources */,
+				104F23A01FB737FA001F9F30 /* ChartVC.swift in Sources */,
 				10A7DF191F58515C004C4F61 /* Style.swift in Sources */,
 				10A7DF171F585153004C4F61 /* DataManager.swift in Sources */,
 				102942B41F74AD700042F87B /* Settings.swift in Sources */,
@@ -745,6 +757,7 @@
 			baseConfigurationReference = 6ACEE88B9BD61F98CD7CF440 /* Pods-It Happened.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "It Happened/It Happened.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = TFEDY5M56J;
@@ -752,6 +765,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.It-Happened";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "It Happened-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -763,6 +778,7 @@
 			baseConfigurationReference = 4D789A23A16887B21F69C8E6 /* Pods-It Happened.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "It Happened/It Happened.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = TFEDY5M56J;
@@ -770,6 +786,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.drewlanning.It-Happened";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "It Happened-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

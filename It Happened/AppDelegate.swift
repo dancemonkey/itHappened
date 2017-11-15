@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           if let newURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.drewlanning.It-Happened.todayWidget")?.appendingPathComponent("It_Happened.sqlite") {
             migrate(store: oldStore, from: url, to: newURL)
             try! oldPsc.destroyPersistentStore(at: url, ofType: NSSQLiteStoreType, options: nil)
-            print("migration attempted")
+//            print("migration attempted")
           }
         } else {
-          print("no store found at oldPSC")
+//          print("no store found at oldPSC")
         }
       }
     }
@@ -132,7 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       try! psc.destroyPersistentStore(at: oldURL, ofType: NSSQLiteStoreType, options: nil)
       UserDefaults().set(true, forKey: "migrated")
     } catch {
-      print("Failed to move from: \(oldURL) to \(newURL)")
+//      print("Failed to move from: \(oldURL) to \(newURL)")
     }
   }
   

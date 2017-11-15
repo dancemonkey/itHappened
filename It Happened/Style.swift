@@ -64,6 +64,7 @@ enum SegueIDs {
   static let showInstanceList = "showInstanceList"
   static let editInstance = "editInstance"
   static let showDatePicker = "showDatePicker"
+  static let showChart = "showChart"
 }
 
 enum CellIDs {

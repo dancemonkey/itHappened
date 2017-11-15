@@ -35,7 +35,7 @@ struct Settings {
   
   mutating func setColorTheme(to theme: ThemeType) {
     UserDefaults.standard.set(theme.rawValue, forKey: SettingsKey.colorTheme)
-    print(theme.rawValue)
+//    print(theme.rawValue)
     switch theme {
     case .dark: self.theme = ThemeOption.dark
     case .light: self.theme = ThemeOption.light
