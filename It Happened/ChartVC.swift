@@ -36,12 +36,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     formatter.dateFormat = "MMM d"
     
     allDatesForActivity = activity.getAllDates()
-    let cal = Calendar(identifier: .gregorian)
-    let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
-    for d in 1 ... 7 {
-      let newDate = Calendar.current.date(byAdding: .day, value: d, to: startDate)
-      dateRange.append(cal.startOfDay(for: newDate!))
-    }
+    dateRange = activity.getDateRange(for: .week)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +64,6 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     }
     
     updateChartLabels()
-    
     infoView.hideSubviews()
     infoView.showHint()
   }

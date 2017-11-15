@@ -41,9 +41,9 @@ class InfoView: UIView {
   
   func styleViews() {
     self.backgroundColor = .clear
-    dateLbl.textColor = .white
-    totalLbl.textColor = .white
-    average.textColor = .white
+    dateLbl.textColor = Settings().colorTheme[.navElement]
+    totalLbl.textColor = Settings().colorTheme[.navElement]
+    average.textColor = Settings().colorTheme[.navElement]
   }
   
   func chartIsUpdating(_ updating: Bool) {

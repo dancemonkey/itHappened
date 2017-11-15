@@ -122,7 +122,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print("going back to app")
+//    print("going back to app")
     if let url: URL = URL(string: "It-Happened://") {
       self.extensionContext?.open(url, completionHandler: nil)
     }
