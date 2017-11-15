@@ -14,6 +14,7 @@ class InfoView: UIView {
   @IBOutlet weak var totalLbl: UILabel!
   @IBOutlet weak var average: UILabel!
   @IBOutlet weak var labelStack: UIStackView!
+  @IBOutlet weak var hintLbl: UILabel!
   
   var formatter: DateFormatter!
   
@@ -44,6 +45,7 @@ class InfoView: UIView {
     dateLbl.textColor = Settings().colorTheme[.navElement]
     totalLbl.textColor = Settings().colorTheme[.navElement]
     average.textColor = Settings().colorTheme[.navElement]
+    hintLbl.textColor = Settings().colorTheme[.navElement]
   }
   
   func chartIsUpdating(_ updating: Bool) {
@@ -52,15 +54,20 @@ class InfoView: UIView {
     if updating {
       dateLbl.text = "UPDATING..."
       totalLbl.text = "Large data sets may take a few moments to load..."
+      hideHint()
     } else {
       dateLbl.text = ""
       totalLbl.text = ""
+      showHint()
     }
   }
   
   func showHint() {
-    totalLbl.isHidden = false
-    totalLbl.text = "Tap and hold on a bar for more details..."
+    hintLbl.isHidden = false
+  }
+  
+  func hideHint() {
+    hintLbl.isHidden = true
   }
   
 }

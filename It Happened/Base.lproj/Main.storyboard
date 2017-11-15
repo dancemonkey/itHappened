@@ -636,7 +636,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No activity to chart." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-Ca-k7g">
-                                <rect key="frame" x="106.5" y="291.5" width="162" height="20.5"/>
+                                <rect key="frame" x="106.5" y="6" width="162" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -652,6 +652,12 @@
                                     <constraint firstAttribute="height" constant="75" id="dLm-aT-KWM"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap and hold on a bar for more details..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CbR-pf-WUz">
+                                <rect key="frame" x="35.5" y="458" width="303.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-o7-TKT" userLabel="Legend Label Stack">
                                 <rect key="frame" x="16" y="24" width="343" height="361.5"/>
                                 <subviews>
@@ -706,6 +712,7 @@
                                 <connections>
                                     <outlet property="average" destination="xCA-cD-WKB" id="2wr-9A-75s"/>
                                     <outlet property="dateLbl" destination="PvJ-lP-sIL" id="QJ9-vR-YF7"/>
+                                    <outlet property="hintLbl" destination="CbR-pf-WUz" id="X5f-u6-eTH"/>
                                     <outlet property="labelStack" destination="qHS-05-6aC" id="RUD-WO-JI5"/>
                                     <outlet property="totalLbl" destination="2ig-1D-4ze" id="4oD-ZO-a0Q"/>
                                 </connections>
@@ -727,19 +734,21 @@
                         <constraints>
                             <constraint firstItem="ibH-BX-WSA" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="2ed-vS-OeF"/>
                             <constraint firstAttribute="trailing" secondItem="Ugl-v6-Izb" secondAttribute="trailing" constant="16" id="6gO-0d-SRM"/>
-                            <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerX" secondItem="ckJ-Zq-Exo" secondAttribute="centerX" id="7dn-6w-3Uh"/>
                             <constraint firstItem="ibH-BX-WSA" firstAttribute="top" secondItem="xFb-o7-TKT" secondAttribute="bottom" constant="8" id="8r9-KW-hY9"/>
                             <constraint firstItem="xFb-o7-TKT" firstAttribute="top" secondItem="urs-m9-VUs" secondAttribute="bottom" constant="8" id="8wM-48-p0u"/>
                             <constraint firstItem="urs-m9-VUs" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="FXZ-gd-Fuc"/>
                             <constraint firstItem="FCW-Qh-YMV" firstAttribute="centerX" secondItem="urs-m9-VUs" secondAttribute="centerX" id="Ju1-wH-LML"/>
                             <constraint firstAttribute="trailing" secondItem="ibH-BX-WSA" secondAttribute="trailing" constant="16" id="M2D-hl-FiG"/>
+                            <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerX" secondItem="urs-m9-VUs" secondAttribute="centerX" id="TEg-bU-XZa"/>
+                            <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerY" secondItem="urs-m9-VUs" secondAttribute="centerY" id="UJZ-Ss-uHn"/>
                             <constraint firstItem="Ugl-v6-Izb" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="amQ-Uz-vvS"/>
                             <constraint firstAttribute="trailing" secondItem="xFb-o7-TKT" secondAttribute="trailing" constant="16" id="axt-XN-Jsq"/>
                             <constraint firstItem="urs-m9-VUs" firstAttribute="top" secondItem="MMm-yd-8tq" secondAttribute="bottom" constant="16" id="fjx-1a-jLR"/>
                             <constraint firstItem="svv-L0-9HG" firstAttribute="top" secondItem="Ugl-v6-Izb" secondAttribute="bottom" constant="16" id="fsu-jU-hud"/>
                             <constraint firstItem="xFb-o7-TKT" firstAttribute="leading" secondItem="ckJ-Zq-Exo" secondAttribute="leading" constant="16" id="gaB-eQ-Sj9"/>
+                            <constraint firstItem="CbR-pf-WUz" firstAttribute="centerX" secondItem="ibH-BX-WSA" secondAttribute="centerX" id="kwo-U7-NCZ"/>
+                            <constraint firstItem="CbR-pf-WUz" firstAttribute="centerY" secondItem="ibH-BX-WSA" secondAttribute="centerY" id="lz0-jj-kxQ"/>
                             <constraint firstAttribute="trailing" secondItem="urs-m9-VUs" secondAttribute="trailing" constant="16" id="qEp-em-xGC"/>
-                            <constraint firstItem="fVE-Ca-k7g" firstAttribute="centerY" secondItem="ckJ-Zq-Exo" secondAttribute="centerY" id="qPN-d8-una"/>
                             <constraint firstItem="Ugl-v6-Izb" firstAttribute="top" secondItem="ibH-BX-WSA" secondAttribute="bottom" constant="16" id="u86-Nb-jSl"/>
                             <constraint firstItem="FCW-Qh-YMV" firstAttribute="centerY" secondItem="urs-m9-VUs" secondAttribute="centerY" id="xZw-4h-eXz"/>
                         </constraints>

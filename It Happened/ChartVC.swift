@@ -64,10 +64,9 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
       chartView.minimumValue = 0
       chartView.reloadData()
       updateChartLabels()
-    } else if chartView.isHidden {
+      infoView.showHint()
     }
     infoView.hideSubviews()
-    infoView.showHint()
   }
   
   // MARK: Chart Methods
@@ -92,6 +91,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   func barChartView(_ barChartView: JBBarChartView!, didSelectBarAt index: UInt) {
     let date = dateRange[Int(index)]
     infoView.configureSubviews(withActivity: self.activity, forDate: date)
+    infoView.hideHint()
   }
   
   func didDeselect(_ barChartView: JBBarChartView!) {

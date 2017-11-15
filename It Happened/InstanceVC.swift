@@ -75,7 +75,6 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
   
   func animateViews() {
     newButton.animate(animations: [Animations.newButtonIn])
-//    tableView.animateAll(animations: [Animations.tableRowsIn])
   }
   
   fileprivate func updateView() {
@@ -85,6 +84,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     }
     tableView.isHidden = !hasInstances
     emptyDataLbl.isHidden = hasInstances
+    navigationItem.rightBarButtonItem?.isEnabled = hasInstances
     activityIndicator.stopAnimating()
   }
   
@@ -93,6 +93,7 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     playSound(called: Sound.numberRise)
     generator.notificationOccurred(.success)
     DataManager().save()
+    updateView()
   }
   
   func setHeader(forSection section: Int) {
