@@ -36,7 +36,9 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     formatter.dateFormat = "MMM d"
     
     allDatesForActivity = activity.getAllDates()
-    dateRange = activity.getDateRange(for: .week)
+    dateRangeSgmt.selectedSegmentIndex = 0
+    dateRangeSelected(sender: dateRangeSgmt)
+    chartView.reloadData()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -55,15 +57,15 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   }
   
   fileprivate func updateViews() {
-    let hasActivity = self.activity!.instance!.count > 0
+    let hasActivity = self.activity.instance!.count > 0
     emptyDataLbl.isHidden = hasActivity
     chartView.isHidden = !hasActivity
-    if !chartView.isHidden {
+    if chartView.isHidden == false {
       chartView.minimumValue = 0
       chartView.reloadData()
+      updateChartLabels()
+    } else if chartView.isHidden {
     }
-    
-    updateChartLabels()
     infoView.hideSubviews()
     infoView.showHint()
   }
@@ -98,9 +100,9 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
   
   func updateChartLabels() {
     leftLbl.text = formatter.string(from: dateRange.first!)
-    leftLbl.textColor = .white
+    leftLbl.textColor = Settings().colorTheme[.navElement]
     rightLbl.text = "Today"
-    rightLbl.textColor = .white
+    rightLbl.textColor = Settings().colorTheme[.navElement]
   }
   
   // MARK: Segmented control
