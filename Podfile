@@ -6,7 +6,7 @@ target 'It Happened' do
   use_frameworks!
 
   # Pods for It Happened
-  pod "ViewAnimator"	
+  pod "ViewAnimator"    
   pod 'JBChartView'
   
 end

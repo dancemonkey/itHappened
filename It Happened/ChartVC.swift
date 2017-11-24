@@ -62,6 +62,7 @@ class ChartVC: UIViewController, JBBarChartViewDelegate, JBBarChartViewDataSourc
     chartView.isHidden = !hasActivity
     if chartView.isHidden == false {
       chartView.minimumValue = 0
+      chartView.maximumValue = 1
       chartView.reloadData()
       updateChartLabels()
       infoView.showHint()
