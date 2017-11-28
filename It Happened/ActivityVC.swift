@@ -54,11 +54,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   override func viewWillAppear(_ animated: Bool) {
     
-//    if Settings().didChangeObject {
-//      DataManager().context.refreshAllObjects()
-//      Settings().didChangeObjectOff()
-//    }
-    
     tableView.reloadData()
     animateViews()
     styleNavBar()

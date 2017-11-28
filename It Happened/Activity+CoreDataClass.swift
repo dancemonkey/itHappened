@@ -23,6 +23,8 @@ public class Activity: NSManagedObject {
   private var monthRange: [Date]?
   private var quarterRange: [Date]?
   private var yearRange: [Date]?
+  
+  let instanceFetchRange = -14
 
   var lastInstance: Instance? {
     get {
@@ -128,6 +130,13 @@ public class Activity: NSManagedObject {
     case .quarter:
       quarterRange = newRange
     }
+  }
+  
+  func getInstanceRange() -> [Date] {
+    let cal = Calendar(identifier: .gregorian)
+    let fromDate = Calendar.current.date(byAdding: .day, value: instanceFetchRange, to: Date())
+    let toDate = Calendar.current.date(byAdding: .day, value: 1, to: Date())
+    return [cal.startOfDay(for: fromDate!), cal.startOfDay(for: toDate!)]
   }
 
 }

@@ -28,7 +28,10 @@ class InstanceVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
     let fetchRequest: NSFetchRequest<Instance> = Instance.fetchRequest()
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
     let activity = self.activity!
-    fetchRequest.predicate = NSPredicate(format: "activity == %@", activity)
+    let instanceRange = activity.getInstanceRange()
+    let fromDate = instanceRange[0] as NSDate
+    let toDate = instanceRange[1] as NSDate
+    fetchRequest.predicate = NSPredicate(format: "activity == %@ AND (date >= %@ AND date <= %@)", argumentArray: [activity, fromDate, toDate])
     let fetchedResultsController: NSFetchedResultsController<Instance> = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "sectionNameFromDate", cacheName: nil)
     return fetchedResultsController
   }()
