@@ -12,6 +12,7 @@ enum SettingsKey {
   static let sound = "sound"
   static let haptic = "haptic"
   static let colorTheme = "colorTheme"
+  static let didChangeObject = "didChangeObject"
 }
 
 typealias Theme = [ColorSlot: UIColor]
@@ -19,10 +20,11 @@ typealias Theme = [ColorSlot: UIColor]
 struct Settings {
   
   private var theme: Theme?
-  
+  let appGroup: String = "group.com.drewlanning.It-Happened.todayWidget"
+
   var colorTheme: Theme {
     get {
-      guard let theme = UserDefaults.standard.value(forKey: SettingsKey.colorTheme) else {
+      guard let theme = UserDefaults.init(suiteName: appGroup)?.value(forKey: SettingsKey.colorTheme) else {
         return ThemeOption.dark
       }
       let savedTheme = ThemeType(rawValue: theme as! String)!
@@ -33,9 +35,12 @@ struct Settings {
     }
   }
   
+  var didChangeObject: Bool {
+    return (UserDefaults.init(suiteName: appGroup)?.bool(forKey: SettingsKey.didChangeObject))!
+  }
+  
   mutating func setColorTheme(to theme: ThemeType) {
     UserDefaults.standard.set(theme.rawValue, forKey: SettingsKey.colorTheme)
-//    print(theme.rawValue)
     switch theme {
     case .dark: self.theme = ThemeOption.dark
     case .light: self.theme = ThemeOption.light
@@ -79,6 +84,14 @@ struct Settings {
   
   func turnHapticOn() {
     UserDefaults.standard.set(true, forKey: SettingsKey.haptic)
+  }
+  
+  func didChangeObjectOn() {
+    UserDefaults.init(suiteName: appGroup)?.set(true, forKey: SettingsKey.didChangeObject)
+  }
+  
+  func didChangeObjectOff() {
+    UserDefaults.init(suiteName: appGroup)?.set(false, forKey: SettingsKey.didChangeObject)
   }
   
 }

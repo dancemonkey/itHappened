@@ -16,11 +16,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var emptyDataLbl: UILabel!
   var activities: [Activity]?
-  
+  let appGroup: String = "group.com.drewlanning.It-Happened.todayWidget"
+
   lazy var persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "It_Happened")
     var persistentStoreDescriptions: NSPersistentStoreDescription
-    let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.drewlanning.It-Happened.todayWidget")?.appendingPathComponent("It_Happened.sqlite")
+    let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup)?.appendingPathComponent("It_Happened.sqlite")
     let description = NSPersistentStoreDescription()
     description.shouldInferMappingModelAutomatically = true
     description.shouldMigrateStoreAutomatically = true

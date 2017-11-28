@@ -33,6 +33,7 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   // MARK: Class & IB Methods
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     frc = initializeFRC()
     setupAudioSession()
     NotificationCenter.default.addObserver(self, selector: #selector(ActivityVC.appBecameActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
@@ -52,6 +53,12 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    
+//    if Settings().didChangeObject {
+//      DataManager().context.refreshAllObjects()
+//      Settings().didChangeObjectOff()
+//    }
+    
     tableView.reloadData()
     animateViews()
     styleNavBar()
@@ -63,7 +70,6 @@ class ActivityVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
   
   func animateViews() {
     newButton.animate(animations: [Animations.newButtonIn])
-//    tableView.animateAll(animations: [Animations.tableRowsIn])
   }
   
   @IBAction func newPressed(sender: UIButton) {

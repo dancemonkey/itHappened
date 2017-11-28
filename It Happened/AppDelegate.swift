@@ -13,21 +13,17 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-  
-  
+  let appGroup: String = "group.com.drewlanning.It-Happened.todayWidget"
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
-//    UserDefaults().set(false, forKey: "migrated")
-//    print(UserDefaults().bool(forKey: "migrated"))
     
     if !UserDefaults().bool(forKey: "migrated") {
       let oldPsc = oldPersistentContainer.persistentStoreCoordinator
       for store in oldPsc.persistentStores {
         if let url = store.url, let oldStore = oldPsc.persistentStore(for: url) {
-          if let newURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.drewlanning.It-Happened.todayWidget")?.appendingPathComponent("It_Happened.sqlite") {
+          if let newURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup)?.appendingPathComponent("It_Happened.sqlite") {
             migrate(store: oldStore, from: url, to: newURL)
             try! oldPsc.destroyPersistentStore(at: url, ofType: NSSQLiteStoreType, options: nil)
-//            print("migration attempted")
           }
         } else {
 //          print("no store found at oldPSC")
@@ -49,11 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func applicationWillEnterForeground(_ application: UIApplication) {
+    
   }
   
   func applicationDidBecomeActive(_ application: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    persistentContainer.viewContext.refreshAllObjects()
+    if Settings().didChangeObject {
+      persistentContainer.viewContext.refreshAllObjects()
+      Settings().didChangeObjectOff()
+    }
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   lazy var persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "It_Happened")
     var persistentStoreDescriptions: NSPersistentStoreDescription
-    let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.drewlanning.It-Happened.todayWidget")?.appendingPathComponent("It_Happened.sqlite")
+    let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup)?.appendingPathComponent("It_Happened.sqlite")
     let description = NSPersistentStoreDescription()
     description.shouldInferMappingModelAutomatically = true
     description.shouldMigrateStoreAutomatically = true

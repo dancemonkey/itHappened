@@ -68,6 +68,7 @@ class TodayViewCell: UITableViewCell {
         self.flashCell()
         do {
           try self.context?.save()
+          Settings().didChangeObjectOn()
         } catch {
           print("could not save to context in today widget")
         }
